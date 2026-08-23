@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://by2ha6f7loiwk"]
+
+[ext_resource type="Script" uid="uid://ce5gjxdmi51s6" path="res://Scenes/tube.gd" id="1_p420r"]
+
+[node name="tube" type="Node3D" unique_id=2266206]
+script = ExtResource("1_p420r")
