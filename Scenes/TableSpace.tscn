@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cvlrfj50brt4"]
+
+[ext_resource type="Script" uid="uid://btjao1uly6bk2" path="res://Scenes/item.gd" id="1_ommpx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_37okk"]
+size = Vector3(9.214111, 0.34521484, 4.4733887)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
+size = Vector3(0.16644287, 0.40568542, 0.13760376)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_37okk"]
+top_radius = 0.061523438
+bottom_radius = 0.061523438
+height = 0.39105225
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
+
+[sub_resource type="Sky" id="Sky_ila21"]
+sky_material = SubResource("ProceduralSkyMaterial_u057j")
+
+[sub_resource type="Environment" id="Environment_37okk"]
+background_mode = 2
+sky = SubResource("Sky_ila21")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
+
+[sub_resource type="Compositor" id="Compositor_2gruq"]
+
+[node name="TableSpace" type="Node3D" unique_id=1361018379]
+
+[node name="Table" type="Node3D" parent="." unique_id=1377402160]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1324002984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0057373047, -0.02676326, 0.014526367)
+mesh = SubResource("BoxMesh_37okk")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=755732051]
+transform = Transform3D(1, 0, 0, 0, 0.8481961, 0.5296824, 0, -0.5296824, 0.8481961, 0, 3.1730628, 3.9376564)
+
+[node name="Item" type="AnimatableBody3D" parent="." unique_id=1311023499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5796907, 0)
+script = ExtResource("1_ommpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item" unique_id=480941083]
+transform = Transform3D(0.9659258, -0.25881904, -1.131334e-08, 0, -4.371139e-08, 1, -0.25881904, -0.9659258, -4.222196e-08, 0, -0.3815074, 0)
+shape = SubResource("BoxShape3D_37okk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Item" unique_id=1027030971]
+transform = Transform3D(0.9659258, -0.25881904, -1.131334e-08, 0, -4.371139e-08, 1, -0.25881904, -0.9659258, -4.222196e-08, 0, -0.3815074, 0)
+mesh = SubResource("CylinderMesh_37okk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
+environment = SubResource("Environment_37okk")
+camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
+compositor = SubResource("Compositor_2gruq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747452872]
+transform = Transform3D(-0.9396926, 0.27061445, 0.20915462, 0, -0.6115271, 0.7912235, 0.3420202, 0.7435069, 0.5746475, 0, 0, 0)
+
+[connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]
