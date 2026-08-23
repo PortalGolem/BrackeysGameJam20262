@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cvlrfj50brt4"]
 
-[ext_resource type="PackedScene" uid="uid://o7yitixrj7ix" path="res://Objects/item.tscn" id="1_67p7y"]
+[ext_resource type="PackedScene" uid="uid://dnvgae0oci6bj" path="res://Objects/Cylender.tscn" id="2_67p7y"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
-[ext_resource type="Script" uid="uid://h568dl6gqtss" path="res://Scenes/cylender_contents.gd" id="3_hwbjd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -19,15 +18,6 @@ sky = SubResource("Sky_ila21")
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
 
 [sub_resource type="Compositor" id="Compositor_2gruq"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_37okk"]
-top_radius = 0.296875
-bottom_radius = 0.296875
-height = 0.50305176
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_37okk"]
-height = 0.5288086
-radius = 0.10546875
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
@@ -52,18 +42,5 @@ transform = Transform3D(-0.9396926, 0.27061445, 0.20915462, 0, -0.6115271, 0.791
 [node name="Dropable" parent="." unique_id=671015364 instance=ExtResource("2_hwbjd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.770794, 5.9604645e-08, -1.5410397)
 
-[node name="Cylender" parent="." unique_id=511029066 instance=ExtResource("1_67p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6878502, 0.20607787, 0.2055111)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylender" unique_id=678063040]
-transform = Transform3D(-0.25129807, 0, 0, 0, -4.371139e-08, -0.25129807, 0, -1, 1.09845875e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_37okk")
-
-[node name="CylenderContents" type="Node" parent="Cylender" unique_id=1678490825]
-script = ExtResource("3_hwbjd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylender" unique_id=1718064548]
-transform = Transform3D(1, 0, 0, 0, 0, 1.0000001, 0, -1.0000001, 0, 0, -0.006837189, 0.0036621094)
-shape = SubResource("CylinderShape3D_37okk")
-
-[connection signal="inspectObject" from="Cylender" to="Cylender/CylenderContents" method="_on_cylender_inspect_object"]
+[node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_67p7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21662986, 0)

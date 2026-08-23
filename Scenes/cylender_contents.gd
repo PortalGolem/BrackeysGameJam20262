@@ -1,12 +1,13 @@
 extends Node
 
 @export var contents:Node3D
+@export var notePositionOffset:Vector3 = Vector3.ZERO
 
 var hasContents = true
-var Ve
 
 func _on_cylender_inspect_object() -> void:
 	if hasContents:
 		contents.process_mode = Node.PROCESS_MODE_INHERIT
-		contents.reparent(get_parent(), true)
-		contents.position = get_parent().position
+		contents.visible = true
+		contents.reparent($"..".get_parent(), true)
+		contents.position = $"..".position
