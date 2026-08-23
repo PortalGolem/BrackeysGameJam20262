@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
 [ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="2_ywnsu"]
-[ext_resource type="PackedScene" uid="uid://dnvgae0oci6bj" path="res://Objects/cylender.tscn" id="4_6wss6"]
+[ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/Cylender.tscn" id="4_6wss6"]
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]

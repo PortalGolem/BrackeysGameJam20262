@@ -73,8 +73,8 @@ func _physics_process(delta: float) -> void:
 		$Control.modulate.a = opacity
 		$Control.position.y -= position_offset/(1/opacity_speed)
 
-		if opacity == 0:
-			self.queue_free()
+		if opacity <= 0:
+			get_parent().queue_free()
 			
 func gen_random_choice(choices):
 	randomize() # Should probably put randomize() outside,
