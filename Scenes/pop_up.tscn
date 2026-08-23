@@ -4,6 +4,8 @@
 
 [sub_resource type="SystemFont" id="SystemFont_3fiop"]
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_tv3en"]
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1171853667]
 follow_viewport_enabled = true
 script = ExtResource("1_tv3en")
@@ -46,3 +48,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = SubResource("SystemFont_3fiop")
 theme_override_font_sizes/normal_font_size = 2
 scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=26261569]
+stream = SubResource("AudioStreamWAV_tv3en")
+max_polyphony = 11
