@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://f84b7diwus4n"]
 
 [ext_resource type="Script" uid="uid://cso0qh67tq0x6" path="res://Scenes/pop_up.gd" id="1_tv3en"]
-
-[sub_resource type="SystemFont" id="SystemFont_3fiop"]
+[ext_resource type="FontFile" uid="uid://bmqvhxsbuj0b4" path="res://PlayfairDisplay-VariableFont_wght.ttf" id="2_2xliu"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_tv3en"]
 
@@ -35,18 +34,14 @@ color = Color(0.993, 0.839, 0.885, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect" unique_id=1056683117]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.5
-offset_top = 2.5
-offset_right = -2.5
-offset_bottom = -2.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 1.5195072
+offset_top = 2.2587268
+offset_right = 911.1704
+offset_bottom = 877.0021
+scale = Vector2(0.04, 0.04)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = SubResource("SystemFont_3fiop")
-theme_override_font_sizes/normal_font_size = 2
+theme_override_fonts/normal_font = ExtResource("2_2xliu")
+theme_override_font_sizes/normal_font_size = 70
 scroll_active = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=26261569]

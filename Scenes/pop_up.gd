@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var char_spd = 0.7
 var char_cur = 0
-@export var text = "\n\n\nHey Dan! Could you send this over to Stacy upstairs?\n\n Best, \n Nathan"
+@export var text = "\n\nHey Dan! Could you send this over to Stacy upstairs?\n\n Best, \n Nathan"
 
 var opacity = 0
 var opacity_speed = 0.0333333333
