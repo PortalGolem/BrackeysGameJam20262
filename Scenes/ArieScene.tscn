@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://by87c0jkdljb0"]
 
+[ext_resource type="PackedScene" uid="uid://g8c58jrtx0i3" path="res://Assets/test obj/Canister.fbx" id="1_eeyem"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gruq"]
 
 [sub_resource type="Sky" id="Sky_fo3dt"]
@@ -15,10 +17,15 @@ sky = SubResource("Sky_fo3dt")
 
 [node name="ArieScene" type="Node3D" unique_id=1651724204]
 
+[node name="Node3D" type="Node3D" parent="." unique_id=1193152149]
+
+[node name="Canister" parent="Node3D" unique_id=1658490570 instance=ExtResource("1_eeyem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3917265, 0, 0.14058006)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934531048]
+transform = Transform3D(0.9941873, -0.10759224, 0.003936025, -0.080410875, -0.7177194, 0.6916741, -0.0715938, -0.68797016, -0.722199, 2.3841858e-07, 2.6230288, -1.3762686)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1322116548]
 environment = SubResource("Environment_37okk")
 camera_attributes = SubResource("CameraAttributesPractical_ila21")
 compositor = SubResource("Compositor_u057j")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934531048]
-transform = Transform3D(0.83535486, -0.5176183, -0.18507682, -0.094010636, -0.4662408, 0.8796485, -0.54161257, -0.7174195, -0.43813816, 0, 0, 0)
