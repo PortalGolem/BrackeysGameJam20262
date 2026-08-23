@@ -25,6 +25,10 @@ top_radius = 0.296875
 bottom_radius = 0.296875
 height = 0.50305176
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_37okk"]
+height = 0.5288086
+radius = 0.10546875
+
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
 [node name="Table" type="Node3D" parent="." unique_id=1377402160]
@@ -57,5 +61,9 @@ mesh = SubResource("CylinderMesh_37okk")
 
 [node name="CylenderContents" type="Node" parent="Cylender" unique_id=1678490825]
 script = ExtResource("3_hwbjd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylender" unique_id=1718064548]
+transform = Transform3D(1, 0, 0, 0, 0, 1.0000001, 0, -1.0000001, 0, 0, -0.006837189, 0.0036621094)
+shape = SubResource("CylinderShape3D_37okk")
 
 [connection signal="inspectObject" from="Cylender" to="Cylender/CylenderContents" method="_on_cylender_inspect_object"]
