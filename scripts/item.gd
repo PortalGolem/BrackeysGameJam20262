@@ -6,11 +6,13 @@ var grabbed := false
 var itemTouched := false
 var movementInput := Vector2.ZERO
 @export var sensitivity_ := .1
+signal inspectObject
+signal dropObject(position)
 
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseMotion:
-		movementInput = event.relative
+		movementInput += event.relative
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,12 +23,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("m_left") and itemTouched:
 		grabbed = true
+	if Input.is_action_just_pressed("m_right") and itemTouched:
+		dropItem()
+		inspectObject.emit()
 	if Input.is_action_just_released("m_left"):
-		grabbed = false
+		dropItem()
 	if grabbed:
-		position += Vector3(movementInput.x, 0, movementInput.y) * sensitivity_
-		print(Vector3(movementInput.x, 0, movementInput.y) * sensitivity_ )
-
+		position.x += movementInput.x * sensitivity_
+		position.z += movementInput.y * sensitivity_
+	movementInput = Vector2.ZERO
+	
+	
+func dropItem():
+	grabbed = false
+	dropObject.emit(position)
 
 func _on_mouse_entered() -> void:
 	itemTouched = true
