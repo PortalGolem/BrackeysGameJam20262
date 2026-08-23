@@ -7,7 +7,7 @@ var itemTouched := false
 var movementInput := Vector2.ZERO
 @export var sensitivity_ := .1
 signal inspectObject
-signal dropObject(position)
+signal dropObject(object:Node3D)
 
 func _input(event):
 	# Mouse in viewport coordinates.
@@ -33,10 +33,9 @@ func _process(delta: float) -> void:
 		position.z += movementInput.y * sensitivity_
 	movementInput = Vector2.ZERO
 	
-	
 func dropItem():
 	grabbed = false
-	dropObject.emit(position)
+	dropObject.emit(self)
 
 func _on_mouse_entered() -> void:
 	itemTouched = true

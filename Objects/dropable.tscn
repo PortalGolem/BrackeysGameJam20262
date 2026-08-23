@@ -2,18 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cp3naar6pskmg" path="res://scripts/Dropable.gd" id="1_v7jbt"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fo3dt"]
-size = Vector3(2.237793, 1, 1.5411377)
-
-[node name="Dropable" type="Node3D" unique_id=671015364]
+[node name="Dropable" type="Area3D" unique_id=16778985]
+input_ray_pickable = false
 script = ExtResource("1_v7jbt")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1615266648]
-input_ray_pickable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=883895052]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6188965, 0, 0.27056885)
-shape = SubResource("BoxShape3D_fo3dt")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dnvgae0oci6bj" path="res://Objects/Cylender.tscn" id="2_67p7y"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
+[ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="2_ywnsu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -18,6 +19,9 @@ sky = SubResource("Sky_ila21")
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
 
 [sub_resource type="Compositor" id="Compositor_2gruq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
+size = Vector3(0.45507813, 1, 1)
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
@@ -39,8 +43,19 @@ compositor = SubResource("Compositor_2gruq")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747452872]
 transform = Transform3D(-0.9396926, 0.27061445, 0.20915462, 0, -0.6115271, 0.7912235, 0.3420202, 0.7435069, 0.5746475, 0, 0, 0)
 
-[node name="Dropable" parent="." unique_id=671015364 instance=ExtResource("2_hwbjd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.770794, 5.9604645e-08, -1.5410397)
-
 [node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_67p7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21662986, 0)
+
+[node name="Ventricle" type="Node3D" parent="." unique_id=229432518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7400234, 1.5263139, -2.2215178)
+script = ExtResource("2_ywnsu")
+
+[node name="Dropable" parent="Ventricle" unique_id=16778985 instance=ExtResource("2_hwbjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0390568, 0.39037097)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
+shape = SubResource("BoxShape3D_37okk")
+
+[connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_exited"]
+[connection signal="trigger_dropped_function" from="Ventricle/Dropable" to="Ventricle" method="_on_dropable_trigger_dropped_function"]
