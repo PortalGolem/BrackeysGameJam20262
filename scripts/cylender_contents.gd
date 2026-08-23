@@ -7,7 +7,9 @@ var hasContents = true
 
 func _on_cylender_inspect_object() -> void:
 	if hasContents:
+		hasContents = false
 		contents.process_mode = Node.PROCESS_MODE_INHERIT
 		contents.visible = true
-		contents.reparent($"..".get_parent(), true)
-		contents.position = $"..".position
+		contents.position = $Item.position + notePositionOffset
+		contents.reparent(get_parent(), true)
+		

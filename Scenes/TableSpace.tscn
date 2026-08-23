@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cvlrfj50brt4"]
 
-[ext_resource type="PackedScene" uid="uid://dnvgae0oci6bj" path="res://Objects/Cylender.tscn" id="2_67p7y"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
 [ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="2_ywnsu"]
+[ext_resource type="PackedScene" uid="uid://dnvgae0oci6bj" path="res://Objects/cylender.tscn" id="4_6wss6"]
+[ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -43,9 +44,6 @@ compositor = SubResource("Compositor_2gruq")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747452872]
 transform = Transform3D(-0.9396926, 0.27061445, 0.20915462, 0, -0.6115271, 0.7912235, 0.3420202, 0.7435069, 0.5746475, 0, 0, 0)
 
-[node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_67p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21662986, 0)
-
 [node name="Ventricle" type="Node3D" parent="." unique_id=229432518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7400234, 1.5263139, -2.2215178)
 script = ExtResource("2_ywnsu")
@@ -56,6 +54,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0390568, 0.39037097)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
 shape = SubResource("BoxShape3D_37okk")
 
+[node name="CylenderSpawner" type="Node3D" parent="." unique_id=969594893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 1.8004051, -1.637929)
+script = ExtResource("4_ywnsu")
+
+[node name="Timer" type="Timer" parent="CylenderSpawner" unique_id=1855129281]
+autostart = true
+
+[node name="Cylender" parent="." unique_id=867891222 instance=ExtResource("4_6wss6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3403966, 0.22664416, 0.34653616)
+
+[node name="CylenderContents" type="Node" parent="Cylender" unique_id=77979233]
+
 [connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_exited"]
 [connection signal="trigger_dropped_function" from="Ventricle/Dropable" to="Ventricle" method="_on_dropable_trigger_dropped_function"]
+[connection signal="timeout" from="CylenderSpawner/Timer" to="CylenderSpawner" method="_on_timer_timeout"]
