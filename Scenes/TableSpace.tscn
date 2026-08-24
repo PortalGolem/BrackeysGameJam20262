@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
 [ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="2_ywnsu"]
-[ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/Cylender.tscn" id="4_6wss6"]
+[ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/cylender.tscn" id="4_6wss6"]
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
@@ -57,7 +57,7 @@ shape = SubResource("BoxShape3D_37okk")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
 
 [node name="CylenderSpawner" type="Node3D" parent="." unique_id=969594893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 1.8004051, -1.637929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 0.31634986, -1.637929)
 script = ExtResource("4_ywnsu")
 
 [node name="Timer" type="Timer" parent="CylenderSpawner" unique_id=1855129281]

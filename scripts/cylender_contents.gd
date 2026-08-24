@@ -10,6 +10,6 @@ func _on_cylender_inspect_object() -> void:
 		hasContents = false
 		contents.process_mode = Node.PROCESS_MODE_INHERIT
 		contents.visible = true
-		contents.position = $Item.position + notePositionOffset
+		contents.global_position = $Item.global_position + notePositionOffset
 		contents.reparent(get_parent(), true)
 		

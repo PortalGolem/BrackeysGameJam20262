@@ -3,10 +3,23 @@
 [ext_resource type="Script" uid="uid://ciwnwjyhjc3q5" path="res://Scenes/note.gd" id="1_akwul"]
 [ext_resource type="PackedScene" uid="uid://o7yitixrj7ix" path="res://Objects/item.tscn" id="2_o0whp"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
+size = Vector3(0.5032654, 0.44677734, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_37okk"]
+size = Vector3(0.4730835, 0.45166016, 1)
+
 [node name="Note" type="Node3D" unique_id=387744038]
 script = ExtResource("1_akwul")
 
 [node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_o0whp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65252817, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item" unique_id=1022855295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030380249, 0, 0)
+shape = SubResource("BoxShape3D_37okk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Item" unique_id=91952221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02407837, 0, 0)
+mesh = SubResource("BoxMesh_37okk")
 
 [connection signal="inspectObject" from="Item" to="." method="_on_item_inspect_object"]
