@@ -30,9 +30,9 @@ transform = Transform3D(1, 0, 0, 0, 0, 1.0000001, 0, -1.0000001, 0, 0, -0.006837
 shape = SubResource("CylinderShape3D_oov56")
 
 [node name="Dropable" parent="Item" unique_id=16778985 instance=ExtResource("3_u2wl8")]
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item/Dropable" unique_id=705922073]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004951477, 0.012451172, 0.0015716553)
 shape = SubResource("BoxShape3D_37okk")
 
 [connection signal="inspectObject" from="Item" to="." method="_on_cylender_inspect_object"]

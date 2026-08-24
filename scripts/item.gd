@@ -10,7 +10,7 @@ var actualMovement := Vector2.ZERO
 signal inspectObject
 signal dropObject(object:Node3D)
 @export var canPutInCyl := false
-@export var minimumMoveDistance := .1
+@export var minimumMoveDistance := .01
 var distanceMovedThusFar:float
 var lastMousePosition:Vector3
 @export var tablePlane:Plane
@@ -30,16 +30,16 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("m_left") and itemTouched:
 		grabbed = true
 	if Input.is_action_just_pressed("m_right") and itemTouched:
 		if grabbed:
 			dropItem()
 		inspectObject.emit()
-	if Input.is_action_just_released("m_left"):
-		dropItem()
 	if grabbed:
+		if Input.is_action_just_released("m_left"):
+			dropItem()
 		position.x += movementInput.x
 		position.z += movementInput.y
 		distanceMovedThusFar += movementInput.length()
@@ -48,7 +48,9 @@ func _process(_delta: float) -> void:
 	
 func dropItem():
 	grabbed = false
+	print("DroppedInto")
 	if distanceMovedThusFar > minimumMoveDistance / sensitivity_:
+		print("DroppedInto!")
 		dropObject.emit(self)
 	distanceMovedThusFar = 0
 

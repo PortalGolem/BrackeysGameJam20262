@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/cylender.tscn" id="4_6wss6"]
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 [ext_resource type="PackedScene" uid="uid://bw1uhv0rxubna" path="res://Objects/note.tscn" id="5_6wss6"]
+[ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://Scenes/system_manager.gd" id="6_lxaw6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -24,6 +25,9 @@ sky = SubResource("Sky_ila21")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
 size = Vector3(0.45507813, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fo3dt"]
+size = Vector3(0.4152832, 1, 1)
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
@@ -45,26 +49,6 @@ compositor = SubResource("Compositor_2gruq")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747452872]
 transform = Transform3D(-0.9396926, 0.27061445, 0.20915462, 0, -0.6115271, 0.7912235, 0.3420202, 0.7435069, 0.5746475, 0, 0, 0)
 
-[node name="Ventricle" type="Node3D" parent="." unique_id=229432518]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7400234, 1.5263139, -2.2215178)
-script = ExtResource("2_ywnsu")
-
-[node name="Dropable" parent="Ventricle" unique_id=16778985 instance=ExtResource("2_hwbjd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0390568, 0.39037097)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
-shape = SubResource("BoxShape3D_37okk")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
-
-[node name="CylenderSpawner" type="Node3D" parent="." unique_id=969594893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 0.31634986, -1.637929)
-script = ExtResource("4_ywnsu")
-
-[node name="Timer" type="Timer" parent="CylenderSpawner" unique_id=1855129281]
-wait_time = 5.0
-autostart = true
-
 [node name="Cylender" parent="." unique_id=867891222 node_paths=PackedStringArray("contents") instance=ExtResource("4_6wss6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 0.22664416, 0.05611849)
 contents = NodePath("CylenderContents/Note")
@@ -76,7 +60,35 @@ process_mode = 4
 visible = false
 text = "Hello There!"
 
+[node name="SystemManager" type="Node" parent="." unique_id=1602999480]
+script = ExtResource("6_lxaw6")
+
+[node name="CylenderSpawner" type="Node3D" parent="SystemManager" unique_id=969594893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 0.31634986, -1.637929)
+script = ExtResource("4_ywnsu")
+
+[node name="Timer" type="Timer" parent="SystemManager/CylenderSpawner" unique_id=1855129281]
+wait_time = 5.0
+autostart = true
+
+[node name="Ventricle" type="Node3D" parent="." unique_id=229432518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7400234, 1.5263139, -2.2215178)
+script = ExtResource("2_ywnsu")
+
+[node name="Dropable" parent="Ventricle" unique_id=16778985 instance=ExtResource("2_hwbjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0390568, 0.39037097)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
+shape = SubResource("BoxShape3D_37okk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventricle/Dropable" unique_id=71553662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005004883, 0, 0)
+mesh = SubResource("BoxMesh_fo3dt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
+
+[connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_exited"]
 [connection signal="trigger_dropped_function" from="Ventricle/Dropable" to="Ventricle" method="_on_dropable_trigger_dropped_function"]
-[connection signal="timeout" from="CylenderSpawner/Timer" to="CylenderSpawner" method="_on_timer_timeout"]
