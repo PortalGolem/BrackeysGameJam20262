@@ -13,6 +13,7 @@ size = Vector3(0.4730835, 0.45166016, 1)
 script = ExtResource("1_akwul")
 
 [node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_o0whp")]
+canPutInCyl = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item" unique_id=1022855295]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030380249, 0, 0)

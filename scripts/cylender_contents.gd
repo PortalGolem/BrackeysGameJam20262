@@ -13,3 +13,12 @@ func _on_cylender_inspect_object() -> void:
 		contents.global_position = $Item.global_position + notePositionOffset
 		contents.reparent(get_parent(), true)
 		
+
+func _on_dropable_trigger_dropped_function(object: Node3D) -> void:
+		print("Tried to grab object " + str(object))
+		if object is Item and object.canPutInCyl and not hasContents:
+			hasContents = true
+			object.process_mode = Node.PROCESS_MODE_DISABLED
+			object.visible = false
+			object.reparent(self)
+			contents = object

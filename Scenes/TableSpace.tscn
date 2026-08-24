@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="2_ywnsu"]
 [ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/cylender.tscn" id="4_6wss6"]
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
+[ext_resource type="PackedScene" uid="uid://bw1uhv0rxubna" path="res://Objects/note.tscn" id="5_6wss6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -29,7 +30,7 @@ size = Vector3(0.45507813, 1, 1)
 [node name="Table" type="Node3D" parent="." unique_id=1377402160]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1324002984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0057373047, -0.02676326, 0.014526367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055185556, -0.03144008, 0.016375065)
 mesh = SubResource("BoxMesh_37okk")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=755732051]
@@ -61,12 +62,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 0.31634986, -1.637
 script = ExtResource("4_ywnsu")
 
 [node name="Timer" type="Timer" parent="CylenderSpawner" unique_id=1855129281]
+wait_time = 5.0
 autostart = true
 
-[node name="Cylender" parent="." unique_id=867891222 instance=ExtResource("4_6wss6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3403966, 0.22664416, 0.34653616)
+[node name="Cylender" parent="." unique_id=867891222 node_paths=PackedStringArray("contents") instance=ExtResource("4_6wss6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 0.22664416, 0.05611849)
+contents = NodePath("CylenderContents/Note")
 
 [node name="CylenderContents" type="Node" parent="Cylender" unique_id=77979233]
+
+[node name="Note" parent="Cylender/CylenderContents" unique_id=387744038 instance=ExtResource("5_6wss6")]
+process_mode = 4
+visible = false
+text = "Hello There!"
 
 [connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_exited"]

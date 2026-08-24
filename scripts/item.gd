@@ -8,6 +8,7 @@ var movementInput := Vector2.ZERO
 @export var sensitivity_ := .1
 signal inspectObject
 signal dropObject(object:Node3D)
+@export var canPutInCyl := false
 
 func _input(event):
 	# Mouse in viewport coordinates.

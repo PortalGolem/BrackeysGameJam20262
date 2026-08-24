@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://h568dl6gqtss" path="res://scripts/cylender_contents.gd" id="1_cgexk"]
 [ext_resource type="PackedScene" uid="uid://o7yitixrj7ix" path="res://Objects/item.tscn" id="2_u2wl8"]
+[ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="3_u2wl8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lxaw6"]
 top_radius = 0.296875
@@ -11,6 +12,9 @@ height = 0.50305176
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_oov56"]
 height = 0.5288086
 radius = 0.10546875
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
+size = Vector3(0.17304993, 0.15185547, 0.5423279)
 
 [node name="Cylender" type="Node3D" unique_id=867891222]
 script = ExtResource("1_cgexk")
@@ -25,4 +29,13 @@ mesh = SubResource("CylinderMesh_lxaw6")
 transform = Transform3D(1, 0, 0, 0, 0, 1.0000001, 0, -1.0000001, 0, 0, -0.006837189, 0.0036621094)
 shape = SubResource("CylinderShape3D_oov56")
 
+[node name="Dropable" parent="Item" unique_id=16778985 instance=ExtResource("3_u2wl8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item/Dropable" unique_id=705922073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004951477, 0.012451172, 0.0015716553)
+shape = SubResource("BoxShape3D_37okk")
+
 [connection signal="inspectObject" from="Item" to="." method="_on_cylender_inspect_object"]
+[connection signal="body_entered" from="Item/Dropable" to="Item/Dropable" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Item/Dropable" to="Item/Dropable" method="_on_area_3d_body_exited"]
+[connection signal="trigger_dropped_function" from="Item/Dropable" to="." method="_on_dropable_trigger_dropped_function"]

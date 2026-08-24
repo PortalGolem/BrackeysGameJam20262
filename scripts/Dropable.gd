@@ -2,7 +2,7 @@ class_name Drop
 
 extends Node3D
 
-signal trigger_dropped_function(object)
+signal trigger_dropped_function(object:Node3D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	print("body" + str(body))
 	if body is Item and body.has_signal("dropObject"):
 		body.dropObject.connect(_object_dropped_in_area)
 		
