@@ -7,6 +7,7 @@ var char_cur = 0
 var opacity = 0
 var opacity_speed = 0.0333333333
 var position_offset = 80
+var position_original = Vector2.ZERO
 var fade_out = false
 
 var color = "yellow"
@@ -36,7 +37,7 @@ func _ready() -> void:
 		$Control/ColorRect.color = Color(0.33, 0.317, 0.083, 1.0)
 	if color == "rand":
 		$Control/ColorRect.color = gen_random_choice([Color(0.925, 0.914, 0.42), Color(0.53, 0.978, 0.926), Color(0.993, 0.839, 0.885)])
-	
+	position_original = $Control.position
 	$Control.position.y = $Control.position.y - position_offset
 	$AudioStreamPlayer.stream = page_sound.pick_random()
 	$AudioStreamPlayer.play()
@@ -68,9 +69,14 @@ func _physics_process(delta: float) -> void:
 			pass
 	
 	if Input.is_action_just_pressed("m_left"):
-		fade_out = true
-		$AudioStreamPlayer.stream = page_sound.pick_random()
-		$AudioStreamPlayer.play()
+		if char_cur <= text.length():
+			char_cur = text.length()
+			opacity = 1
+			$Control.position = position_original
+		else:
+			fade_out = true
+			$AudioStreamPlayer.stream = page_sound.pick_random()
+			$AudioStreamPlayer.play()
 	
 	if fade_out == true:
 		opacity-= opacity_speed
