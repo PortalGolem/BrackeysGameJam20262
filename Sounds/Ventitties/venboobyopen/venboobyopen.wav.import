@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bkyuj62jjfbjx"
-path="res://.godot/imported/venboobyopen.wav-d7ebb5b1fed52a57fe9c6b6dcb443373.sample"
+path="res://.godot/imported/venboobyopen.wav-c314228660300191efbe3947885890f9.sample"
 
 [deps]
 
-source_file="res://Sounds/venboobyopen/venboobyopen.wav"
-dest_files=["res://.godot/imported/venboobyopen.wav-d7ebb5b1fed52a57fe9c6b6dcb443373.sample"]
+source_file="res://Sounds/Ventitties/venboobyopen/venboobyopen.wav"
+dest_files=["res://.godot/imported/venboobyopen.wav-c314228660300191efbe3947885890f9.sample"]
 
 [params]
 

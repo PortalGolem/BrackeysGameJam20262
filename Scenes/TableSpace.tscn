@@ -54,6 +54,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0390568, 0.39037097)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
 shape = SubResource("BoxShape3D_37okk")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
+
 [node name="CylenderSpawner" type="Node3D" parent="." unique_id=969594893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9066467, 1.8004051, -1.637929)
 script = ExtResource("4_ywnsu")

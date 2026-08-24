@@ -30,6 +30,10 @@ func _ready() -> void:
 		$Control/ColorRect.color = Color(0.53, 0.978, 0.926)
 	if color == "pink":
 		$Control/ColorRect.color = Color(0.993, 0.839, 0.885)
+	if color == "shitstainbrown":
+		$Control/ColorRect.color = Color(0.313, 0.167, 0.037, 1.0)
+	if color == "vomitgreen":
+		$Control/ColorRect.color = Color(0.33, 0.317, 0.083, 1.0)
 	if color == "rand":
 		$Control/ColorRect.color = gen_random_choice([Color(0.925, 0.914, 0.42), Color(0.53, 0.978, 0.926), Color(0.993, 0.839, 0.885)])
 	
