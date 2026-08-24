@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3e3wdbtp62u3"
-path.s3tc="res://.godot/imported/canister_emission.png-a983addbb5876b288eedf04eabe79f8e.s3tc.ctex"
+uid="uid://h7nu5u6nl7e8"
+path.s3tc="res://.godot/imported/Pipe9_Roughness.png-5b5528be4a793e47f58a1140d475527c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/test obj/canister_emission.png"
-dest_files=["res://.godot/imported/canister_emission.png-a983addbb5876b288eedf04eabe79f8e.s3tc.ctex"]
+source_file="res://Assets/Pipes/Pipe 9/Pipe9_Roughness.png"
+dest_files=["res://.godot/imported/Pipe9_Roughness.png-5b5528be4a793e47f58a1140d475527c.s3tc.ctex"]
 
 [params]
 

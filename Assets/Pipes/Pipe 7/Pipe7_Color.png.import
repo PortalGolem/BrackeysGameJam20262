@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3e3wdbtp62u3"
-path.s3tc="res://.godot/imported/canister_emission.png-a983addbb5876b288eedf04eabe79f8e.s3tc.ctex"
+uid="uid://bbn2qo2r2f4ob"
+path.s3tc="res://.godot/imported/Pipe7_Color.png-c98dbd3dc5de830c3d3570ddb089b8f8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/test obj/canister_emission.png"
-dest_files=["res://.godot/imported/canister_emission.png-a983addbb5876b288eedf04eabe79f8e.s3tc.ctex"]
+source_file="res://Assets/Pipes/Pipe 7/Pipe7_Color.png"
+dest_files=["res://.godot/imported/Pipe7_Color.png-c98dbd3dc5de830c3d3570ddb089b8f8.s3tc.ctex"]
 
 [params]
 
