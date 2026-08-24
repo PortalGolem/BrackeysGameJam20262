@@ -9,6 +9,8 @@ var movementInput := Vector2.ZERO
 signal inspectObject
 signal dropObject(object:Node3D)
 @export var canPutInCyl := false
+@export var minimumMoveDistance := .1
+var distanceMovedThusFar:float
 
 func _input(event):
 	# Mouse in viewport coordinates.
@@ -21,22 +23,26 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("m_left") and itemTouched:
 		grabbed = true
 	if Input.is_action_just_pressed("m_right") and itemTouched:
-		dropItem()
+		if grabbed:
+			dropItem()
 		inspectObject.emit()
 	if Input.is_action_just_released("m_left"):
 		dropItem()
 	if grabbed:
 		position.x += movementInput.x * sensitivity_
 		position.z += movementInput.y * sensitivity_
+		distanceMovedThusFar += movementInput.length()
 	movementInput = Vector2.ZERO
 	
 func dropItem():
 	grabbed = false
-	dropObject.emit(self)
+	if distanceMovedThusFar > minimumMoveDistance / sensitivity_:
+		dropObject.emit(self)
+	distanceMovedThusFar = 0
 
 func _on_mouse_entered() -> void:
 	itemTouched = true

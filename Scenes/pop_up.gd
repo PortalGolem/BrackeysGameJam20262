@@ -41,12 +41,12 @@ func _ready() -> void:
 	$Control.position.y = $Control.position.y - position_offset
 	$AudioStreamPlayer.stream = page_sound.pick_random()
 	$AudioStreamPlayer.play()
+	$Control.modulate.a = 0
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	
+func _physics_process(_delta: float) -> void:
 #fade in anim
 	if fade_out == false:
 		if opacity <= 1:

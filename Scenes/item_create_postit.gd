@@ -7,11 +7,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_item_inspect_object() -> void:
-	var _postit = PostIt.new()
-	_postit.create("hello world", "blue")
-	pass # Replace with function body.
+	var _postit = PostIt.new("Hello!", "blue")
