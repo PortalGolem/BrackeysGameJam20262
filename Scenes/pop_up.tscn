@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://f84b7diwus4n"]
+
+[ext_resource type="Script" uid="uid://cso0qh67tq0x6" path="res://Scenes/pop_up.gd" id="1_tv3en"]
+[ext_resource type="FontFile" uid="uid://bmqvhxsbuj0b4" path="res://PlayfairDisplay-VariableFont_wght.ttf" id="2_2xliu"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_tv3en"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1171853667]
+follow_viewport_enabled = true
+script = ExtResource("1_tv3en")
+
+[node name="Control" type="Control" parent="." unique_id=35198555]
+self_modulate = Color(1.084, 1.084, 1.084, 1)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1679228236]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(12.175, 12.175)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0.993, 0.839, 0.885, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect" unique_id=1056683117]
+layout_mode = 1
+offset_left = 1.5195072
+offset_top = 2.2587268
+offset_right = 911.1704
+offset_bottom = 877.0021
+scale = Vector2(0.04, 0.04)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_2xliu")
+theme_override_font_sizes/normal_font_size = 70
+scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=26261569]
+stream = SubResource("AudioStreamWAV_tv3en")
+max_polyphony = 11

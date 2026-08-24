@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://to5ej5dtb3bl"]
+
+[ext_resource type="Script" uid="uid://cp3naar6pskmg" path="res://scripts/Dropable.gd" id="1_v7jbt"]
+
+[node name="Dropable" type="Area3D" unique_id=16778985]
+input_ray_pickable = false
+script = ExtResource("1_v7jbt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
