@@ -20,7 +20,6 @@ size = Vector3(0.17304993, 0.15185547, 0.5423279)
 script = ExtResource("1_cgexk")
 
 [node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_u2wl8")]
-backboardTilt = 20.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Item" unique_id=2040064337]
 transform = Transform3D(-0.25129807, 0, 0, 0, -4.371139e-08, -0.25129807, 0, -1, 1.09845875e-08, 0, 0, 0)

@@ -6,6 +6,17 @@
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 [ext_resource type="PackedScene" uid="uid://bw1uhv0rxubna" path="res://Objects/note.tscn" id="5_6wss6"]
 [ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://Scenes/system_manager.gd" id="6_lxaw6"]
+[ext_resource type="PackedScene" uid="uid://cnj70f1n04rvg" path="res://Assets/Pipes/Scenes/pipe_1.tscn" id="7_y0l3c"]
+[ext_resource type="PackedScene" uid="uid://doc4cjdojabah" path="res://Assets/Pipes/Scenes/pipe_2.tscn" id="8_w7qaw"]
+[ext_resource type="PackedScene" uid="uid://do4dkitpa1kna" path="res://Assets/Pipes/Scenes/pipe_3.tscn" id="9_r1l1s"]
+[ext_resource type="PackedScene" uid="uid://ba3qk4w560c0w" path="res://Assets/Pipes/Scenes/pipe_4.tscn" id="10_rq4wj"]
+[ext_resource type="PackedScene" uid="uid://csacdh3f0u2vp" path="res://Assets/Pipes/Scenes/pipe_5.tscn" id="11_3fi02"]
+[ext_resource type="PackedScene" uid="uid://caauej2tpc12" path="res://Assets/Pipes/Scenes/pipe_6.tscn" id="12_qqlji"]
+[ext_resource type="PackedScene" uid="uid://cmlvo64vqbk1d" path="res://Assets/Pipes/Scenes/pipe_7.tscn" id="13_vqnbw"]
+[ext_resource type="PackedScene" uid="uid://cesua7ofbvjhc" path="res://Assets/Pipes/Scenes/pipe_8.tscn" id="14_go7lm"]
+[ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Pipes/Scenes/pipe_9.tscn" id="15_qju35"]
+[ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Pipes/Scenes/pipe_10.tscn" id="16_c8qf1"]
+[ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Pipes/Scenes/pipe_11.tscn" id="17_uxhga"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -26,9 +37,6 @@ sky = SubResource("Sky_ila21")
 [sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
 size = Vector3(0.45507813, 1, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_fo3dt"]
-size = Vector3(0.4152832, 1, 1)
-
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
 [node name="Table" type="Node3D" parent="." unique_id=1377402160]
@@ -38,8 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055185556, -0.03144008, 0.
 mesh = SubResource("BoxMesh_37okk")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=755732051]
-transform = Transform3D(1, 0, 0, 0, 0.5930183, 0.8051891, 0, -0.8051891, 0.5930183, 0, 5.988659, 4.082383)
-fov = 50.0
+transform = Transform3D(1, 0, 0, 0, 0.8954376, 0.4451871, 0, -0.4451871, 0.8954376, 0, 4.740882, 6.697431)
+fov = 45.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
 environment = SubResource("Environment_37okk")
@@ -82,11 +90,45 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
 shape = SubResource("BoxShape3D_37okk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ventricle/Dropable" unique_id=71553662]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005004883, 0, 0)
-mesh = SubResource("BoxMesh_fo3dt")
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
+
+[node name="Pipes" type="Node3D" parent="." unique_id=923323276]
+
+[node name="Pipe1" parent="Pipes" unique_id=1296160952 instance=ExtResource("7_y0l3c")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe2" parent="Pipes" unique_id=52720117 instance=ExtResource("8_w7qaw")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe3" parent="Pipes" unique_id=1268137030 instance=ExtResource("9_r1l1s")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe4" parent="Pipes" unique_id=288379918 instance=ExtResource("10_rq4wj")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe5" parent="Pipes" unique_id=1181145620 instance=ExtResource("11_3fi02")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe6" parent="Pipes" unique_id=345968622 instance=ExtResource("12_qqlji")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe7" parent="Pipes" unique_id=461442714 instance=ExtResource("13_vqnbw")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe8" parent="Pipes" unique_id=1208834969 instance=ExtResource("14_go7lm")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe9" parent="Pipes" unique_id=118030934 instance=ExtResource("15_qju35")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe10" parent="Pipes" unique_id=1781539512 instance=ExtResource("16_c8qf1")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Pipe11" parent="Pipes" unique_id=974635522 instance=ExtResource("17_uxhga")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=2056756282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]

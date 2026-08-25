@@ -22,15 +22,36 @@ var positionFlat:Vector2
 var trueYpos:float
 var isFirstGrab := true
 var actualAngleAdjustment
+var usedBackboard := false
 
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseMotion:
 		var camera = get_viewport().get_camera_3d()
 		var newPosition:Vector3 = find_point_on_plane_with_ray(tablePlane, camera.project_ray_origin(event.position), camera.project_ray_normal(event.position))
-		var delta = newPosition - lastMousePosition
-		lastMousePosition = newPosition
-		movementInput += Vector2(delta.x, delta.z)
+		var otherNewPosition:Vector3 = find_point_on_plane_with_ray(Plane(Vector3(boundsBottomRight.x, tablePlane.d, boundsBottomRight.y),
+				Vector3(-boundsBottomRight.x, tablePlane.d, boundsBottomRight.y),
+				Vector3(boundsBottomRight.x, tablePlane.d - 1, boundsBottomRight.y - actualAngleAdjustment)),
+				camera.project_ray_origin(event.position), camera.project_ray_normal(event.position))
+		if newPosition.distance_to(camera.position) < otherNewPosition.distance_to(camera.position):
+			var delta:Vector3
+			if not usedBackboard:
+				delta = newPosition - lastMousePosition
+			else:
+				delta = Vector3(newPosition.x - lastMousePosition.x, 0, lastMousePosition.z)
+			lastMousePosition = Vector3(newPosition.x, 0, newPosition.z)
+			movementInput += Vector2(delta.x, delta.z)
+			usedBackboard = false
+		else:
+			otherNewPosition = Vector3(otherNewPosition.x, 0, -otherNewPosition.y)
+			var delta:Vector3
+			if not usedBackboard:
+				delta = otherNewPosition - Vector3(lastMousePosition.x, 0, -lastMousePosition.y)
+			else:
+				delta = otherNewPosition - lastMousePosition
+			lastMousePosition = Vector3(otherNewPosition.x, 0, otherNewPosition.z)
+			movementInput += Vector2(delta.x, delta.z)
+			usedBackboard = true
 		
 
 func _ready() -> void:
