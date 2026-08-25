@@ -14,6 +14,14 @@ signal dropObject(object:Node3D)
 var distanceMovedThusFar:float
 var lastMousePosition:Vector3
 @export var tablePlane:Plane
+var positionFlat:Vector2
+@export var boundsTopLeft:Vector2
+@export var boundsBottomRight:Vector2
+@export var backboardHeight:float
+@export var backboardTilt:float
+var trueYpos:float
+var isFirstGrab := true
+var actualAngleAdjustment
 
 func _input(event):
 	# Mouse in viewport coordinates.
@@ -23,31 +31,45 @@ func _input(event):
 		var delta = newPosition - lastMousePosition
 		lastMousePosition = newPosition
 		movementInput += Vector2(delta.x, delta.z)
+		
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	actualAngleAdjustment = backboardTilt/45
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("m_left") and itemTouched:
 		grabbed = true
+		if isFirstGrab:
+			positionFlat = Vector2(global_position.x, global_position.z)
+			trueYpos = global_position.y
+			isFirstGrab = false
 	if Input.is_action_just_pressed("m_right") and itemTouched:
 		if grabbed:
 			dropItem()
 		inspectObject.emit()
 	if grabbed:
+		positionFlat += movementInput
+		positionFlat = Vector2(clamp(positionFlat.x, boundsTopLeft.x, boundsBottomRight.x),
+				clamp(positionFlat.y, boundsBottomRight.y - backboardHeight, boundsTopLeft.y))
+		global_position.x = positionFlat.x
+		global_position.z = max(positionFlat.y, boundsBottomRight.y)
+		global_position.y = trueYpos
+		if (positionFlat.y < boundsBottomRight.y):
+			global_position.y -= positionFlat.y - boundsBottomRight.y
+			global_position.z -= (positionFlat.y - boundsBottomRight.y) * actualAngleAdjustment
+		distanceMovedThusFar += movementInput.length()
 		if Input.is_action_just_released("m_left"):
 			dropItem()
-		position.x += movementInput.x
-		position.z += movementInput.y
-		distanceMovedThusFar += movementInput.length()
 	movementInput = Vector2.ZERO
 	
 	
 func dropItem():
 	grabbed = false
+	global_position.y = trueYpos
+	print("ypos is" + str(trueYpos))
+	positionFlat = Vector2(global_position.x, global_position.z)
 	print("DroppedInto")
 	if distanceMovedThusFar > minimumMoveDistance / sensitivity_:
 		print("DroppedInto!")

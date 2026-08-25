@@ -20,5 +20,5 @@ func _on_dropable_trigger_dropped_function(object: Node3D) -> void:
 			hasContents = true
 			object.process_mode = Node.PROCESS_MODE_DISABLED
 			object.visible = false
-			object.reparent(self)
+			object.reparent(get_viewport(), true)
 			contents = object
