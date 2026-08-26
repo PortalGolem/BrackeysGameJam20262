@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys GameJam"
-run/main_scene="uid://db3f64haped0m"
+run/main_scene="uid://cvlrfj50brt4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
