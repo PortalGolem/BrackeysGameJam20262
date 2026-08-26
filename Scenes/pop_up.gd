@@ -57,7 +57,7 @@ func _ready() -> void:
 			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_turtle.png")
 	position_original = $Control.position
 	$Control.position.y = $Control.position.y - position_offset
-	$AudioStreamPlayer.stream = page_sound.pick_random()
+	global.sound_play($AudioStreamPlayer, page_sound.pick_random(), 1)
 	$AudioStreamPlayer.play()
 	$Control.modulate.a = 0
 	pass # Replace with function body.
@@ -80,8 +80,7 @@ func _physics_process(_delta: float) -> void:
 			if sound_time >= sound_next:
 				var sound_spd = 12
 				sound_next += sound_spd
-				$AudioStreamPlayer.stream = text_sound.pick_random()
-				$AudioStreamPlayer.play()
+				global.sound_play($AudioStreamPlayer, text_sound.pick_random(), 1)
 			var text_cur = text.substr(0, char_cur)
 			$Control/ColorRect/RichTextLabel.text = text_cur
 			pass
@@ -93,8 +92,7 @@ func _physics_process(_delta: float) -> void:
 			$Control.position = position_original
 		else:
 			fade_out = true
-			$AudioStreamPlayer.stream = page_sound.pick_random()
-			$AudioStreamPlayer.play()
+			global.sound_play($AudioStreamPlayer, page_sound.pick_random(), 1)
 	
 	if fade_out == true:
 		opacity-= opacity_speed
