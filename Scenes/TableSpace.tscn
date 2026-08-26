@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cvlrfj50brt4"]
 
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
-[ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="2_ywnsu"]
 [ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/cylender.tscn" id="4_6wss6"]
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 [ext_resource type="PackedScene" uid="uid://bw1uhv0rxubna" path="res://Objects/note.tscn" id="5_6wss6"]
 [ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://Scenes/system_manager.gd" id="6_lxaw6"]
+[ext_resource type="PackedScene" uid="uid://xor8rocu8tbd" path="res://Objects/ventricle.tscn" id="6_y0l3c"]
 [ext_resource type="Script" uid="uid://dd56p8bdnkf11" path="res://Scenes/CameraWiggle.gd" id="7_oov56"]
 [ext_resource type="PackedScene" uid="uid://cnj70f1n04rvg" path="res://Assets/Pipes/Scenes/pipe_1.tscn" id="7_y0l3c"]
 [ext_resource type="PackedScene" uid="uid://doc4cjdojabah" path="res://Assets/Pipes/Scenes/pipe_2.tscn" id="8_w7qaw"]
@@ -35,8 +35,8 @@ sky = SubResource("Sky_ila21")
 
 [sub_resource type="Compositor" id="Compositor_2gruq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
-size = Vector3(0.45507813, 1, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_fo3dt"]
+size = Vector3(0.7817383, 1, 2.770111)
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
@@ -76,59 +76,89 @@ script = ExtResource("4_ywnsu")
 wait_time = 5.0
 autostart = true
 
-[node name="Ventricle" type="Node3D" parent="." unique_id=229432518]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7400234, 1.5263139, -2.2215178)
-script = ExtResource("2_ywnsu")
-
-[node name="Dropable" parent="Ventricle" unique_id=16778985 instance=ExtResource("2_hwbjd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0390568, 0.39037097)
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ventricle/Dropable" unique_id=1989848570]
-shape = SubResource("BoxShape3D_37okk")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
-
 [node name="Pipes" type="Node3D" parent="." unique_id=923323276]
 
 [node name="Pipe1" parent="Pipes" unique_id=1296160952 instance=ExtResource("7_y0l3c")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
+[node name="Ventricle" parent="Pipes/Pipe1" unique_id=1573269064 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -5.255067, 4.7641, 8.883475)
+
 [node name="Pipe2" parent="Pipes" unique_id=52720117 instance=ExtResource("8_w7qaw")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe2" unique_id=1561302375 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -3.3683803, 4.7641, 8.883475)
+ventricleID = 1
 
 [node name="Pipe3" parent="Pipes" unique_id=1268137030 instance=ExtResource("9_r1l1s")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
+[node name="Ventricle" parent="Pipes/Pipe3" unique_id=48853055 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -1.3126835, 4.7641, 8.883475)
+ventricleID = 2
+
 [node name="Pipe4" parent="Pipes" unique_id=288379918 instance=ExtResource("10_rq4wj")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe4" unique_id=356971259 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 0.849071, 4.7641, 8.883475)
+ventricleID = 3
 
 [node name="Pipe5" parent="Pipes" unique_id=1181145620 instance=ExtResource("11_3fi02")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
+[node name="Ventricle" parent="Pipes/Pipe5" unique_id=831566015 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 2.7625756, 4.7641, 8.883475)
+ventricleID = 4
+
 [node name="Pipe6" parent="Pipes" unique_id=345968622 instance=ExtResource("12_qqlji")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe6" unique_id=1575109043 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -4.27316, 7.2055464, 11.046754)
+ventricleID = 5
 
 [node name="Pipe7" parent="Pipes" unique_id=461442714 instance=ExtResource("13_vqnbw")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
+[node name="Ventricle" parent="Pipes/Pipe7" unique_id=861307647 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -4.27316, 7.2055464, 11.046754)
+ventricleID = 6
+
 [node name="Pipe8" parent="Pipes" unique_id=1208834969 instance=ExtResource("14_go7lm")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe8" unique_id=2050183908 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -2.1369367, 7.2055464, 11.046754)
+ventricleID = 7
 
 [node name="Pipe9" parent="Pipes" unique_id=118030934 instance=ExtResource("15_qju35")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
+[node name="Ventricle" parent="Pipes/Pipe9" unique_id=1920501126 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -0.43473947, 7.2055464, 11.046754)
+ventricleID = 8
+
 [node name="Pipe10" parent="Pipes" unique_id=1781539512 instance=ExtResource("16_c8qf1")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
+[node name="Ventricle" parent="Pipes/Pipe10" unique_id=1722944049 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 1.8855665, 7.2055464, 11.046754)
+ventricleID = 9
+
 [node name="Pipe11" parent="Pipes" unique_id=974635522 instance=ExtResource("17_uxhga")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe11" unique_id=1614666089 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 3.845382, 7.2055464, 11.046754)
+ventricleID = 10
 
 [node name="Node3D" type="Node3D" parent="." unique_id=2056756282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="CameraWiggle" type="Node3D" parent="." unique_id=1155477327]
-transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, 5.988659, 4.082383)
+transform = Transform3D(1, 0, 0, 0, 0.91318256, -0.40755072, 0, 0.40755072, 0.91318256, 0, 4.543485, 6.9199133)
 script = ExtResource("7_oov56")
 upWiggleFactor = 0.5
 sideWiggleFactor = 0.5
@@ -137,7 +167,11 @@ sideWiggleFactor = 0.5
 transform = Transform3D(1, 0, 0, 0, 0.5930183, 0.8051891, 0, -0.8051891, 0.5930183, 0, 0, 0)
 fov = 50.0
 
+[node name="TrashCan" parent="." unique_id=16778985 instance=ExtResource("2_hwbjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.425296, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashCan" unique_id=1768333186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31763172, 0, 0.7795868)
+shape = SubResource("BoxShape3D_fo3dt")
+
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_exited"]
-[connection signal="trigger_dropped_function" from="Ventricle/Dropable" to="Ventricle" method="_on_dropable_trigger_dropped_function"]
