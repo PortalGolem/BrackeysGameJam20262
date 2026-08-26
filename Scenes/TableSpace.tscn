@@ -46,10 +46,6 @@ size = Vector3(0.45507813, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055185556, -0.03144008, 0.016375065)
 mesh = SubResource("BoxMesh_37okk")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=755732051]
-transform = Transform3D(1, 0, 0, 0, 0.8954376, 0.4451871, 0, -0.4451871, 0.8954376, 0, 4.740882, 6.697431)
-fov = 45.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
 environment = SubResource("Environment_37okk")
 camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
