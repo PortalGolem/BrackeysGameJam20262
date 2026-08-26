@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3mrunir6auus"]
+
+[ext_resource type="PackedScene" uid="uid://ch764kttb4438" path="res://Assets/Conveyor Belt/ConveyorBelt.fbx" id="1_a4ohy"]
+[ext_resource type="Texture2D" uid="uid://dp2lyd5paxlfc" path="res://Assets/Conveyor Belt/ConveyorBelt_Color.png" id="2_0ig0k"]
+[ext_resource type="Texture2D" uid="uid://couo044r7c7nl" path="res://Assets/Conveyor Belt/ConveyorBelt_Roughness.png" id="3_dlway"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4k1w"]
+albedo_texture = ExtResource("2_0ig0k")
+roughness_texture = ExtResource("3_dlway")
+
+[node name="ConveyorBelt" unique_id=550541245 instance=ExtResource("1_a4ohy")]
+
+[node name="Conveyor Belt_001" parent="." index="0" unique_id=1587022229]
+surface_material_override/0 = SubResource("StandardMaterial3D_r4k1w")
