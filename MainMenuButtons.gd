@@ -1,8 +1,14 @@
 extends Control
 
-var selection = 0
+var selection = 1
+var selection_past = 1
+var font = global.Main_Font
+var move_sfx = [preload("res://Sounds/Menu/Move/snd_menu_moveA.mp3"), preload("res://Sounds/Menu/Move/snd_menu_moveC1.mp3"),
+preload("res://Sounds/Menu/Move/snd_menu_moveC.mp3"),preload("res://Sounds/Menu/Move/snd_menu_moveD.mp3"),
+preload("res://Sounds/Menu/Move/snd_menu_moveE.mp3"),preload("res://Sounds/Menu/Move/snd_menu_moveG.mp3")]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	randomize()
 	pass # Replace with function body.
 
 
@@ -17,6 +23,10 @@ func _process(delta: float) -> void:
 		selection = 3
 	if selection < 1:
 		selection = 1
+#play sound effects
+	if selection_past != selection:
+		selection_past = selection
+		global.sound_play($"../AudioStreamPlayer", global.gen_random_choice(move_sfx), 1)
 	set_selection()
 	
 	if Input.is_action_just_pressed("ui_confirm") == true:

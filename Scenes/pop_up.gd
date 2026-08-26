@@ -9,6 +9,7 @@ var opacity_speed = 0.0333333333
 var position_offset = 80
 var position_original = Vector2.ZERO
 var fade_out = false
+var font = global.Main_Font
 
 var postit_sprite = ""
 
@@ -39,7 +40,7 @@ func _ready() -> void:
 	if color == "vomitgreen":
 		$Control/ColorRect.color = Color(0.33, 0.317, 0.083, 1.0)
 	if color == "rand":
-		$Control/ColorRect.color = gen_random_choice([Color(0.925, 0.914, 0.42), Color(0.53, 0.978, 0.926), Color(0.993, 0.839, 0.885)])
+		$Control/ColorRect.color = global.gen_random_choice([Color(0.925, 0.914, 0.42), Color(0.53, 0.978, 0.926), Color(0.993, 0.839, 0.885)])
 	
 #mothman custom notes
 	if postit_sprite != "":
@@ -60,6 +61,7 @@ func _ready() -> void:
 	global.sound_play($AudioStreamPlayer, page_sound.pick_random(), 1)
 	$AudioStreamPlayer.play()
 	$Control.modulate.a = 0
+	$Control/ColorRect/RichTextLabel.add_theme_font_override("normal_font", load(global.Main_Font))
 	pass # Replace with function body.
 
 
@@ -101,8 +103,5 @@ func _physics_process(_delta: float) -> void:
 
 		if opacity <= 0:
 			get_parent().queue_free()
-			
-func gen_random_choice(choices):
-	randomize() # Should probably put randomize() outside,
-					# since it only needs to be called once per game
-	return choices[randi() % choices.size() -1]
+	
+	

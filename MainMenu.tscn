@@ -83,3 +83,6 @@ offset_right = 86.0
 offset_bottom = 426.0
 scale = Vector2(1.5, 1.5)
 offset_transform_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1452066851]
+max_polyphony = 20
