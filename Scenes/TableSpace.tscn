@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://Scenes/cylender_spawner.gd" id="4_ywnsu"]
 [ext_resource type="PackedScene" uid="uid://bw1uhv0rxubna" path="res://Objects/note.tscn" id="5_6wss6"]
 [ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://Scenes/system_manager.gd" id="6_lxaw6"]
+[ext_resource type="Script" uid="uid://dd56p8bdnkf11" path="res://Scenes/CameraWiggle.gd" id="7_oov56"]
 [ext_resource type="PackedScene" uid="uid://cnj70f1n04rvg" path="res://Assets/Pipes/Scenes/pipe_1.tscn" id="7_y0l3c"]
 [ext_resource type="PackedScene" uid="uid://doc4cjdojabah" path="res://Assets/Pipes/Scenes/pipe_2.tscn" id="8_w7qaw"]
 [ext_resource type="PackedScene" uid="uid://do4dkitpa1kna" path="res://Assets/Pipes/Scenes/pipe_3.tscn" id="9_r1l1s"]
@@ -129,6 +130,16 @@ transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.38
 
 [node name="Node3D" type="Node3D" parent="." unique_id=2056756282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CameraWiggle" type="Node3D" parent="." unique_id=1155477327]
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, -2.9802322e-08, 1, 0, 5.988659, 4.082383)
+script = ExtResource("7_oov56")
+upWiggleFactor = 0.5
+sideWiggleFactor = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraWiggle" unique_id=755732051]
+transform = Transform3D(1, 0, 0, 0, 0.5930183, 0.8051891, 0, -0.8051891, 0.5930183, 0, 0, 0)
+fov = 50.0
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]

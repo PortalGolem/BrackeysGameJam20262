@@ -2,6 +2,7 @@ extends Control
 
 var selection = 0
 var confirmed = false
+var annoying_check = 0
 var meow = [preload("res://Sounds/Meow/snd_Meow1.mp3"), preload("res://Sounds/Meow/snd_Meow2.mp3"), preload("res://Sounds/Meow/snd_Meow3.mp3"),
 preload("res://Sounds/Meow/snd_Meow4.mp3"), preload("res://Sounds/Meow/snd_Meow5.mp3"), preload("res://Sounds/Meow/snd_Meow6.mp3"),
 preload("res://Sounds/Meow/snd_Meow7.mp3"), preload("res://Sounds/Meow/snd_Meow8.mp3"), preload("res://Sounds/Meow/snd_Meow9.mp3"),
@@ -13,13 +14,19 @@ var SFX_Volume = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$MasterSlider.value = global.Master_Volume
+	$SFXSlider.value = global.Sound_Volume
+	$MusicSlider.value = global.Music_Volume
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_confirm") == true:
-		confirmed = !confirmed
+	if annoying_check > 0:
+		if Input.is_action_just_pressed("ui_confirm") == true:
+			confirmed = !confirmed
+	else:
+		annoying_check += 1
 #keep track of what we have selected
 	if confirmed == false:
 		if Input.is_action_just_pressed("ui_down") == true:
@@ -38,13 +45,13 @@ func _physics_process(delta: float) -> void:
 			print("hello")
 		if selection == 2:
 			slider_move($MasterSlider, 0.75)
-			Master_Volume = $MasterSlider.value
+			global.Master_Volume = $MasterSlider.value
 		if selection == 3:
 			slider_move($MusicSlider, 0.75)
-			Music_Volume = $MusicSlider.value
+			global.Music_Volume = $MusicSlider.value
 		if selection == 4:
 			slider_move($SFXSlider, 0.75)
-			SFX_Volume = $SFXSlider.value
+			global.Sound_Volume = $SFXSlider.value
 		if selection == 5:
 			$AudioStreamPlayer.stream = gen_random_choice(meow)
 			$AudioStreamPlayer.play()

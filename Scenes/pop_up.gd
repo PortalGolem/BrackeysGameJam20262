@@ -10,6 +10,8 @@ var position_offset = 80
 var position_original = Vector2.ZERO
 var fade_out = false
 
+var postit_sprite = ""
+
 var color = "yellow"
 var text_sound = [preload("res://Sounds/Text/txt1.wav"), preload("res://Sounds/Text/txt2.wav"), 
 preload("res://Sounds/Text/txt3.wav"), preload("res://Sounds/Text/txt4.wav"), preload("res://Sounds/Text/txt5.wav"),
@@ -25,6 +27,7 @@ var sound_next = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#color functions
 	if color == "yellow":
 		$Control/ColorRect.color = Color(0.925, 0.914, 0.42)
 	if color == "blue":
@@ -37,9 +40,24 @@ func _ready() -> void:
 		$Control/ColorRect.color = Color(0.33, 0.317, 0.083, 1.0)
 	if color == "rand":
 		$Control/ColorRect.color = gen_random_choice([Color(0.925, 0.914, 0.42), Color(0.53, 0.978, 0.926), Color(0.993, 0.839, 0.885)])
+	
+#mothman custom notes
+	if postit_sprite != "":
+		if postit_sprite == "cat":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_cat.png")
+		if postit_sprite == "dino":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_dino.png")
+		if postit_sprite == "guy":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_guy.png")
+		if postit_sprite == "paws":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_paws.png")
+		if postit_sprite == "todo":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_todo.png")
+		if postit_sprite == "turtle":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/PostIts/postit_turtle.png")
 	position_original = $Control.position
 	$Control.position.y = $Control.position.y - position_offset
-	$AudioStreamPlayer.stream = page_sound.pick_random()
+	global.sound_play($AudioStreamPlayer, page_sound.pick_random(), 1)
 	$AudioStreamPlayer.play()
 	$Control.modulate.a = 0
 	pass # Replace with function body.
@@ -62,8 +80,7 @@ func _physics_process(_delta: float) -> void:
 			if sound_time >= sound_next:
 				var sound_spd = 12
 				sound_next += sound_spd
-				$AudioStreamPlayer.stream = text_sound.pick_random()
-				$AudioStreamPlayer.play()
+				global.sound_play($AudioStreamPlayer, text_sound.pick_random(), 1)
 			var text_cur = text.substr(0, char_cur)
 			$Control/ColorRect/RichTextLabel.text = text_cur
 			pass
@@ -75,8 +92,7 @@ func _physics_process(_delta: float) -> void:
 			$Control.position = position_original
 		else:
 			fade_out = true
-			$AudioStreamPlayer.stream = page_sound.pick_random()
-			$AudioStreamPlayer.play()
+			global.sound_play($AudioStreamPlayer, page_sound.pick_random(), 1)
 	
 	if fade_out == true:
 		opacity-= opacity_speed
