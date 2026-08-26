@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxm0naksqno0g"]
+
+[ext_resource type="PackedScene" uid="uid://cjw2q7yxrqk5a" path="res://Assets/Canister/Canister Regular/Canister.fbx" id="1_yvsy6"]
+[ext_resource type="Texture2D" uid="uid://fc2121pcbobb" path="res://Assets/Canister/Canister Regular/Canister_Color.png" id="2_vpxgn"]
+[ext_resource type="Texture2D" uid="uid://bjte438qxe0s2" path="res://Assets/Canister/Canister Regular/Canister_Normal.png" id="3_y52oq"]
+[ext_resource type="Texture2D" uid="uid://bx2gmt7sgic8c" path="res://Assets/test obj/canister_Roughness.png" id="4_dxwwe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u0fr"]
+albedo_texture = ExtResource("2_vpxgn")
+metallic = 1.0
+roughness_texture = ExtResource("4_dxwwe")
+normal_enabled = true
+normal_texture = ExtResource("3_y52oq")
+
+[node name="Canister" unique_id=1501802207 instance=ExtResource("1_yvsy6")]
+
+[node name="Canister_Solid" parent="." index="0" unique_id=216413712]
+transform = Transform3D(92.98547, 36.79268, 1.4525555e-06, 2.9802327e-06, 1.1920928e-05, 100, 36.79268, -92.98547, 8.821912e-06, 0.0671041, 2.0517325, -0.013329029)
+surface_material_override/0 = SubResource("StandardMaterial3D_1u0fr")

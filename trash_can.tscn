@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://clyp8rbnlr0gm"]
+
+[ext_resource type="PackedScene" uid="uid://5noorvfyc12l" path="res://Assets/Trash Can/TrashCan.fbx" id="1_bgvmr"]
+[ext_resource type="Texture2D" uid="uid://l5jgfv7ykof1" path="res://Assets/Trash Can/TrashCan_Color.png" id="2_alpy1"]
+[ext_resource type="Texture2D" uid="uid://dsyigklg4whah" path="res://Assets/Trash Can/TrashCan_Metallic.png" id="3_kcyba"]
+[ext_resource type="Texture2D" uid="uid://dbs0hqaydltyb" path="res://Assets/Trash Can/TrashCan_Roughness.png" id="4_dv6pg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alpy1"]
+cull_mode = 2
+albedo_texture = ExtResource("2_alpy1")
+metallic = 1.0
+metallic_texture = ExtResource("3_kcyba")
+roughness_texture = ExtResource("4_dv6pg")
+
+[node name="TrashCan" unique_id=1884958424 instance=ExtResource("1_bgvmr")]
+
+[node name="Cylinder_009" parent="." index="0" unique_id=889462578]
+surface_material_override/0 = SubResource("StandardMaterial3D_alpy1")

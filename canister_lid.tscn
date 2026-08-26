@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://xcf0phapjaca"]
+
+[ext_resource type="PackedScene" uid="uid://drutid6jgtviy" path="res://Assets/Canister/Canister W_Lid/Canister_Lid.fbx" id="1_pn8lp"]
+[ext_resource type="Texture2D" uid="uid://cemhl7ts125sh" path="res://Assets/Canister/Canister W_Lid/Canister_Lid_Color.png" id="2_r74ai"]
+[ext_resource type="Texture2D" uid="uid://do41g4gvjeyup" path="res://Assets/Canister/Canister W_Lid/Canister_Lid_Normal.png" id="3_4sc32"]
+[ext_resource type="Texture2D" uid="uid://daeprex18wwd7" path="res://Assets/Canister/Canister W_Lid/Canister_Lid_Roughness.png" id="4_q76k3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7610r"]
+albedo_texture = ExtResource("2_r74ai")
+roughness_texture = ExtResource("4_q76k3")
+normal_enabled = true
+normal_texture = ExtResource("3_4sc32")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6kaiy"]
+albedo_texture = ExtResource("2_r74ai")
+metallic = 1.0
+roughness_texture = ExtResource("4_q76k3")
+
+[node name="Canister_Lid" unique_id=665474873 instance=ExtResource("1_pn8lp")]
+
+[node name="Cylinder_004" parent="." index="0" unique_id=586153255]
+surface_material_override/0 = SubResource("StandardMaterial3D_7610r")
+
+[node name="Cylinder_005" parent="." index="1" unique_id=1863889270]
+transform = Transform3D(-51.410805, 85.77254, -8.940697e-06, 2.9802322e-06, 1.1920929e-05, 100, 85.77254, 51.410805, 0, 0.0045335293, 2.3016193, -1.0669584e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_6kaiy")

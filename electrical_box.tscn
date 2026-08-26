@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://7sd5yebdgfr1"]
+
+[ext_resource type="PackedScene" uid="uid://b4ujmunmejsbm" path="res://Assets/Canister/Electrical Box/Electrical_Box.fbx" id="1_frm3r"]
+[ext_resource type="Texture2D" uid="uid://f3yuolhi4pdi" path="res://Assets/Canister/Electrical Box/Electrical_Box_Color.png" id="2_kie14"]
+[ext_resource type="Texture2D" uid="uid://bgbp54qkxoo3k" path="res://Assets/Canister/Electrical Box/Electrical_Box_Metallic.png" id="3_xcjlu"]
+[ext_resource type="Texture2D" uid="uid://dxx5vvifv5eud" path="res://Assets/Canister/Electrical Box/Electrical_Box_Roughness.png" id="4_ufgqo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvsy6"]
+albedo_texture = ExtResource("2_kie14")
+metallic = 1.0
+metallic_texture = ExtResource("3_xcjlu")
+roughness_texture = ExtResource("4_ufgqo")
+
+[node name="Electrical_Box" unique_id=52782056 instance=ExtResource("1_frm3r")]
+
+[node name="Cube_006" parent="." index="0" unique_id=484345809]
+surface_material_override/0 = SubResource("StandardMaterial3D_yvsy6")
