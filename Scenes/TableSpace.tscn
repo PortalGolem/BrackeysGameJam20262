@@ -76,6 +76,8 @@ script = ExtResource("4_ywnsu")
 wait_time = 5.0
 autostart = true
 
+<<<<<<< HEAD
+=======
 [node name="Timer" type="Timer" parent="SystemManager" unique_id=28882147]
 wait_time = 10.0
 autostart = true
@@ -93,6 +95,7 @@ shape = SubResource("BoxShape3D_37okk")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Ventricle" unique_id=2020880059]
 
+>>>>>>> origin/main
 [node name="Pipes" type="Node3D" parent="." unique_id=923323276]
 
 [node name="Pipe1" parent="Pipes" unique_id=1296160952 instance=ExtResource("7_y0l3c")]
@@ -193,7 +196,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31763172, 0, 0.7795868)
 shape = SubResource("BoxShape3D_fo3dt")
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
+<<<<<<< HEAD
+=======
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Ventricle/Dropable" to="Ventricle/Dropable" method="_on_area_3d_body_exited"]
 [connection signal="trigger_dropped_function" from="Ventricle/Dropable" to="Ventricle" method="_on_dropable_trigger_dropped_function"]
+>>>>>>> origin/main
