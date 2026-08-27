@@ -5,10 +5,10 @@ extends Node3D
 var Cylender = preload("res://Objects/cylender.tscn")
 var Note = preload("res://Objects/note.tscn")
 
-func _ready():
-	printNote("Hello Frank!", "pink")
-	printNote("My name if Frankcheska Jeff. stop calling me Frank.", "yellow")
-	printNote("HAHAHAHAHHAHAHAHA \n\n\n   -Bill From Accounting", "yellow")
+#func _ready():
+	#printNote("Hello Frank!", "pink")
+	#printNote("My name if Frankcheska Jeff. stop calling me Frank.", "yellow")
+	#printNote("HAHAHAHAHHAHAHAHA \n\n\n   -Bill From Accounting", "yellow")
 
 func printNote(noteText, noteColor):
 	noteQueue.append({"Text" = noteText, "Color" = noteColor})
