@@ -5,13 +5,11 @@ extends Node3D
 signal trigger_dropped_function(object:Node3D)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("body" + str(body) + "Entered")
 	if body.has_signal("dropObject"):
 		body.dropObject.connect(_object_dropped_in_area)
 		
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	print("Body Exited")
 	if  body.dropObject.is_connected(_object_dropped_in_area):
 		body.dropObject.disconnect(_object_dropped_in_area)
 
