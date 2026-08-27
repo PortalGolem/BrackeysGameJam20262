@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://collection_bin.tscn" id="20_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://conveyor_belt.tscn" id="21_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://crt.tscn" id="22_v1xsh"]
+[ext_resource type="Texture2D" uid="uid://bt1mfxsc6eqi3" path="res://Assets/CRT/CRTtv.tres" id="23_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://electrical_box.tscn" id="23_jm2s4"]
 [ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://electrical_lines.tscn" id="24_12hmx"]
 [ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://room.tscn" id="25_tbrxr"]
@@ -49,6 +50,14 @@ ambient_light_energy = 3.78
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fo3dt"]
 size = Vector3(0.7817383, 1, 2.770111)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kq5l"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("23_cd4vf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3slyq"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_0kq5l")
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
@@ -199,7 +208,11 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.78574
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
 
 [node name="CRT" parent="." unique_id=1199210867 instance=ExtResource("22_v1xsh")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 9.365416, -1.7857425, -1.2257662)
+transform = Transform3D(0.60780585, 0, -0.42210433, 0, 0.74, 0, 0.42210433, 0, 0.60780585, 3.7563956, -0.04895413, -0.20376444)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CRT" unique_id=1901847369]
+transform = Transform3D(0.6340513, 5.364418e-07, -1.2434498e-14, 0, -5.3854997e-08, -0.6061226, -1.4901161e-07, 1.2320583, -2.649445e-08, 0.171525, 0.5740874, 0.09205747)
+mesh = SubResource("PlaneMesh_3slyq")
 
 [node name="Electrical_Box" parent="." unique_id=52782056 instance=ExtResource("23_jm2s4")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
@@ -222,7 +235,9 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.78574
 [node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=270792858]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5854435, 6.7612195, -0.13304281)
 light_energy = 8.175
+light_specular = 5.254
 area_range = 23.59
+area_attenuation = 2.269
 area_size = Vector2(10, 5)
 
 [node name="AreaLight3D" type="AreaLight3D" parent="AreaLight3D" unique_id=883251824]
@@ -237,6 +252,31 @@ area_size = Vector2(20, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.285801, 2.6133094, 12.305206)
 omni_range = 27.562
 omni_attenuation = 0.03
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=998798660]
+disable_3d = true
+transparent_bg = true
+
+[node name="Control" type="Control" parent="SubViewport" unique_id=1084050503]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SubViewport/Control" unique_id=1799107017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Control/CenterContainer" unique_id=994402417]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+color = Color(0.31873888, 0.6543046, 0.5801795, 1)
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]
