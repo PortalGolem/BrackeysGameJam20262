@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkne75omvapdr"]
+
+[ext_resource type="PackedScene" uid="uid://bm7g1tylfgemj" path="res://Assets/Office Room/Room.fbx" id="1_bisa2"]
+[ext_resource type="Texture2D" uid="uid://bcr5xf2gowgtf" path="res://Assets/Office Room/Room_Color.png" id="2_4o3f6"]
+[ext_resource type="Texture2D" uid="uid://bbqcun5jcw62i" path="res://Assets/Office Room/Room_Metallic.png" id="3_v5vuv"]
+[ext_resource type="Texture2D" uid="uid://dlshwc60fk0bs" path="res://Assets/Office Room/Room_Roughness.png" id="4_ka7wq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_be47u"]
+albedo_texture = ExtResource("2_4o3f6")
+metallic = 1.0
+metallic_texture = ExtResource("3_v5vuv")
+roughness_texture = ExtResource("4_ka7wq")
+
+[node name="Room" unique_id=310400824 instance=ExtResource("1_bisa2")]
+
+[node name="Plane_007" parent="." index="0" unique_id=445472513]
+surface_material_override/0 = SubResource("StandardMaterial3D_be47u")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ckle1mgojo4jk"]
+
+[ext_resource type="PackedScene" uid="uid://c6ew28w0s2t1q" path="res://Assets/Special Pipe/Special Pipe Animations/SpecialPipe_Close.fbx" id="1_pl0hl"]
+[ext_resource type="Texture2D" uid="uid://baa0hs1etqqew" path="res://Assets/Special Pipe/Special_Pipe_Color.png" id="2_sv0te"]
+[ext_resource type="Texture2D" uid="uid://dqhqiphkd6nuj" path="res://Assets/Special Pipe/Special_Pipe_Roughness.png" id="3_35e4m"]
+[ext_resource type="Texture2D" uid="uid://37dqglij1k2" path="res://Assets/Special Pipe/Special_Pipe_Metallic.png" id="4_l3klo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xt2sm"]
+albedo_texture = ExtResource("2_sv0te")
+metallic = 1.0
+metallic_texture = ExtResource("4_l3klo")
+roughness_texture = ExtResource("3_35e4m")
+
+[node name="SpecialPipe_Close" unique_id=1838875837 instance=ExtResource("1_pl0hl")]
+
+[node name="Cylinder_008" parent="." index="0" unique_id=1971459458]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_xt2sm")
