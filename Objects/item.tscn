@@ -5,12 +5,11 @@
 [node name="Item" type="AnimatableBody3D" unique_id=1259799028]
 sync_to_physics = false
 script = ExtResource("1_4ofof")
-sensitivity_ = 0.01
 tablePlane = Plane(0, 1, 0, 0.25)
 boundsTopLeft = Vector2(-4.589, 2.186)
-boundsBottomRight = Vector2(4.589, -2.186)
+boundsBottomRight = Vector2(4.589, -1.5)
 backboardHeight = 4.0
-backboardTilt = 40.0
+backboardTilt = 30.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

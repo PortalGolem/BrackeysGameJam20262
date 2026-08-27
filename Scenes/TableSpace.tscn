@@ -18,6 +18,16 @@
 [ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Pipes/Scenes/pipe_9.tscn" id="15_qju35"]
 [ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Pipes/Scenes/pipe_10.tscn" id="16_c8qf1"]
 [ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Pipes/Scenes/pipe_11.tscn" id="17_uxhga"]
+[ext_resource type="PackedScene" uid="uid://dd01e0umby24g" path="res://cardboard_box.tscn" id="19_yyvi6"]
+[ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://collection_bin.tscn" id="20_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://conveyor_belt.tscn" id="21_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://crt.tscn" id="22_v1xsh"]
+[ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://electrical_box.tscn" id="23_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://electrical_lines.tscn" id="24_12hmx"]
+[ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://room.tscn" id="25_tbrxr"]
+[ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://special_pipe.tscn" id="26_cu2dh"]
+[ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://trash_can.tscn" id="27_stcfx"]
+[ext_resource type="PackedScene" uid="uid://bshs673xvvl7o" path="res://Assets/Scenes/table.tscn" id="28_6j2xr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -28,8 +38,10 @@ size = Vector3(9.214111, 0.34521484, 4.4733887)
 sky_material = SubResource("ProceduralSkyMaterial_u057j")
 
 [sub_resource type="Environment" id="Environment_37okk"]
-background_mode = 2
+background_energy_multiplier = 2.36
 sky = SubResource("Sky_ila21")
+ambient_light_color = Color(0.44, 0.26957336, 0.07480001, 1)
+ambient_light_energy = 3.78
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
 
@@ -44,15 +56,13 @@ size = Vector3(0.7817383, 1, 2.770111)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1324002984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055185556, -0.03144008, 0.016375065)
+visible = false
 mesh = SubResource("BoxMesh_37okk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
 environment = SubResource("Environment_37okk")
 camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
 compositor = SubResource("Compositor_2gruq")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747452872]
-transform = Transform3D(-0.9396926, 0.27061445, 0.20915462, 0, -0.6115271, 0.7912235, 0.3420202, 0.7435069, 0.5746475, 0, 0, 0)
 
 [node name="Cylender" parent="." unique_id=867891222 node_paths=PackedStringArray("contents") instance=ExtResource("4_6wss6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 0.22664416, 0.05611849)
@@ -178,6 +188,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.425296, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrashCan" unique_id=1768333186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31763172, 0, 0.7795868)
 shape = SubResource("BoxShape3D_fo3dt")
+
+[node name="CardboardBox" parent="." unique_id=16955975 instance=ExtResource("19_yyvi6")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.0952725, -1.7857435, 0.7513087)
+
+[node name="CollectionBin" parent="." unique_id=1244313674 instance=ExtResource("20_cd4vf")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="ConveyorBelt" parent="." unique_id=550541245 instance=ExtResource("21_dyeg5")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="CRT" parent="." unique_id=1199210867 instance=ExtResource("22_v1xsh")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 9.365416, -1.7857425, -1.2257662)
+
+[node name="Electrical_Box" parent="." unique_id=52782056 instance=ExtResource("23_jm2s4")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="ElectricalLines" parent="." unique_id=1065912506 instance=ExtResource("24_12hmx")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="Room" parent="." unique_id=310400824 instance=ExtResource("25_tbrxr")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="SpecialPipe" parent="." unique_id=1920061222 instance=ExtResource("26_cu2dh")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="TrashCan2" parent="." unique_id=1884958424 instance=ExtResource("27_stcfx")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 12.817417, -1.7857425, -3.4891648)
+
+[node name="Table2" parent="." unique_id=584708325 instance=ExtResource("28_6j2xr")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=270792858]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5854435, 6.7612195, -0.13304281)
+light_energy = 8.175
+area_range = 23.59
+area_size = Vector2(10, 5)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="AreaLight3D" unique_id=883251824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5854435, 8.569151, 20.738234)
+light_energy = 8.175
+area_range = 76.42
+area_attenuation = 2.836
+area_normalize_energy = false
+area_size = Vector2(20, 20)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1171203485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.285801, 2.6133094, 12.305206)
+omni_range = 27.562
+omni_attenuation = 0.03
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]

@@ -71,9 +71,8 @@ func _physics_process(delta: float) -> void:
 		inspectObject.emit()
 	if grabbed:
 		positionFlat += movementInput
-		positionFlat = Vector2(clamp(positionFlat.x, boundsTopLeft.x, boundsBottomRight.x),
-				clamp(positionFlat.y, boundsBottomRight.y - backboardHeight, boundsTopLeft.y))
-		global_position.x = positionFlat.x
+		positionFlat = Vector2(positionFlat.x,clamp(positionFlat.y, boundsBottomRight.y - backboardHeight, boundsTopLeft.y))
+		global_position.x = clamp(positionFlat.x, boundsTopLeft.x, boundsBottomRight.x)
 		global_position.z = max(positionFlat.y, boundsBottomRight.y)
 		global_position.y = trueYpos
 		if (positionFlat.y < boundsBottomRight.y):
