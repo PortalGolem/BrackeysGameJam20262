@@ -231,7 +231,7 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.13556218, 0.387248
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 10.240734, 0.054823995, 2.080317)
 
 [node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=270792858]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5854435, 6.7612195, -0.13304281)
+transform = Transform3D(1, 0, 0, 0, 0.31914014, 0.94770753, 0, -0.94770753, 0.31914014, 0.5854435, 7.3106194, 4.454878)
 light_energy = 8.175
 light_specular = 5.254
 area_range = 23.59

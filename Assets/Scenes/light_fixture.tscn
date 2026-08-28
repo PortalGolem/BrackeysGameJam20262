@@ -13,12 +13,12 @@ metallic_texture = ExtResource("4_73yrp")
 roughness_texture = ExtResource("5_t7pdd")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 2.4
+emission_energy_multiplier = 2.75
 emission_operator = 1
 emission_on_uv2 = true
 emission_texture = ExtResource("3_lsrjw")
 
 [node name="Light_Fixture" unique_id=981242666 instance=ExtResource("1_w1c43")]
 
-[node name="Cube_007" parent="." index="0" unique_id=1409039078]
+[node name="Cube_007" parent="." index="0" unique_id=1512111014]
 surface_material_override/0 = SubResource("StandardMaterial3D_ka7wq")
