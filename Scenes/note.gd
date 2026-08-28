@@ -1,3 +1,5 @@
+class_name Note
+
 extends Node3D
 var _inst:PostIt 
 

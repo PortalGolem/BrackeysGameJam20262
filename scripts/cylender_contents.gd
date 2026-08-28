@@ -1,3 +1,4 @@
+class_name CylenderContents
 extends Node
 
 @export var contents:Node3D

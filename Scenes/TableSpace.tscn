@@ -138,7 +138,7 @@ ventricleID = 4
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
 [node name="Ventricle" parent="Pipes/Pipe6" unique_id=1575109043 instance=ExtResource("6_y0l3c")]
-transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -4.27316, 7.2055464, 11.046754)
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 4.8061256, 4.6802397, 8.9416)
 ventricleID = 5
 
 [node name="Pipe7" parent="Pipes" unique_id=461442714 instance=ExtResource("13_vqnbw")]
@@ -276,3 +276,13 @@ color = Color(0.31873888, 0.6543046, 0.5801795, 1)
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]
+[connection signal="submitItem" from="Pipes/Pipe1/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe2/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe3/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe4/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe5/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe6/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe7/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe9/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe10/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe11/Ventricle" to="SystemManager" method="_ventricle_return_function"]

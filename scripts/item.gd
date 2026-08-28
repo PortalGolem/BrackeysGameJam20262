@@ -87,11 +87,8 @@ func _physics_process(delta: float) -> void:
 func dropItem():
 	grabbed = false
 	global_position.y = trueYpos
-	print("ypos is" + str(trueYpos))
 	positionFlat = Vector2(global_position.x, global_position.z)
-	print("DroppedInto")
 	if distanceMovedThusFar > minimumMoveDistance:
-		print("DroppedInto!")
 		dropObject.emit(self)
 	distanceMovedThusFar = 0
 
