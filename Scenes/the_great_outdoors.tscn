@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="7_ukqti"]
 [ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="8_vlp47"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="9_fxwx4"]
-[ext_resource type="PackedScene" path="res://Assets/Scenes/table.tscn" id="10_l2hap"]
-
 
 [node name="TheGreatOutdoors" type="Node3D" unique_id=723118674]
 
@@ -34,5 +32,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2705, 0, 7.0902047)
 
 [node name="TrashCan" parent="." unique_id=1884958424 instance=ExtResource("9_fxwx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.722502, 0, 4.826806)
-
-[node name="Table" parent="." unique_id=584708325 instance=ExtResource("10_l2hap")]

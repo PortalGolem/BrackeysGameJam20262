@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="25_tbrxr"]
 [ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="26_cu2dh"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
+[ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -99,6 +100,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="Pipes" type="Node3D" parent="." unique_id=923323276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1318533, 0)
 
 [node name="Pipe1" parent="Pipes" unique_id=1296160952 instance=ExtResource("7_y0l3c")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
@@ -198,7 +200,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31763172, 0, 0.7795868)
 shape = SubResource("BoxShape3D_fo3dt")
 
 [node name="CardboardBox" parent="." unique_id=16955975 instance=ExtResource("19_yyvi6")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.0952725, 0.35792947, 0.7513087)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.8260493, 0.35792947, 0.7513087)
 
 [node name="CollectionBin" parent="." unique_id=1244313674 instance=ExtResource("20_cd4vf")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.44103074, -8.315971)
@@ -207,14 +209,14 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.441030
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.35793042, -8.315971)
 
 [node name="CRT" parent="." unique_id=1199210867 instance=ExtResource("22_v1xsh")]
-transform = Transform3D(0.60780585, 0, -0.42210433, 0, 0.74, 0, 0.42210433, 0, 0.60780585, 5.0080585, 0.79278576, -0.20376444)
+transform = Transform3D(0.636486, 0, 0.37747243, 0, 0.74, 0, -0.37747243, 0, 0.636486, -4.969798, 1.9342018, -0.9051404)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CRT" unique_id=1901847369]
 transform = Transform3D(0.6340513, 5.364418e-07, -1.2434498e-14, 0, -5.3854997e-08, -0.6061226, -1.4901161e-07, 1.2320583, -2.649445e-08, 0.171525, 0.5740874, 0.09205747)
 mesh = SubResource("PlaneMesh_3slyq")
 
 [node name="Electrical_Box" parent="." unique_id=52782056 instance=ExtResource("23_jm2s4")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.34611154, -8.315971)
 
 [node name="ElectricalLines" parent="." unique_id=1065912506 instance=ExtResource("24_12hmx")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 2.5419755, 0.8264725, -8.315971)
@@ -223,7 +225,7 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 2.5419755, 0.8264725
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -11.9918995, -1.7857406, 17.950874)
 
 [node name="SpecialPipe" parent="." unique_id=1920061222 instance=ExtResource("26_cu2dh")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.13556218, 0.38724804, -8.762668)
 
 [node name="TrashCan2" parent="." unique_id=1884958424 instance=ExtResource("27_stcfx")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 10.240734, 0.054823995, 2.080317)
@@ -273,6 +275,9 @@ grow_vertical = 2
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 color = Color(0.31873888, 0.6543046, 0.5801795, 1)
+
+[node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
+transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]
