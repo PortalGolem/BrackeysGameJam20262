@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bisqm0n71suik"
-path.s3tc="res://.godot/imported/Room_Metallic.png-471869fa82e12f70d6e9dde577653692.s3tc.ctex"
+uid="uid://bqf0vpiqe16rm"
+path.s3tc="res://.godot/imported/Desk_Roughness.png-43aeadc0651c2db0751bd1814c8eb957.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Office Room/Room_Metallic.png"
-dest_files=["res://.godot/imported/Room_Metallic.png-471869fa82e12f70d6e9dde577653692.s3tc.ctex"]
+source_file="res://Assets/Table Desk/Desk_Roughness.png"
+dest_files=["res://.godot/imported/Desk_Roughness.png-43aeadc0651c2db0751bd1814c8eb957.s3tc.ctex"]
 
 [params]
 

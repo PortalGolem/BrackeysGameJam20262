@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bcwcgq08jeqv7"]
+
+[ext_resource type="PackedScene" uid="uid://4cgwfw2n4jnb" path="res://Assets/Table Desk/TableDesk.fbx" id="1_1ckki"]
+[ext_resource type="Texture2D" uid="uid://b0wnrkj8tmblp" path="res://Assets/Table Desk/Desk_Color.png" id="2_apaj2"]
+[ext_resource type="Texture2D" uid="uid://cjcd6gq104l8u" path="res://Assets/Table Desk/Desk_Metallic.png" id="3_q2521"]
+[ext_resource type="Texture2D" uid="uid://bqf0vpiqe16rm" path="res://Assets/Table Desk/Desk_Roughness.png" id="4_xqhl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhvfj"]
+albedo_texture = ExtResource("2_apaj2")
+metallic = 1.0
+metallic_texture = ExtResource("3_q2521")
+roughness_texture = ExtResource("4_xqhl2")
+
+[node name="TableDesk" unique_id=1343893694 instance=ExtResource("1_1ckki")]
+
+[node name="Desk" parent="." index="0" unique_id=1006310]
+surface_material_override/0 = SubResource("StandardMaterial3D_dhvfj")

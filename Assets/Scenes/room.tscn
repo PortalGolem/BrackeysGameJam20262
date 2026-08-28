@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bkne75omvapdr"]
+
+[ext_resource type="PackedScene" uid="uid://bm7g1tylfgemj" path="res://Assets/Office Room/Room.fbx" id="1_bisa2"]
+[ext_resource type="Texture2D" uid="uid://cs2vevap8ykex" path="res://Assets/Office Room/Room_Color.png" id="2_4o3f6"]
+[ext_resource type="Texture2D" uid="uid://bisqm0n71suik" path="res://Assets/Office Room/Room_Metallic.png" id="3_v5vuv"]
+[ext_resource type="Texture2D" uid="uid://c1qjjyxw2ooyv" path="res://Assets/Office Room/Room_Roughness.png" id="4_ka7wq"]
+[ext_resource type="Texture2D" uid="uid://ds7q4bhkd3ocp" path="res://Assets/Office Room/Room_Normal.png" id="4_x5k2b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_be47u"]
+albedo_texture = ExtResource("2_4o3f6")
+metallic = 1.0
+metallic_texture = ExtResource("3_v5vuv")
+roughness_texture = ExtResource("4_ka7wq")
+normal_enabled = true
+normal_texture = ExtResource("4_x5k2b")
+
+[node name="Room" unique_id=310400824 instance=ExtResource("1_bisa2")]
+
+[node name="Plane_007" parent="." index="0" unique_id=2085659842]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 15.85737, 19.523064, -32.16751)
+surface_material_override/0 = SubResource("StandardMaterial3D_be47u")

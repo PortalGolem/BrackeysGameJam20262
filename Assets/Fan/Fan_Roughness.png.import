@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bisqm0n71suik"
-path.s3tc="res://.godot/imported/Room_Metallic.png-471869fa82e12f70d6e9dde577653692.s3tc.ctex"
+uid="uid://b606g4iyytp1r"
+path.s3tc="res://.godot/imported/Fan_Roughness.png-13d005cd7b12c56306006351166a3678.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Office Room/Room_Metallic.png"
-dest_files=["res://.godot/imported/Room_Metallic.png-471869fa82e12f70d6e9dde577653692.s3tc.ctex"]
+source_file="res://Assets/Fan/Fan_Roughness.png"
+dest_files=["res://.godot/imported/Fan_Roughness.png-13d005cd7b12c56306006351166a3678.s3tc.ctex"]
 
 [params]
 

@@ -13,6 +13,6 @@ roughness_texture = ExtResource("3_35e4m")
 
 [node name="SpecialPipe_Close" unique_id=1838875837 instance=ExtResource("1_pl0hl")]
 
-[node name="Cylinder_008" parent="." index="0" unique_id=1971459458]
-transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
+[node name="Cylinder_008" parent="." index="0" unique_id=38709029]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -0.7788405, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_xt2sm")

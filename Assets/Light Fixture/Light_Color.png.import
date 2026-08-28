@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bisqm0n71suik"
-path.s3tc="res://.godot/imported/Room_Metallic.png-471869fa82e12f70d6e9dde577653692.s3tc.ctex"
+uid="uid://ld8bsu3hloro"
+path.s3tc="res://.godot/imported/Light_Color.png-4481ff9ee25cc3a3fed5fdbfc63fc4e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Office Room/Room_Metallic.png"
-dest_files=["res://.godot/imported/Room_Metallic.png-471869fa82e12f70d6e9dde577653692.s3tc.ctex"]
+source_file="res://Assets/Light Fixture/Light_Color.png"
+dest_files=["res://.godot/imported/Light_Color.png-4481ff9ee25cc3a3fed5fdbfc63fc4e2.s3tc.ctex"]
 
 [params]
 

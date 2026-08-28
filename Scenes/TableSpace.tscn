@@ -18,17 +18,16 @@
 [ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Pipes/Scenes/pipe_9.tscn" id="15_qju35"]
 [ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Pipes/Scenes/pipe_10.tscn" id="16_c8qf1"]
 [ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Pipes/Scenes/pipe_11.tscn" id="17_uxhga"]
-[ext_resource type="PackedScene" uid="uid://dd01e0umby24g" path="res://cardboard_box.tscn" id="19_yyvi6"]
-[ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://collection_bin.tscn" id="20_cd4vf"]
-[ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://conveyor_belt.tscn" id="21_dyeg5"]
-[ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://crt.tscn" id="22_v1xsh"]
+[ext_resource type="PackedScene" uid="uid://dd01e0umby24g" path="res://Assets/Scenes/cardboard_box.tscn" id="19_yyvi6"]
+[ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://Assets/Scenes/collection_bin.tscn" id="20_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://Assets/Scenes/conveyor_belt.tscn" id="21_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://Assets/Scenes/crt.tscn" id="22_v1xsh"]
 [ext_resource type="Texture2D" uid="uid://bt1mfxsc6eqi3" path="res://Assets/CRT/CRTtv.tres" id="23_cd4vf"]
-[ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://electrical_box.tscn" id="23_jm2s4"]
-[ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://electrical_lines.tscn" id="24_12hmx"]
-[ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://room.tscn" id="25_tbrxr"]
-[ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://special_pipe.tscn" id="26_cu2dh"]
-[ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://trash_can.tscn" id="27_stcfx"]
-[ext_resource type="PackedScene" uid="uid://bshs673xvvl7o" path="res://Assets/Scenes/table.tscn" id="28_6j2xr"]
+[ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://Assets/Scenes/electrical_box.tscn" id="23_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://Assets/Scenes/electrical_lines.tscn" id="24_12hmx"]
+[ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="25_tbrxr"]
+[ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="26_cu2dh"]
+[ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -199,16 +198,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31763172, 0, 0.7795868)
 shape = SubResource("BoxShape3D_fo3dt")
 
 [node name="CardboardBox" parent="." unique_id=16955975 instance=ExtResource("19_yyvi6")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.0952725, -1.7857435, 0.7513087)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.0952725, 0.35792947, 0.7513087)
 
 [node name="CollectionBin" parent="." unique_id=1244313674 instance=ExtResource("20_cd4vf")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.44103074, -8.315971)
 
 [node name="ConveyorBelt" parent="." unique_id=550541245 instance=ExtResource("21_dyeg5")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.35793042, -8.315971)
 
 [node name="CRT" parent="." unique_id=1199210867 instance=ExtResource("22_v1xsh")]
-transform = Transform3D(0.60780585, 0, -0.42210433, 0, 0.74, 0, 0.42210433, 0, 0.60780585, 3.7563956, -0.04895413, -0.20376444)
+transform = Transform3D(0.60780585, 0, -0.42210433, 0, 0.74, 0, 0.42210433, 0, 0.60780585, 5.0080585, 0.79278576, -0.20376444)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CRT" unique_id=1901847369]
 transform = Transform3D(0.6340513, 5.364418e-07, -1.2434498e-14, 0, -5.3854997e-08, -0.6061226, -1.4901161e-07, 1.2320583, -2.649445e-08, 0.171525, 0.5740874, 0.09205747)
@@ -218,19 +217,16 @@ mesh = SubResource("PlaneMesh_3slyq")
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
 
 [node name="ElectricalLines" parent="." unique_id=1065912506 instance=ExtResource("24_12hmx")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 2.5419755, 0.8264725, -8.315971)
 
 [node name="Room" parent="." unique_id=310400824 instance=ExtResource("25_tbrxr")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -11.9918995, -1.7857406, 17.950874)
 
 [node name="SpecialPipe" parent="." unique_id=1920061222 instance=ExtResource("26_cu2dh")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
 
 [node name="TrashCan2" parent="." unique_id=1884958424 instance=ExtResource("27_stcfx")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 12.817417, -1.7857425, -3.4891648)
-
-[node name="Table2" parent="." unique_id=584708325 instance=ExtResource("28_6j2xr")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, -1.7857425, -8.315971)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 10.240734, 0.054823995, 2.080317)
 
 [node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=270792858]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5854435, 6.7612195, -0.13304281)

@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://bff0c0ewimkir"]
 
-[ext_resource type="PackedScene" uid="uid://dd01e0umby24g" path="res://cardboard_box.tscn" id="1_hhcdj"]
-[ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://collection_bin.tscn" id="2_ukdsi"]
-[ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://conveyor_belt.tscn" id="3_vvsa3"]
-[ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://crt.tscn" id="4_pb4sf"]
-[ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://electrical_box.tscn" id="5_t0v2o"]
-[ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://electrical_lines.tscn" id="6_5u1sh"]
-[ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://room.tscn" id="7_ukqti"]
-[ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://special_pipe.tscn" id="8_vlp47"]
-[ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://trash_can.tscn" id="9_fxwx4"]
-[ext_resource type="PackedScene" uid="uid://bshs673xvvl7o" path="res://Assets/Scenes/table.tscn" id="10_l2hap"]
+[ext_resource type="PackedScene" uid="uid://dd01e0umby24g" path="res://Assets/Scenes/cardboard_box.tscn" id="1_hhcdj"]
+[ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://Assets/Scenes/collection_bin.tscn" id="2_ukdsi"]
+[ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://Assets/Scenes/conveyor_belt.tscn" id="3_vvsa3"]
+[ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://Assets/Scenes/crt.tscn" id="4_pb4sf"]
+[ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://Assets/Scenes/electrical_box.tscn" id="5_t0v2o"]
+[ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://Assets/Scenes/electrical_lines.tscn" id="6_5u1sh"]
+[ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="7_ukqti"]
+[ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="8_vlp47"]
+[ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="9_fxwx4"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/table.tscn" id="10_l2hap"]
+
 
 [node name="TheGreatOutdoors" type="Node3D" unique_id=723118674]
 
