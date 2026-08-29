@@ -54,8 +54,7 @@ func _physics_process(delta: float) -> void:
 		set_selection()
 		if confirmed:
 			if selection == 1:
-				global.Music = game_music
-				get_tree().change_scene_to_file("res://Scenes/TableSpace.tscn")
+				$"../TransitionClock".transition_started = true
 			if selection == 2:
 				$"../SettingsMenu".settings = true
 				main_menu = false

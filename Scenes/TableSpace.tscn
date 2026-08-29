@@ -30,6 +30,8 @@
 [ext_resource type="Script" uid="uid://ckggr1mdl56uu" path="res://scripts/pathToSpawnerConnector.gd" id="29_v1xsh"]
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
+[ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="31_jm2s4"]
+[ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="32_12hmx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
 
@@ -64,6 +66,34 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbrxr"]
+shader = ExtResource("31_jm2s4")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 3
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 3
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
@@ -262,6 +292,25 @@ transform = Transform3D(-0.9716864, 0.029706812, 0.234329, 9.31307e-10, 0.992040
 
 [node name="Timer" type="Timer" parent="Path3D" unique_id=638267457]
 autostart = true
+
+[node name="TransitionClock" type="ColorRect" parent="." unique_id=1111744979]
+material = SubResource("ShaderMaterial_tbrxr")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+script = ExtResource("32_12hmx")
+transition_started = true
+hardcoded_shit = false
 
 [connection signal="add_note_to_queue" from="SystemManager/CylenderSpawner" to="Path3D" method="_on_cylender_spawner_add_note_to_queue"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
