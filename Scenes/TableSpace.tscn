@@ -257,7 +257,6 @@ disable_3d = true
 transparent_bg = true
 
 [node name="AccuracyMeter" parent="SubViewport" unique_id=1817966563 instance=ExtResource("30_dyeg5")]
-accuracy_percent = 20.0
 
 [node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
 transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)

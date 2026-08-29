@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://74t1p0v4pkky"]
+
+[ext_resource type="PackedScene" uid="uid://qfd65gapvba3" path="res://Assets/Models/New Cardboard Box/Box.fbx" id="1_g2tbl"]
+[ext_resource type="Texture2D" uid="uid://di7si22twlsqu" path="res://Assets/Models/New Cardboard Box/Box_Color.png" id="2_oq5cr"]
+[ext_resource type="Texture2D" uid="uid://dl6bdh55g5n0q" path="res://Assets/Models/New Cardboard Box/Box_Normal.png" id="3_3n43a"]
+[ext_resource type="Texture2D" uid="uid://c44vu5h1uhn63" path="res://Assets/Models/New Cardboard Box/Box_Roughness.png" id="4_jjbh2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfhtr"]
+cull_mode = 2
+albedo_texture = ExtResource("2_oq5cr")
+roughness_texture = ExtResource("4_jjbh2")
+normal_enabled = true
+normal_texture = ExtResource("3_3n43a")
+
+[node name="Box" unique_id=1030823981 instance=ExtResource("1_g2tbl")]
+
+[node name="Cube_008" parent="." index="0" unique_id=976401203]
+surface_material_override/0 = SubResource("StandardMaterial3D_cfhtr")
