@@ -210,10 +210,10 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.441030
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.35793042, -8.315971)
 
 [node name="CRT" parent="." unique_id=1199210867 instance=ExtResource("22_v1xsh")]
-transform = Transform3D(0.636486, 0, 0.37747243, 0, 0.74, 0, -0.37747243, 0, 0.636486, -4.969798, 1.9342018, -0.9051404)
+transform = Transform3D(1.5826141, 0, 0.9385802, 0, 1.84, 0, -0.9385802, 0, 1.5826141, -6.184141, 3.2772074, 0.43011588)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CRT" unique_id=1901847369]
-transform = Transform3D(0.6340513, 5.364418e-07, -1.2434498e-14, 0, -5.3854997e-08, -0.6061226, -1.4901161e-07, 1.2320583, -2.649445e-08, 0.171525, 0.5740874, 0.09205747)
+transform = Transform3D(0.6340513, 7.1525574e-07, -1.687539e-14, 0, -5.3854997e-08, -0.6061226, -3.2782555e-07, 1.2320583, -2.6494456e-08, 0.171525, 0.61093926, 0.09205747)
 mesh = SubResource("PlaneMesh_3slyq")
 
 [node name="Electrical_Box" parent="." unique_id=52782056 instance=ExtResource("23_jm2s4")]
@@ -256,32 +256,11 @@ omni_attenuation = 0.03
 disable_3d = true
 transparent_bg = true
 
-[node name="Control" type="Control" parent="SubViewport" unique_id=1084050503]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="SubViewport/Control" unique_id=1799107017]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="SubViewport/Control/CenterContainer" unique_id=994402417]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-color = Color(0.31873888, 0.6543046, 0.5801795, 1)
+[node name="AccuracyMeter" parent="SubViewport" unique_id=1817966563 instance=ExtResource("30_dyeg5")]
+accuracy_percent = 20.0
 
 [node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
 transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
-
-[node name="AccuracyMeter" parent="." unique_id=1817966563 instance=ExtResource("30_dyeg5")]
-accuracy_percent = 20.0
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]

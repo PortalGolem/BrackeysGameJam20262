@@ -7,32 +7,39 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=2020325541]
+anchors_preset = 0
+offset_left = 219.0
+offset_right = 259.0
+offset_bottom = 40.0
 script = ExtResource("1_wkpfp")
+metadata/_edit_group_ = true
 
-[node name="OutlineBar" type="ColorRect" parent="." unique_id=643197117]
+[node name="OutlineBar" type="ColorRect" parent="Control" unique_id=643197117]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 16.0
-offset_right = 79.0
-offset_bottom = 634.0
+offset_right = 201.0
+offset_bottom = 512.0
 
-[node name="FillBar" type="ColorRect" parent="OutlineBar" unique_id=947418062]
-layout_mode = 0
-offset_top = 618.0
-offset_right = 67.0
-offset_bottom = 818.0
+[node name="FillBar" type="ColorRect" parent="Control/OutlineBar" unique_id=947418062]
+layout_mode = 1
+offset_top = 512.0
+offset_right = 200.80379
+offset_bottom = 712.0
 rotation = 3.1415927
 pivot_offset_ratio = Vector2(0.5, 0)
 color = Color(1, 0.5372549, 1, 1)
 
-[node name="written text" type="Label" parent="." unique_id=1099261829]
+[node name="written text" type="Label" parent="Control" unique_id=1099261829]
 layout_mode = 0
-offset_left = -18.0
-offset_top = 98.0
-offset_right = 110.0
-offset_bottom = 485.0
+offset_left = 32.0
+offset_top = 55.0
+offset_right = 160.0
+offset_bottom = 442.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "A
