@@ -3,7 +3,7 @@ extends Node
 var Master_Volume = 1
 var Music_Volume = 1
 var Sound_Volume = 1
-var Main_Font = "res://PlayfairDisplay-VariableFont_wght.ttf"
+var Main_Font = "res://Assets/UIAssets/PlayfairDisplay-VariableFont_wght.ttf"
 var Music = null
 
 func sound_play(audio_stream_player, audio_file, gain = 1):

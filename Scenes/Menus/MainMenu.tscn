@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://db3f64haped0m"]
 
 [ext_resource type="Script" uid="uid://dh7bunnpimn7j" path="res://scripts/UI/MainMenuButtons.gd" id="1_i26rj"]
+[ext_resource type="PackedScene" uid="uid://cjd7cide3olap" path="res://Scenes/Menus/SettingsMenu.tscn" id="2_b42ut"]
 
+[node name="MainMenu" type="CanvasLayer" unique_id=1152495092]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1152495092]
-
-[node name="Control" type="Control" parent="." unique_id=1535377572]
+[node name="MainMenu" type="Control" parent="." unique_id=1535377572]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,12 +15,12 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_i26rj")
 
-[node name="Node2D" type="Node2D" parent="Control" unique_id=1130701109]
+[node name="Node2D" type="Node2D" parent="MainMenu" unique_id=1130701109]
 position = Vector2(288, 648)
 scale = Vector2(1, 0.99999994)
 skew = -0.1274091
 
-[node name="ColorRect" type="ColorRect" parent="Control/Node2D" unique_id=1244022348]
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Node2D" unique_id=1244022348]
 offset_left = -338.54245
 offset_top = -798.4721
 offset_right = 135.15799
@@ -29,26 +29,26 @@ offset_transform_enabled = true
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 metadata/_edit_group_ = true
 
-[node name="TITLE" type="CenterContainer" parent="Control" unique_id=336479199]
+[node name="TITLE" type="CenterContainer" parent="MainMenu" unique_id=336479199]
 layout_mode = 0
 offset_top = -161.74
 offset_right = 483.96945
 offset_bottom = 827.573
 scale = Vector2(0.655, 0.655)
 
-[node name="Label" type="Label" parent="Control/TITLE" unique_id=1358226956]
+[node name="Label" type="Label" parent="MainMenu/TITLE" unique_id=1358226956]
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "NO IDEAS"
 
-[node name="TEXT" type="CenterContainer" parent="Control" unique_id=611039226]
+[node name="TEXT" type="CenterContainer" parent="MainMenu" unique_id=611039226]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 320.0
 offset_right = 222.0
 offset_bottom = 512.0005
 
-[node name="written text" type="Label" parent="Control/TEXT" unique_id=1666516053]
+[node name="written text" type="Label" parent="MainMenu/TEXT" unique_id=1666516053]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Game start
@@ -58,7 +58,7 @@ Settings
 Quit"
 horizontal_alignment = 1
 
-[node name="Selection1" type="Label" parent="Control" unique_id=1484498285]
+[node name="Selection1" type="Label" parent="MainMenu" unique_id=1484498285]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 323.0
@@ -67,7 +67,7 @@ offset_bottom = 346.0
 scale = Vector2(1.5, 1.5)
 offset_transform_enabled = true
 
-[node name="Selection3" type="Label" parent="Control" unique_id=490010523]
+[node name="Selection3" type="Label" parent="MainMenu" unique_id=490010523]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 483.0
@@ -76,7 +76,7 @@ offset_bottom = 506.0
 scale = Vector2(1.5, 1.5)
 offset_transform_enabled = true
 
-[node name="Selection2" type="Label" parent="Control" unique_id=1087164671]
+[node name="Selection2" type="Label" parent="MainMenu" unique_id=1087164671]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 403.0
@@ -87,3 +87,5 @@ offset_transform_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1452066851]
 max_polyphony = 20
+
+[node name="SettingsMenu" parent="." unique_id=1236389570 instance=ExtResource("2_b42ut")]

@@ -75,7 +75,7 @@ camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
 compositor = SubResource("Compositor_2gruq")
 
 [node name="Cylender" parent="." unique_id=867891222 node_paths=PackedStringArray("contents") instance=ExtResource("4_6wss6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 0.22664416, 0.05611849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 1.9334394, 0.05611849)
 contents = NodePath("CylenderContents/Note")
 
 [node name="CylenderContents" type="Node" parent="Cylender" unique_id=77979233]
@@ -260,13 +260,7 @@ omni_attenuation = 0.03
 disable_3d = true
 transparent_bg = true
 
-[node name="Control" type="Control" parent="SubViewport" unique_id=1084050503]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AccuracyMeter" parent="SubViewport" unique_id=1817966563 instance=ExtResource("30_dyeg5")]
 
 [node name="CenterContainer" type="CenterContainer" parent="SubViewport/Control" unique_id=1799107017]
 layout_mode = 1

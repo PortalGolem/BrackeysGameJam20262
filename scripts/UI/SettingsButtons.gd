@@ -11,7 +11,9 @@ var meow = [preload("res://Sounds/Meow/snd_Meow1.mp3"), preload("res://Sounds/Me
 preload("res://Sounds/Meow/snd_Meow4.mp3"), preload("res://Sounds/Meow/snd_Meow5.mp3"), preload("res://Sounds/Meow/snd_Meow6.mp3"),
 preload("res://Sounds/Meow/snd_Meow7.mp3"), preload("res://Sounds/Meow/snd_Meow8.mp3"), preload("res://Sounds/Meow/snd_Meow9.mp3"),
 preload("res://Sounds/Meow/snd_Meow10.mp3")]
+var font = "res://Assets/UIAssets/PlayfairDisplay-VariableFont_wght.ttf"
 var sound_timer = 0
+var settings = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,50 +25,64 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if annoying_check > 0:
-		if Input.is_action_just_pressed("ui_confirm") == true:
-			confirmed = !confirmed
+	#setting up font shit
+	global.Main_Font = font
+	if settings:
+		self.visible = true
+		if annoying_check > 0:
+			if Input.is_action_just_pressed("ui_confirm") == true:
+				confirmed = !confirmed
+		else:
+			annoying_check += 1
+	#keep track of what we have selected
+		if confirmed == false:
+			if Input.is_action_just_pressed("ui_down") == true:
+				selection += 1
+			if Input.is_action_just_pressed("ui_up") == true:
+				selection -= 1
+			if selection > 6:
+				selection = 6
+			if selection < 1:
+				selection = 1
+	#play sounds effects
+			if selection_past != selection:
+				selection_past = selection
+				global.sound_play($AudioStreamPlayer, global.gen_random_choice(move_sfx), 1)
+		set_selection()
+		
+		if confirmed == true:
+			if selection == 1:
+				if font == "res://Assets/UIAssets/PlayfairDisplay-VariableFont_wght.ttf":
+					font = "res://Assets/UIAssets/Zeyada-Regular.ttf"
+					$"Text+Selection/CenterContainer/written text/FontOption".text = "Cursive"
+				else:
+					font = "res://Assets/UIAssets/PlayfairDisplay-VariableFont_wght.ttf"
+					$"Text+Selection/CenterContainer/written text/FontOption".text = "Roman"
+				confirmed = false
+			if selection == 2:
+				slider_move($MasterSlider, 0.75)
+				global.Master_Volume = $MasterSlider.value
+				if slider_sound():
+					global.sound_play($AudioStreamPlayer, move_sfx[3])
+			if selection == 3:
+				slider_move($MusicSlider, 0.75)
+				global.Music_Volume = $MusicSlider.value
+				if slider_sound():
+					global.music_play($AudioStreamPlayer, move_sfx[3])
+			if selection == 4:
+				slider_move($SFXSlider, 0.75)
+				global.Sound_Volume = $SFXSlider.value
+				if slider_sound():
+					global.sound_play($AudioStreamPlayer, move_sfx[3])
+			if selection == 5:
+				global.sound_play($AudioStreamPlayer, global.gen_random_choice(meow))
+				confirmed = false
+			if selection == 6:
+				settings = false
+				selection = 1
+				$"../MainMenu".main_menu = true
 	else:
-		annoying_check += 1
-#keep track of what we have selected
-	if confirmed == false:
-		if Input.is_action_just_pressed("ui_down") == true:
-			selection += 1
-		if Input.is_action_just_pressed("ui_up") == true:
-			selection -= 1
-		if selection > 6:
-			selection = 6
-		if selection < 1:
-			selection = 1
-#play sounds effects
-		if selection_past != selection:
-			selection_past = selection
-			global.sound_play($AudioStreamPlayer, global.gen_random_choice(move_sfx), 1)
-	set_selection()
-	
-	if confirmed == true:
-		if selection == 1:
-			print("hello")
-		if selection == 2:
-			slider_move($MasterSlider, 0.75)
-			global.Master_Volume = $MasterSlider.value
-			if slider_sound():
-				global.sound_play($AudioStreamPlayer, move_sfx[3])
-		if selection == 3:
-			slider_move($MusicSlider, 0.75)
-			global.Music_Volume = $MusicSlider.value
-			if slider_sound():
-				global.music_play($AudioStreamPlayer, move_sfx[3])
-		if selection == 4:
-			slider_move($SFXSlider, 0.75)
-			global.Sound_Volume = $SFXSlider.value
-			if slider_sound():
-				global.sound_play($AudioStreamPlayer, move_sfx[3])
-		if selection == 5:
-			global.sound_play($AudioStreamPlayer, global.gen_random_choice(meow))
-			confirmed = false
-		if selection == 6:
-			get_tree().change_scene_to_file("res://MainMenu.tscn")
+		self.visible = false
 	pass
 
 

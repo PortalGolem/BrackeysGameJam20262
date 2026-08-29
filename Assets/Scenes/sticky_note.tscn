@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3ami1m1vrosv"]
+
+[ext_resource type="PackedScene" uid="uid://cd761iw6kh8ax" path="res://Assets/Models/Sticky Note/StickyNote.fbx" id="1_n0k24"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oq5cr"]
+cull_mode = 2
+
+[node name="StickyNote" unique_id=38248489 instance=ExtResource("1_n0k24")]
+
+[node name="Plane_007" parent="." index="0" unique_id=933363060]
+surface_material_override/0 = SubResource("StandardMaterial3D_oq5cr")
