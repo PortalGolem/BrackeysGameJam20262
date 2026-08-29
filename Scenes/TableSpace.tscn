@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="26_cu2dh"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
 [ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37okk"]
 size = Vector3(9.214111, 0.34521484, 4.4733887)
@@ -278,6 +279,9 @@ color = Color(0.31873888, 0.6543046, 0.5801795, 1)
 
 [node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
 transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
+
+[node name="AccuracyMeter" parent="." unique_id=1817966563 instance=ExtResource("30_dyeg5")]
+accuracy_percent = 20.0
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]

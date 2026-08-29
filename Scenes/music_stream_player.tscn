@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://db7atblh7xv2b"]
+
+[ext_resource type="AudioStream" uid="uid://bwm1w5u070xq2" path="res://Sounds/Meow/snd_Meow10.mp3" id="1_xnxmk"]
+[ext_resource type="Script" uid="uid://br55su12tycp0" path="res://scripts/music_stream_player.gd" id="2_5p50w"]
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" unique_id=87527043]
+stream = ExtResource("1_xnxmk")
+max_polyphony = 13
+script = ExtResource("2_5p50w")

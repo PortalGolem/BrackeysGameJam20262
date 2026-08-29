@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ceiwv563g50j7"]
+
+[ext_resource type="Script" uid="uid://pd7rla1h76w7" path="res://scripts/Accuracy_Bar.gd" id="1_wkpfp"]
+
+[node name="AccuracyMeter" type="Control" unique_id=1817966563]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkpfp")
+
+[node name="OutlineBar" type="ColorRect" parent="." unique_id=643197117]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = 79.0
+offset_bottom = 634.0
+
+[node name="FillBar" type="ColorRect" parent="OutlineBar" unique_id=947418062]
+layout_mode = 0
+offset_top = 618.0
+offset_right = 67.0
+offset_bottom = 818.0
+rotation = 3.1415927
+pivot_offset_ratio = Vector2(0.5, 0)
+color = Color(1, 0.5372549, 1, 1)
+
+[node name="written text" type="Label" parent="." unique_id=1099261829]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 98.0
+offset_right = 110.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "A
+C
+C
+U
+R
+A
+C
+Y
+100
+%"
+horizontal_alignment = 1

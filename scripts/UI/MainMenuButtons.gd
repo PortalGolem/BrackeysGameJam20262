@@ -3,12 +3,16 @@ extends Control
 var selection = 1
 var selection_past = 1
 var font = global.Main_Font
+var music = "res://Sounds/Music/ShittyBeachMusic.mp3"
 var move_sfx = [preload("res://Sounds/Menu/Move/snd_menu_moveA.mp3"), preload("res://Sounds/Menu/Move/snd_menu_moveC1.mp3"),
 preload("res://Sounds/Menu/Move/snd_menu_moveC.mp3"),preload("res://Sounds/Menu/Move/snd_menu_moveD.mp3"),
 preload("res://Sounds/Menu/Move/snd_menu_moveE.mp3"),preload("res://Sounds/Menu/Move/snd_menu_moveG.mp3")]
+var annoying_check = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
+
+	
 	pass # Replace with function body.
 
 
@@ -36,6 +40,18 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://SettingsMenu.tscn")
 		if selection == 3:
 			get_tree().quit()
+	
+	
+	
+	#set up music player and add music
+	if annoying_check == 0:
+		if global.Music == null:
+			const Music_Scene = preload("res://Scenes/music_stream_player.tscn")
+			var Music_Player = Music_Scene.instantiate()
+			get_tree().root.add_child(Music_Player)
+			global.Music = "res://Sounds/Music/ShittyBeachMusic.mp3"
+			annoying_check += 1
+	
 	
 	pass
 
