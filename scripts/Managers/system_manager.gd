@@ -127,7 +127,7 @@ func sendNotes(text: String, color: String, target: String, origin: String, isPe
 		people[origin]["SentNotes"].append({"Text" = text, "Target" = target})
 
 func _ventricle_return_function(object:Node3D, ventricle:int):
-	var parent = object.get_parent()
+	var parent = object.get_parent().get_parent()
 	if parent is CylenderContents and parent.hasContents:
 		handleNotes(parent.contents, false)
 	if parent is Note:

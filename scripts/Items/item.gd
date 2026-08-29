@@ -23,6 +23,8 @@ var isFirstGrab := true
 var actualAngleAdjustment
 var usedBackboard := false
 
+signal pickUpItem(item:Item)
+
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseMotion:
@@ -64,6 +66,7 @@ func _physics_process(delta: float) -> void:
 		if isFirstGrab:
 			positionFlat = Vector2(global_position.x, global_position.z)
 			trueYpos = global_position.y
+			pickUpItem.emit(self)
 			isFirstGrab = false
 	if Input.is_action_just_pressed("m_right") and itemTouched:
 		if grabbed:
