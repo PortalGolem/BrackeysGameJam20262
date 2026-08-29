@@ -75,7 +75,7 @@ camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
 compositor = SubResource("Compositor_2gruq")
 
 [node name="Cylender" parent="." unique_id=867891222 node_paths=PackedStringArray("contents") instance=ExtResource("4_6wss6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 0.22664416, 0.05611849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 1.9334394, 0.05611849)
 contents = NodePath("CylenderContents/Note")
 
 [node name="CylenderContents" type="Node" parent="Cylender" unique_id=77979233]
