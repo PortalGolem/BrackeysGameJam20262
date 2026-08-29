@@ -262,24 +262,21 @@ transparent_bg = true
 
 [node name="AccuracyMeter" parent="SubViewport" unique_id=1817966563 instance=ExtResource("30_dyeg5")]
 
-[node name="CenterContainer" type="CenterContainer" parent="SubViewport/Control" unique_id=1799107017]
-layout_mode = 1
+[node name="SubViewport_Control#CenterContainer" type="CenterContainer" parent="." unique_id=1799107017]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="SubViewport/Control/CenterContainer" unique_id=994402417]
+[node name="SubViewport_Control_CenterContainer#ColorRect" type="ColorRect" parent="." unique_id=994402417]
 custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
 color = Color(0.31873888, 0.6543046, 0.5801795, 1)
 
 [node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
 transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
 
-[node name="AccuracyMeter" parent="." unique_id=1817966563 instance=ExtResource("30_dyeg5")]
-accuracy_percent = 20.0
+[node name="AccuracyMeter" parent="." unique_id=2010723835 instance=ExtResource("30_dyeg5")]
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer2" to="SystemManager/CylenderSpawner" method="_on_timer_2_timeout"]
