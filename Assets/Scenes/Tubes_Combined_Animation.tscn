@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dq8ku6vex34x8"]
+
+[ext_resource type="PackedScene" uid="uid://bftwqd4ao0wdh" path="res://Assets/Models/Main Menu/Tubes-Animation_Merged.glb" id="1_hlmvp"]
+[ext_resource type="Texture2D" uid="uid://fc2121pcbobb" path="res://Assets/Models/Canister/Canister Regular/Canister_Color.png" id="2_11l3f"]
+[ext_resource type="Texture2D" uid="uid://dn3nnikmwcr4r" path="res://Assets/Models/Canister/Canister Regular/Canister_Roughness.png" id="3_3ja1n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ikeg"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11l3f"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ja1n"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce22i"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e412x"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euwmb"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvl5f"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b05g4"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37yw3"]
+albedo_texture = ExtResource("2_11l3f")
+roughness_texture = ExtResource("3_3ja1n")
+
+[node name="Tubes" unique_id=1509204707 instance=ExtResource("1_hlmvp")]
+
+[node name="Cylinder_011" parent="." index="0" unique_id=1038892594]
+transform = Transform3D(-0.43747374, 0, 0.8992311, 0, 1, 0, -0.8992311, 0, -0.43747374, 16, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_1ikeg")
+
+[node name="Cylinder_013" parent="." index="1" unique_id=246183240]
+transform = Transform3D(0.17498562, 0, -0.984571, 0, 1, 0, 0.984571, 0, 0.17498562, 12, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_11l3f")
+
+[node name="Cylinder_014" parent="." index="2" unique_id=1281397328]
+transform = Transform3D(0.6517491, 0, 0.7584347, 0, 1, 0, -0.7584347, 0, 0.6517491, 8, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_3ja1n")
+
+[node name="Cylinder_015" parent="." index="3" unique_id=782249680]
+transform = Transform3D(0.98338675, 0, 0.18152204, 0, 1, 0, -0.18152204, 0, 0.98338675, 4, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_ce22i")
+
+[node name="Cylinder_016" parent="." index="4" unique_id=1045129789]
+transform = Transform3D(-0.5141083, 0, -0.8577253, 0, 1, 0, 0.8577253, 0, -0.5141083, 0, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_e412x")
+
+[node name="Cylinder_017" parent="." index="5" unique_id=1221155833]
+transform = Transform3D(-0.7233113, 0, 0.6905221, 0, 1, 0, -0.6905221, 0, -0.7233113, -4, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_euwmb")
+
+[node name="Cylinder_018" parent="." index="6" unique_id=1772198309]
+transform = Transform3D(0.5452942, 0, -0.8382447, 0, 1, 0, 0.8382447, 0, 0.5452942, -8, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_yvl5f")
+
+[node name="Cylinder_019" parent="." index="7" unique_id=460994408]
+transform = Transform3D(-0.96611905, 0, 0.25809658, 0, 1, 0, -0.25809658, 0, -0.96611905, -12, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_b05g4")
+
+[node name="Cylinder_020" parent="." index="8" unique_id=1125999302]
+transform = Transform3D(0.9626819, 0, 0.2706353, 0, 1, 0, -0.2706353, 0, 0.9626819, -16, -24.857351, -1.0669585e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_37yw3")
+
+[node name="AnimationPlayer" parent="." index="9" unique_id=1314586987]
+autoplay = &"combined_animation"

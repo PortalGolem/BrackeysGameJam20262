@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dibdw1mogwt31"]
+
+[ext_resource type="PackedScene" uid="uid://bkikxts4plu3c" path="res://Assets/Models/Main Menu/Camera_Shake.fbx" id="1_qiidf"]
+
+[node name="Camera_Shake" unique_id=1740387477 instance=ExtResource("1_qiidf")]
+
+[node name="Camera_004" parent="." index="0" unique_id=872658695]
+transform = Transform3D(-100, -1.6291737e-05, 4.3711393e-06, -2.0090705e-05, 123.31587, -0.009334752, -4.3699056e-06, -0.00756979, -100, 0.0011456639, -0.0074374336, -45.662655)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=225945728]
+autoplay = &"Action_003_merged"

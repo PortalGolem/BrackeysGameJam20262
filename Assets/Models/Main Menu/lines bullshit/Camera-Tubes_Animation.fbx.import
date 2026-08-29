@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dpq3ty8bprokq"
-path="res://.godot/imported/Main_Menu.fbx-2664fb40fa70ddfa2fbf1232bd87d826.scn"
+uid="uid://db1q22ywx2xoc"
+path="res://.godot/imported/Camera-Tubes_Animation.fbx-913eb5f3fce60e73663bbe4cc6182115.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Main Menu/Main_Menu.fbx"
-dest_files=["res://.godot/imported/Main_Menu.fbx-2664fb40fa70ddfa2fbf1232bd87d826.scn"]
+source_file="res://Assets/Models/Main Menu/lines bullshit/Camera-Tubes_Animation.fbx"
+dest_files=["res://.godot/imported/Camera-Tubes_Animation.fbx-913eb5f3fce60e73663bbe4cc6182115.scn"]
 
 [params]
 
