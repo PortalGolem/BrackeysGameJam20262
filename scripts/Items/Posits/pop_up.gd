@@ -44,18 +44,16 @@ func _ready() -> void:
 	
 #mothman custom notes
 	if postit_sprite != "":
-		if postit_sprite == "cat":
-			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_cat.png")
-		if postit_sprite == "dino":
-			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_dino.png")
+		if postit_sprite == "stain":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_stain.png")
+		if postit_sprite == "bitten":
+			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_bitten.png")
 		if postit_sprite == "guy":
 			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_guy.png")
 		if postit_sprite == "paws":
 			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_paws.png")
 		if postit_sprite == "todo":
 			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_todo.png")
-		if postit_sprite == "turtle":
-			$Control/ColorRect/TextureRect.texture = preload("res://Assets/UIAssets/PostIts/postit_turtle.png")
 	position_original = $Control.position
 	$Control.position.y = $Control.position.y - position_offset
 	global.sound_play($AudioStreamPlayer, page_sound.pick_random(), 1)

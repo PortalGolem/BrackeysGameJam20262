@@ -41,23 +41,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "NO IDEAS"
 
-[node name="TEXT" type="CenterContainer" parent="MainMenu" unique_id=611039226]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 320.0
-offset_right = 222.0
-offset_bottom = 512.0005
-
-[node name="written text" type="Label" parent="MainMenu/TEXT" unique_id=1666516053]
-layout_mode = 2
-theme_override_font_sizes/font_size = 26
-text = "Game start
-
-Settings
-
-Quit"
-horizontal_alignment = 1
-
 [node name="Selection1" type="Label" parent="MainMenu" unique_id=1484498285]
 layout_mode = 0
 offset_left = 70.0
@@ -85,7 +68,43 @@ offset_bottom = 426.0
 scale = Vector2(1.5, 1.5)
 offset_transform_enabled = true
 
+[node name="Buttons" type="Control" parent="MainMenu" unique_id=953420479]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Button" parent="MainMenu/Buttons" unique_id=1574184793]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 394.0
+offset_right = 208.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 26
+text = "Settings"
+alignment = 0
+
+[node name="Button3" type="Button" parent="MainMenu/Buttons" unique_id=17893489]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 472.0
+offset_right = 190.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+alignment = 0
+
+[node name="Button1" type="Button" parent="MainMenu/Buttons" unique_id=1101554862]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 316.0
+offset_right = 230.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 26
+text = "Game Start"
+alignment = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1452066851]
 max_polyphony = 20
 
 [node name="SettingsMenu" parent="." unique_id=1236389570 instance=ExtResource("2_b42ut")]
+visible = false

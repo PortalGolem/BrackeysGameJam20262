@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsjdukxy0k03e"
-path="res://.godot/imported/postit_dino.png-124910ab6e300ecca25d8224a864dc17.ctex"
+uid="uid://dp5h60ks1ul0v"
+path="res://.godot/imported/postit_stain.png-122b3728e79652cf74bbbb0786ada4c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UIAssets/PostIts/postit_dino.png"
-dest_files=["res://.godot/imported/postit_dino.png-124910ab6e300ecca25d8224a864dc17.ctex"]
+source_file="res://Assets/UIAssets/PostIts/postit_stain.png"
+dest_files=["res://.godot/imported/postit_stain.png-122b3728e79652cf74bbbb0786ada4c9.ctex"]
 
 [params]
 

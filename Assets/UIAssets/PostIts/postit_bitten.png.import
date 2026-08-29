@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs3aj5d5pelom"
-path="res://.godot/imported/postit_turtle.png-5757779bd78123905b8424ef28f25f98.ctex"
+uid="uid://crguas4b0gvwq"
+path="res://.godot/imported/postit_bitten.png-ecee134421d912cfe87b10ad015efdb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UIAssets/PostIts/postit_turtle.png"
-dest_files=["res://.godot/imported/postit_turtle.png-5757779bd78123905b8424ef28f25f98.ctex"]
+source_file="res://Assets/UIAssets/PostIts/postit_bitten.png"
+dest_files=["res://.godot/imported/postit_bitten.png-ecee134421d912cfe87b10ad015efdb9.ctex"]
 
 [params]
 

@@ -32,6 +32,10 @@ func _physics_process(delta: float) -> void:
 		if annoying_check > 0:
 			if Input.is_action_just_pressed("ui_confirm") == true:
 				confirmed = !confirmed
+			if Input.is_action_just_released("m_left"):
+				confirmed = false
+			if Input.is_action_just_pressed("m_left"):
+				confirmed = true
 		else:
 			annoying_check += 1
 	#keep track of what we have selected
@@ -44,34 +48,39 @@ func _physics_process(delta: float) -> void:
 				selection = 6
 			if selection < 1:
 				selection = 1
+			set_selection_mouse()
+		
 	#play sounds effects
 			if selection_past != selection:
 				selection_past = selection
 				global.sound_play($AudioStreamPlayer, global.gen_random_choice(move_sfx), 1)
 		set_selection()
+		global.Master_Volume = $MasterSlider.value
+		global.Music_Volume = $MusicSlider.value
+		global.Sound_Volume = $SFXSlider.value
 		
 		if confirmed == true:
 			if selection == 1:
 				if font == "res://Assets/UIAssets/PlayfairDisplay-VariableFont_wght.ttf":
 					font = "res://Assets/UIAssets/Zeyada-Regular.ttf"
-					$"Text+Selection/CenterContainer/written text/FontOption".text = "Cursive"
+					$Buttons/Button1.text = "Font: Cursive"
 				else:
 					font = "res://Assets/UIAssets/PlayfairDisplay-VariableFont_wght.ttf"
-					$"Text+Selection/CenterContainer/written text/FontOption".text = "Roman"
+					$Buttons/Button1.text = "Font: Roman"
 				confirmed = false
 			if selection == 2:
 				slider_move($MasterSlider, 0.75)
-				global.Master_Volume = $MasterSlider.value
+
 				if slider_sound():
 					global.sound_play($AudioStreamPlayer, move_sfx[3])
 			if selection == 3:
 				slider_move($MusicSlider, 0.75)
-				global.Music_Volume = $MusicSlider.value
+				
 				if slider_sound():
 					global.music_play($AudioStreamPlayer, move_sfx[3])
 			if selection == 4:
 				slider_move($SFXSlider, 0.75)
-				global.Sound_Volume = $SFXSlider.value
+				
 				if slider_sound():
 					global.sound_play($AudioStreamPlayer, move_sfx[3])
 			if selection == 5:
@@ -115,3 +124,16 @@ func slider_sound():
 		sound_timer = 0
 		return true
 	
+func set_selection_mouse():
+	if $Buttons/Button1.is_hovered():
+		selection = 1
+	if $Buttons/Button2.is_hovered():
+		selection = 2
+	if $Buttons/Button3.is_hovered():
+		selection = 3
+	if $Buttons/Button4.is_hovered():
+		selection = 4
+	if $Buttons/Button5.is_hovered():
+		selection = 5
+	if $Buttons/Button6.is_hovered():
+		selection = 6
