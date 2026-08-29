@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ciust056ejqx3"]
 
-[ext_resource type="PackedScene" uid="uid://bsgh23ytq03nw" path="res://Assets/Collection  Bin/CollectionBin.fbx" id="1_3nyrv"]
-[ext_resource type="Texture2D" uid="uid://dy3dv5tcg7ul8" path="res://Assets/Collection  Bin/Bin_Color.png" id="2_n0hg0"]
-[ext_resource type="Texture2D" uid="uid://fl05yput1880" path="res://Assets/Collection  Bin/Bin_Metallic.png" id="3_y0iro"]
-[ext_resource type="Texture2D" uid="uid://m07wvdpriglh" path="res://Assets/Collection  Bin/Bin_Normal.png" id="4_shptt"]
-[ext_resource type="Texture2D" uid="uid://c5as3aye5g1yb" path="res://Assets/Collection  Bin/Bin_Roughness.png" id="5_d8s1k"]
+[ext_resource type="PackedScene" uid="uid://bsgh23ytq03nw" path="res://Assets/Models/Collection  Bin/CollectionBin.fbx" id="1_3nyrv"]
+[ext_resource type="Texture2D" uid="uid://dy3dv5tcg7ul8" path="res://Assets/Models/Collection  Bin/Bin_Color.png" id="2_n0hg0"]
+[ext_resource type="Texture2D" uid="uid://fl05yput1880" path="res://Assets/Models/Collection  Bin/Bin_Metallic.png" id="3_y0iro"]
+[ext_resource type="Texture2D" uid="uid://m07wvdpriglh" path="res://Assets/Models/Collection  Bin/Bin_Normal.png" id="4_shptt"]
+[ext_resource type="Texture2D" uid="uid://c5as3aye5g1yb" path="res://Assets/Models/Collection  Bin/Bin_Roughness.png" id="5_d8s1k"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nyrv"]
 albedo_texture = ExtResource("2_n0hg0")

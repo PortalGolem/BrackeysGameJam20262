@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d16ywi8c1fsr7"]
 
-[ext_resource type="PackedScene" uid="uid://dcbupsnijl5k4" path="res://Assets/CRT/CRT.fbx" id="1_be47u"]
-[ext_resource type="Texture2D" uid="uid://gd8hpigfvltu" path="res://Assets/CRT/CRT_Color.png" id="2_iyoyr"]
-[ext_resource type="Texture2D" uid="uid://dkwbp7wncthes" path="res://Assets/CRT/CRT_Roughness.png" id="3_23rel"]
+[ext_resource type="PackedScene" uid="uid://dcbupsnijl5k4" path="res://Assets/Models/CRT/CRT.fbx" id="1_be47u"]
+[ext_resource type="Texture2D" uid="uid://gd8hpigfvltu" path="res://Assets/Models/CRT/CRT_Color.png" id="2_iyoyr"]
+[ext_resource type="Texture2D" uid="uid://dkwbp7wncthes" path="res://Assets/Models/CRT/CRT_Roughness.png" id="3_23rel"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kxqm"]
 albedo_texture = ExtResource("2_iyoyr")

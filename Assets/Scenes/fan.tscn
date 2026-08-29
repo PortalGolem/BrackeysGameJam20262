@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://i8uxbfh72x5c"]
 
-[ext_resource type="PackedScene" uid="uid://cmsjalrngt7hg" path="res://Assets/Fan/Fan.fbx" id="1_sxj65"]
-[ext_resource type="Texture2D" uid="uid://uij51boaqokx" path="res://Assets/Fan/Fan_Color.png" id="2_ub2ck"]
-[ext_resource type="Texture2D" uid="uid://c7t2yp8gs6rvc" path="res://Assets/Fan/Fan_Metallic.png" id="3_f6rxn"]
-[ext_resource type="Texture2D" uid="uid://b606g4iyytp1r" path="res://Assets/Fan/Fan_Roughness.png" id="4_lpc4o"]
+[ext_resource type="PackedScene" uid="uid://cmsjalrngt7hg" path="res://Assets/Models/Fan/Fan.fbx" id="1_sxj65"]
+[ext_resource type="Texture2D" uid="uid://uij51boaqokx" path="res://Assets/Models/Fan/Fan_Color.png" id="2_ub2ck"]
+[ext_resource type="Texture2D" uid="uid://c7t2yp8gs6rvc" path="res://Assets/Models/Fan/Fan_Metallic.png" id="3_f6rxn"]
+[ext_resource type="Texture2D" uid="uid://b606g4iyytp1r" path="res://Assets/Models/Fan/Fan_Roughness.png" id="4_lpc4o"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ofwq"]
 albedo_texture = ExtResource("2_ub2ck")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dabyex1hx43jc"]
+
+[ext_resource type="PackedScene" uid="uid://hvu7cvist40j" path="res://Assets/Models/Pipes/Pipe 10/Pipe10.fbx" id="1_bfxgt"]
+[ext_resource type="Texture2D" uid="uid://dodtv1rsxgwgp" path="res://Assets/Models/Pipes/Pipe 10/Pipe10_Color.png" id="2_q0lst"]
+[ext_resource type="Texture2D" uid="uid://mquqyxaqh74c" path="res://Assets/Models/Pipes/Pipe 1/Pipe_Normal.png" id="3_88cqk"]
+[ext_resource type="Texture2D" uid="uid://bmi7cor84ywfj" path="res://Assets/Models/Pipes/Pipe 10/Pipe10_Roughness.png" id="4_mppl3"]
+
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqtsf"]
+albedo_texture = ExtResource("2_q0lst")
+metallic = 1.0
+roughness_texture = ExtResource("4_mppl3")
+normal_enabled = true
+normal_scale = 2.25
+normal_texture = ExtResource("3_88cqk")
+
+[node name="Pipe10" unique_id=1781539512 instance=ExtResource("1_bfxgt")]
+
+[node name="Pipe10" parent="." index="0" unique_id=20061061]
+surface_material_override/0 = SubResource("StandardMaterial3D_rqtsf")

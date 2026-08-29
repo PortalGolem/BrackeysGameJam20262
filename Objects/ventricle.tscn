@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://xor8rocu8tbd"]
 
-[ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/ventricle.gd" id="1_fp6l2"]
+[ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/Items/Dropable/ventricle.gd" id="1_fp6l2"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_gp21u"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
 size = Vector3(0.96673584, 1.081543, 1)

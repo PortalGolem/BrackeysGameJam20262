@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://47tscetidhjs"]
 
-[ext_resource type="PackedScene" uid="uid://d3k5bir7gwwyv" path="res://Assets/Eletrical Lines/ElectricalLines.fbx" id="1_twqyy"]
-[ext_resource type="Texture2D" uid="uid://bci7v0l3xi4id" path="res://Assets/Eletrical Lines/ElectricalLines_Color.png" id="2_vlcf5"]
-[ext_resource type="Texture2D" uid="uid://dnj2uneqsfn4t" path="res://Assets/Eletrical Lines/ElectricalLines_Roughness.png" id="3_rbu0i"]
+[ext_resource type="PackedScene" uid="uid://d3k5bir7gwwyv" path="res://Assets/Models/Eletrical Lines/ElectricalLines.fbx" id="1_twqyy"]
+[ext_resource type="Texture2D" uid="uid://bci7v0l3xi4id" path="res://Assets/Models/Eletrical Lines/ElectricalLines_Color.png" id="2_vlcf5"]
+[ext_resource type="Texture2D" uid="uid://dnj2uneqsfn4t" path="res://Assets/Models/Eletrical Lines/ElectricalLines_Roughness.png" id="3_rbu0i"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twqyy"]
 albedo_texture = ExtResource("2_vlcf5")

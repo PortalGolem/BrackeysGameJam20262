@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cjd7cide3olap"]
+
+[ext_resource type="Script" uid="uid://cxbccbrouyic2" path="res://scripts/UI/SettingsButtons.gd" id="1_svoao"]
+
+
+[sub_resource type="Theme" id="Theme_svoao"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=152460156]
+
+[node name="Control" type="Control" parent="." unique_id=1236389570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_svoao")
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=352294395]
+layout_mode = 0
+offset_left = -68.0
+offset_top = -85.0
+offset_right = 1364.0
+offset_bottom = 716.515
+offset_transform_enabled = true
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+metadata/_edit_group_ = true
+
+[node name="MusicSlider" type="HSlider" parent="Control" unique_id=1486756753]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 283.0
+offset_right = 945.0
+offset_bottom = 299.0
+max_value = 2.0
+step = 0.01
+value = 1.0
+scrollable = false
+
+[node name="SFXSlider" type="HSlider" parent="Control" unique_id=1722525993]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 355.0
+offset_right = 947.0
+offset_bottom = 371.0
+max_value = 2.0
+step = 0.01
+value = 1.0
+scrollable = false
+
+[node name="Text+Selection" type="Control" parent="Control" unique_id=1098832219]
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -32.0
+offset_right = -20.0
+offset_bottom = 8.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Text+Selection" unique_id=424662080]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 31.0
+offset_right = 639.0
+offset_bottom = 679.0
+metadata/_edit_group_ = true
+
+[node name="written text" type="Label" parent="Control/Text+Selection/CenterContainer" unique_id=1651934213]
+layout_mode = 2
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 26
+text = "Font:
+
+Master Volume:
+
+Music Volume:
+
+SFX Volume:
+
+Meow Button ≽^•⩊•^≼
+
+Back To Main Menu"
+
+[node name="selection" type="Label" parent="Control/Text+Selection" unique_id=1104011123]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 174.0
+offset_right = 576.0
+offset_bottom = 474.0
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 26
+text = ">
+
+>
+
+>
+
+>
+
+>
+
+>"
+
+[node name="MasterSlider" type="HSlider" parent="Control" unique_id=1099029713]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 219.0
+offset_right = 947.0
+offset_bottom = 235.0
+theme = SubResource("Theme_svoao")
+max_value = 2.0
+step = 0.01
+value = 1.0
+scrollable = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=172654886]

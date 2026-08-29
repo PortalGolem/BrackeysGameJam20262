@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://xcf0phapjaca"]
 
-[ext_resource type="PackedScene" uid="uid://drutid6jgtviy" path="res://Assets/Canister/Canister W_Lid/Canister_Lid.fbx" id="1_pn8lp"]
-[ext_resource type="Texture2D" uid="uid://cemhl7ts125sh" path="res://Assets/Canister/Canister W_Lid/Canister_Lid_Color.png" id="2_r74ai"]
-[ext_resource type="Texture2D" uid="uid://do41g4gvjeyup" path="res://Assets/Canister/Canister W_Lid/Canister_Lid_Normal.png" id="3_4sc32"]
-[ext_resource type="Texture2D" uid="uid://daeprex18wwd7" path="res://Assets/Canister/Canister W_Lid/Canister_Lid_Roughness.png" id="4_q76k3"]
+[ext_resource type="PackedScene" uid="uid://drutid6jgtviy" path="res://Assets/Models/Canister/Canister W_Lid/Canister_Lid.fbx" id="1_pn8lp"]
+[ext_resource type="Texture2D" uid="uid://cemhl7ts125sh" path="res://Assets/Models/Canister/Canister W_Lid/Canister_Lid_Color.png" id="2_r74ai"]
+[ext_resource type="Texture2D" uid="uid://do41g4gvjeyup" path="res://Assets/Models/Canister/Canister W_Lid/Canister_Lid_Normal.png" id="3_4sc32"]
+[ext_resource type="Texture2D" uid="uid://daeprex18wwd7" path="res://Assets/Models/Canister/Canister W_Lid/Canister_Lid_Roughness.png" id="4_q76k3"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7610r"]
 albedo_texture = ExtResource("2_r74ai")

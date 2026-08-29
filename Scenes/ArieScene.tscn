@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://by87c0jkdljb0"]
 
-[ext_resource type="PackedScene" uid="uid://g8c58jrtx0i3" path="res://Assets/test obj/Canister.fbx" id="1_eeyem"]
+[ext_resource type="PackedScene" uid="uid://g8c58jrtx0i3" path="res://Assets/Models/test obj/Canister.fbx" id="1_eeyem"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gruq"]
 

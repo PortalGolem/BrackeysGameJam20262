@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bjnif56ntbegr"]
 
-[ext_resource type="Script" uid="uid://h568dl6gqtss" path="res://scripts/cylender_contents.gd" id="1_cgexk"]
+[ext_resource type="Script" uid="uid://h568dl6gqtss" path="res://scripts/Items/Dropable/Cylender/cylender_contents.gd" id="1_cgexk"]
 [ext_resource type="PackedScene" uid="uid://o7yitixrj7ix" path="res://Objects/item.tscn" id="2_u2wl8"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="3_u2wl8"]
+
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lxaw6"]
 top_radius = 0.296875

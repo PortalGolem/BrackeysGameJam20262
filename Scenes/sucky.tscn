@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bhmj610oj3mj3"]
-
-[ext_resource type="Script" uid="uid://dc23sbomm8370" path="res://Scenes/sucky.gd" id="1_x4fa1"]
-
-[node name="Sucky" type="Node3D" unique_id=547732414]
-script = ExtResource("1_x4fa1")

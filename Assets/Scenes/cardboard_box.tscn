@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dd01e0umby24g"]
 
-[ext_resource type="PackedScene" uid="uid://deybjmm63mc0w" path="res://Assets/Cardboard Box/CardboardBox.fbx" id="1_hs4v7"]
-[ext_resource type="Texture2D" uid="uid://bf3ar2f6uh7ej" path="res://Assets/Cardboard Box/Box_Color.png" id="2_2igyc"]
-[ext_resource type="Texture2D" uid="uid://mu0ycllbt55v" path="res://Assets/Cardboard Box/Box_Roughness.png" id="3_2igyc"]
+[ext_resource type="PackedScene" uid="uid://deybjmm63mc0w" path="res://Assets/Models/Cardboard Box/CardboardBox.fbx" id="1_hs4v7"]
+[ext_resource type="Texture2D" uid="uid://bf3ar2f6uh7ej" path="res://Assets/Models/Cardboard Box/Box_Color.png" id="2_2igyc"]
+[ext_resource type="Texture2D" uid="uid://mu0ycllbt55v" path="res://Assets/Models/Cardboard Box/Box_Roughness.png" id="3_2igyc"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp2sd"]
 albedo_texture = ExtResource("2_2igyc")

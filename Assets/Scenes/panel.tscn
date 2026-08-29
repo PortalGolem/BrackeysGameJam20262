@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://kxt3d2b233wc"]
+
+[ext_resource type="PackedScene" uid="uid://b4gfb82o33hde" path="res://Assets/Models/Canister/Electrical Box/Panel/Panel.fbx" id="1_bhlvv"]
+[ext_resource type="Texture2D" uid="uid://dxcldrnlmvhl4" path="res://Assets/Models/Canister/Electrical Box/Panel/Panel.png" id="2_acnei"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esvih"]
+albedo_texture = ExtResource("2_acnei")
+
+[node name="Panel" unique_id=92283485 instance=ExtResource("1_bhlvv")]
+
+[node name="vintage-instrument-panel" parent="." index="0" unique_id=506095672]
+surface_material_override/0 = SubResource("StandardMaterial3D_esvih")

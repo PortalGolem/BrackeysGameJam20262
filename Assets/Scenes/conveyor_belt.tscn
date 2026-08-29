@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c3mrunir6auus"]
 
-[ext_resource type="PackedScene" uid="uid://ch764kttb4438" path="res://Assets/Conveyor Belt/ConveyorBelt.fbx" id="1_a4ohy"]
-[ext_resource type="Texture2D" uid="uid://dp2lyd5paxlfc" path="res://Assets/Conveyor Belt/ConveyorBelt_Color.png" id="2_0ig0k"]
-[ext_resource type="Texture2D" uid="uid://couo044r7c7nl" path="res://Assets/Conveyor Belt/ConveyorBelt_Roughness.png" id="3_dlway"]
+[ext_resource type="PackedScene" uid="uid://ch764kttb4438" path="res://Assets/Models/Conveyor Belt/ConveyorBelt.fbx" id="1_a4ohy"]
+[ext_resource type="Texture2D" uid="uid://dp2lyd5paxlfc" path="res://Assets/Models/Conveyor Belt/ConveyorBelt_Color.png" id="2_0ig0k"]
+[ext_resource type="Texture2D" uid="uid://couo044r7c7nl" path="res://Assets/Models/Conveyor Belt/ConveyorBelt_Roughness.png" id="3_dlway"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4k1w"]
 albedo_texture = ExtResource("2_0ig0k")

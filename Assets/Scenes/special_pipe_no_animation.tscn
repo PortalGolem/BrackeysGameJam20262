@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://gmysen4q4y2w"]
 
-[ext_resource type="PackedScene" uid="uid://cgdv1paiut2mi" path="res://Assets/Special Pipe/Special Pipe Animations/SpecialPipe_No_Animation.fbx" id="1_t4pbw"]
-[ext_resource type="Texture2D" uid="uid://baa0hs1etqqew" path="res://Assets/Special Pipe/Special_Pipe_Color.png" id="2_k1xc5"]
-[ext_resource type="Texture2D" uid="uid://37dqglij1k2" path="res://Assets/Special Pipe/Special_Pipe_Metallic.png" id="3_8eysu"]
-[ext_resource type="Texture2D" uid="uid://dqhqiphkd6nuj" path="res://Assets/Special Pipe/Special_Pipe_Roughness.png" id="4_ma3md"]
+[ext_resource type="PackedScene" uid="uid://cgdv1paiut2mi" path="res://Assets/Models/Special Pipe/Special Pipe Animations/SpecialPipe_No_Animation.fbx" id="1_t4pbw"]
+[ext_resource type="Texture2D" uid="uid://baa0hs1etqqew" path="res://Assets/Models/Special Pipe/Special_Pipe_Color.png" id="2_k1xc5"]
+[ext_resource type="Texture2D" uid="uid://37dqglij1k2" path="res://Assets/Models/Special Pipe/Special_Pipe_Metallic.png" id="3_8eysu"]
+[ext_resource type="Texture2D" uid="uid://dqhqiphkd6nuj" path="res://Assets/Models/Special Pipe/Special_Pipe_Roughness.png" id="4_ma3md"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p0sp"]
 albedo_texture = ExtResource("2_k1xc5")
