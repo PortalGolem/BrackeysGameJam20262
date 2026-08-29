@@ -31,9 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_37okk"]
-size = Vector3(9.214111, 0.34521484, 4.4733887)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
 
 [sub_resource type="Sky" id="Sky_ila21"]
@@ -61,13 +58,6 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_0kq5l")
 
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
-
-[node name="Table" type="Node3D" parent="." unique_id=1377402160]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=1324002984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0055185556, -0.03144008, 0.016375065)
-visible = false
-mesh = SubResource("BoxMesh_37okk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
 environment = SubResource("Environment_37okk")
@@ -262,21 +252,11 @@ transparent_bg = true
 
 [node name="AccuracyMeter" parent="SubViewport" unique_id=1817966563 instance=ExtResource("30_dyeg5")]
 
-[node name="SubViewport_Control#CenterContainer" type="CenterContainer" parent="." unique_id=1799107017]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport_Control_CenterContainer#ColorRect" type="ColorRect" parent="." unique_id=994402417]
-custom_minimum_size = Vector2(200, 200)
-color = Color(0.31873888, 0.6543046, 0.5801795, 1)
-
 [node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
 transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
 
-[node name="AccuracyMeter" parent="." unique_id=2010723835 instance=ExtResource("30_dyeg5")]
+[node name="MeasuringStick" type="Node3D" parent="." unique_id=1163212658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.804122, 1.7207493, 2.0296788)
 
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer2" to="SystemManager/CylenderSpawner" method="_on_timer_2_timeout"]

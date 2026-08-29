@@ -18,6 +18,9 @@ var positionFlat:Vector2
 @export var boundsBottomRight:Vector2
 @export var backboardHeight:float
 @export var backboardTilt:float
+@export var boundsLeftExtention:float
+@export var boundsRightExtention:float
+@export var grabbedOffset:float
 var trueYpos:float
 var isFirstGrab := true
 var actualAngleAdjustment
@@ -29,27 +32,36 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseMotion:
 		var camera = get_viewport().get_camera_3d()
-		var newPosition:Vector3 = find_point_on_plane_with_ray(tablePlane, camera.project_ray_origin(event.position), camera.project_ray_normal(event.position))
-		var otherNewPosition:Vector3 = find_point_on_plane_with_ray(Plane(Vector3(boundsBottomRight.x, tablePlane.d, boundsBottomRight.y),
+		var newPositionGoal = tablePlane.intersects_ray( camera.project_ray_origin(event.position), camera.project_ray_normal(event.position))
+		var newPosition:Vector3
+		if newPositionGoal != null:
+			newPosition = newPositionGoal
+		else:
+			newPosition = Vector3.INF
+		var otherNewPositionGoal = Plane(Vector3(boundsBottomRight.x, tablePlane.d, boundsBottomRight.y),
 				Vector3(-boundsBottomRight.x, tablePlane.d, boundsBottomRight.y),
-				Vector3(boundsBottomRight.x, tablePlane.d - 1, boundsBottomRight.y - actualAngleAdjustment)),
+				Vector3(boundsBottomRight.x, tablePlane.d - 1, boundsBottomRight.y - actualAngleAdjustment)).intersects_ray(
 				camera.project_ray_origin(event.position), camera.project_ray_normal(event.position))
+		var otherNewPosition:Vector3
+		if otherNewPositionGoal != null:
+			otherNewPosition = otherNewPositionGoal
+		else:
+			otherNewPosition = Vector3.INF
+		
+		if (newPosition == Vector3.INF and otherNewPosition == Vector3.INF):
+			return
+		
 		if newPosition.distance_to(camera.position) < otherNewPosition.distance_to(camera.position):
 			var delta:Vector3
-			if not usedBackboard:
-				delta = newPosition - lastMousePosition
-			else:
-				delta = Vector3(newPosition.x - lastMousePosition.x, 0, lastMousePosition.z)
+			delta = newPosition - lastMousePosition
 			lastMousePosition = Vector3(newPosition.x, 0, newPosition.z)
 			movementInput += Vector2(delta.x, delta.z)
 			usedBackboard = false
 		else:
 			otherNewPosition = Vector3(otherNewPosition.x, 0, -otherNewPosition.y)
 			var delta:Vector3
-			if not usedBackboard:
-				delta = otherNewPosition - Vector3(lastMousePosition.x, 0, -lastMousePosition.y)
-			else:
-				delta = otherNewPosition - lastMousePosition
+
+			delta = otherNewPosition - lastMousePosition
 			lastMousePosition = Vector3(otherNewPosition.x, 0, otherNewPosition.z)
 			movementInput += Vector2(delta.x, delta.z)
 			usedBackboard = true
@@ -74,13 +86,14 @@ func _physics_process(delta: float) -> void:
 		inspectObject.emit()
 	if grabbed:
 		positionFlat += movementInput
-		positionFlat = Vector2(positionFlat.x,clamp(positionFlat.y, boundsBottomRight.y - backboardHeight, boundsTopLeft.y))
-		global_position.x = clamp(positionFlat.x, boundsTopLeft.x, boundsBottomRight.x)
-		global_position.z = max(positionFlat.y, boundsBottomRight.y)
+		var tempPositionFlat = Vector2(clamp(positionFlat.x, boundsTopLeft.x - boundsLeftExtention, boundsBottomRight.x + boundsRightExtention) ,clamp(positionFlat.y, boundsBottomRight.y - backboardHeight, boundsTopLeft.y))
+		global_position.x = tempPositionFlat.x
+		global_position.z = max(tempPositionFlat.y, boundsBottomRight.y)
 		global_position.y = trueYpos
 		if (positionFlat.y < boundsBottomRight.y):
-			global_position.y -= positionFlat.y - boundsBottomRight.y
-			global_position.z -= (positionFlat.y - boundsBottomRight.y) * actualAngleAdjustment
+			global_position.y -= tempPositionFlat.y - boundsBottomRight.y
+			global_position.z -= (tempPositionFlat.y - boundsBottomRight.y) * actualAngleAdjustment
+		global_position.y += grabbedOffset
 		distanceMovedThusFar += movementInput.length()
 		if Input.is_action_just_released("m_left"):
 			dropItem()
@@ -90,6 +103,7 @@ func _physics_process(delta: float) -> void:
 func dropItem():
 	grabbed = false
 	global_position.y = trueYpos
+	global_position.x = clamp(positionFlat.x, boundsTopLeft.x, boundsBottomRight.x)
 	positionFlat = Vector2(global_position.x, global_position.z)
 	if distanceMovedThusFar > minimumMoveDistance:
 		dropObject.emit(self)
@@ -101,12 +115,3 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	itemTouched = false
-
-func find_point_on_plane_with_ray(plane:Plane, rayOrigin, rayDirection):
-	var planeOrigin = plane.normal * plane.d
-	var denom = plane.normal.dot(rayDirection)
-	if denom != 0:
-		var Hd = (planeOrigin - rayOrigin).dot(plane.normal) / denom
-		return Hd * rayDirection + rayOrigin
-	else:
-		return 0
