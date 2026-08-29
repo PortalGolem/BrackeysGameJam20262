@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://cvlrfj50brt4"]
 
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
-[ext_resource type="PackedScene" uid="uid://bjnif56ntbegr" path="res://Objects/cylender.tscn" id="4_6wss6"]
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://scripts/Items/Dropable/Cylender/cylender_spawner.gd" id="4_ywnsu"]
-[ext_resource type="PackedScene" uid="uid://bw1uhv0rxubna" path="res://Objects/note.tscn" id="5_6wss6"]
 [ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://scripts/Managers/system_manager.gd" id="6_lxaw6"]
 [ext_resource type="PackedScene" uid="uid://xor8rocu8tbd" path="res://Objects/ventricle.tscn" id="6_y0l3c"]
 [ext_resource type="Script" uid="uid://dd56p8bdnkf11" path="res://scripts/CameraWiggle.gd" id="7_oov56"]
@@ -18,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Scenes/Pipes/pipe_9.tscn" id="15_qju35"]
 [ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Scenes/Pipes/pipe_10.tscn" id="16_c8qf1"]
 [ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Scenes/Pipes/pipe_11.tscn" id="17_uxhga"]
-[ext_resource type="PackedScene" uid="uid://dd01e0umby24g" path="res://Assets/Scenes/cardboard_box.tscn" id="19_yyvi6"]
 [ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://Assets/Scenes/collection_bin.tscn" id="20_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://Assets/Scenes/conveyor_belt.tscn" id="21_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://Assets/Scenes/crt.tscn" id="22_v1xsh"]
@@ -29,7 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="26_cu2dh"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
 [ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://cae2q0wj37xsx" path="res://Objects/MovingCylender.tscn" id="29_dyeg5"]
+[ext_resource type="Script" uid="uid://ckggr1mdl56uu" path="res://scripts/pathToSpawnerConnector.gd" id="29_v1xsh"]
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
 
@@ -46,9 +46,6 @@ ambient_light_energy = 3.78
 
 [sub_resource type="Compositor" id="Compositor_2gruq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fo3dt"]
-size = Vector3(0.7817383, 1, 2.770111)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kq5l"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("23_cd4vf")
@@ -57,6 +54,17 @@ albedo_texture = ExtResource("23_cd4vf")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_0kq5l")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fo3dt"]
+size = Vector3(1.4352417, 2.8061523, 1.6264153)
+
+[sub_resource type="Curve3D" id="Curve3D_yyvi6"]
+bake_interval = 6.76
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.9439845, 2.213457, 18.519457, 0, 0, 0, 0, 0, 0, -7.208261, 2.3552966, 19.606628, 0, 0, 0, 0, 0, 0, -6.001621, 2.819058, 22.426022, 0, 0, 0, 0, 0, 0, -5.3087296, 2.7947516, 23.201023, 0, 0, 0, 0, 0, 0, -2.2799745, 2.6897092, 23.343437, 0, 0, 0, 0, 0, 0, -0.9769311, 2.4177458, 23.34258, 0, 0, 0, 0, 0, 0, -0.8123431, 0.2393573, 23.48526),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
 [node name="TableSpace" type="Node3D" unique_id=1361018379]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
@@ -64,27 +72,15 @@ environment = SubResource("Environment_37okk")
 camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
 compositor = SubResource("Compositor_2gruq")
 
-[node name="Cylender" parent="." unique_id=867891222 node_paths=PackedStringArray("contents") instance=ExtResource("4_6wss6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5515449, 1.9334394, 0.05611849)
-contents = NodePath("CylenderContents/Note")
-
-[node name="CylenderContents" type="Node" parent="Cylender" unique_id=77979233]
-
-[node name="Note" parent="Cylender/CylenderContents" unique_id=387744038 instance=ExtResource("5_6wss6")]
-process_mode = 4
-visible = false
-text = "Hello There!"
-
 [node name="SystemManager" type="Node" parent="." unique_id=1602999480]
 script = ExtResource("6_lxaw6")
 
 [node name="CylenderSpawner" type="Node3D" parent="SystemManager" unique_id=969594893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4154973, 2.094718, 0.53872323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.249941, 1.8908757, 1.1865151)
 script = ExtResource("4_ywnsu")
 
 [node name="Timer" type="Timer" parent="SystemManager/CylenderSpawner" unique_id=1855129281]
 wait_time = 5.0
-autostart = true
 
 [node name="Timer2" type="Timer" parent="SystemManager/CylenderSpawner" unique_id=812902109]
 wait_time = 0.5
@@ -187,16 +183,6 @@ downWiggleFactor = 0.2
 transform = Transform3D(1, 0, 0, 0, 0.5930183, 0.8051891, 0, -0.8051891, 0.5930183, 0, 0, 0)
 fov = 50.0
 
-[node name="TrashCan" parent="." unique_id=16778985 instance=ExtResource("2_hwbjd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.425296, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashCan" unique_id=1768333186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31763172, 0, 0.7795868)
-shape = SubResource("BoxShape3D_fo3dt")
-
-[node name="CardboardBox" parent="." unique_id=16955975 instance=ExtResource("19_yyvi6")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.8260493, 0.35792947, 0.7513087)
-
 [node name="CollectionBin" parent="." unique_id=1244313674 instance=ExtResource("20_cd4vf")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.44103074, -8.315971)
 
@@ -223,12 +209,20 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -11.9918995, -1.7857
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.13556218, 0.38724804, -8.762668)
 
 [node name="TrashCan2" parent="." unique_id=1884958424 instance=ExtResource("27_stcfx")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 10.240734, 0.054823995, 2.080317)
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 6.7594132, 0.054823756, 1.0867425)
+
+[node name="TrashCan" parent="TrashCan2" unique_id=16778985 instance=ExtResource("2_hwbjd")]
+transform = Transform3D(1.3513514, 0, 0, 0, 1.3513514, 0, 0, 0, 1.3513514, -1.8028612, -0.07408616, -1.468571)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashCan2/TrashCan" unique_id=1768333186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3520861, 0.9030762, 1.1039257)
+shape = SubResource("BoxShape3D_fo3dt")
 
 [node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=270792858]
 transform = Transform3D(1, 0, 0, 0, 0.31914014, 0.94770753, 0, -0.94770753, 0.31914014, 0.5854435, 7.3106194, 4.454878)
-light_energy = 8.175
-light_specular = 5.254
+light_energy = 7.759
+light_indirect_energy = 2.06
+light_specular = 1.909
 area_range = 23.59
 area_attenuation = 2.269
 area_size = Vector2(10, 5)
@@ -255,9 +249,21 @@ transparent_bg = true
 [node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
 transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
 
-[node name="MeasuringStick" type="Node3D" parent="." unique_id=1163212658]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.804122, 1.7207493, 2.0296788)
+[node name="Box" parent="." unique_id=1030823981 instance=ExtResource("30_v1xsh")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.4709578, 0.4834038, 0.62449265)
 
+[node name="Path3D" type="Path3D" parent="." unique_id=263996855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.698314, 0, -22.57311)
+curve = SubResource("Curve3D_yyvi6")
+script = ExtResource("29_v1xsh")
+
+[node name="PathFollow3D" parent="Path3D" unique_id=719248638 instance=ExtResource("29_dyeg5")]
+transform = Transform3D(-0.9716864, 0.029706812, 0.234329, 9.31307e-10, 0.9920408, -0.12576643, -0.23620367, -0.12220684, -0.9639744, -6.9439845, 2.213457, 18.519457)
+
+[node name="Timer" type="Timer" parent="Path3D" unique_id=638267457]
+autostart = true
+
+[connection signal="add_note_to_queue" from="SystemManager/CylenderSpawner" to="Path3D" method="_on_cylender_spawner_add_note_to_queue"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer2" to="SystemManager/CylenderSpawner" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]
@@ -271,3 +277,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.804122, 1.7207493, 2.029678
 [connection signal="submitItem" from="Pipes/Pipe9/Ventricle" to="SystemManager" method="_ventricle_return_function"]
 [connection signal="submitItem" from="Pipes/Pipe10/Ventricle" to="SystemManager" method="_ventricle_return_function"]
 [connection signal="submitItem" from="Pipes/Pipe11/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="object_finished" from="Path3D" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]

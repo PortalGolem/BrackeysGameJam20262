@@ -11,12 +11,15 @@ var Note = preload("res://Objects/note.tscn")
 var stashedNotes = [null, null, null, null, null]
 var hiddenStashedNotes := []
 
+signal add_note_to_queue()
+
 #func _ready():
 	#printNote("Hello Frank!", "pink")
 	#printNote("My name if Frankcheska Jeff. stop calling me Frank.", "yellow")
 	#printNote("HAHAHAHAHHAHAHAHA \n\n\n   -Bill From Accounting", "yellow")
 
 func printNote(noteText, noteColor):
+	add_note_to_queue.emit()
 	noteQueue.append({"Text" = noteText, "Color" = noteColor})
 
 

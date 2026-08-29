@@ -2,37 +2,34 @@
 
 [ext_resource type="Script" uid="uid://h568dl6gqtss" path="res://scripts/Items/Dropable/Cylender/cylender_contents.gd" id="1_cgexk"]
 [ext_resource type="PackedScene" uid="uid://o7yitixrj7ix" path="res://Objects/item.tscn" id="2_u2wl8"]
+[ext_resource type="PackedScene" uid="uid://dxm0naksqno0g" path="res://Assets/Scenes/canister.tscn" id="3_h3sdl"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="3_u2wl8"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_lxaw6"]
-top_radius = 0.296875
-bottom_radius = 0.296875
-height = 0.50305176
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_oov56"]
-height = 0.5288086
-radius = 0.10546875
+height = 0.8358154
+radius = 0.18701172
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
-size = Vector3(0.17304993, 0.15185547, 0.5423279)
+size = Vector3(0.27739334, 0.63061523, 0.7229843)
 
 [node name="Cylender" type="Node3D" unique_id=867891222]
 script = ExtResource("1_cgexk")
+notePositionOffset = Vector3(0.5, 0, 0)
 
 [node name="Item" parent="." unique_id=1259799028 instance=ExtResource("2_u2wl8")]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Item" unique_id=2040064337]
-transform = Transform3D(-0.25129807, 0, 0, 0, -4.371139e-08, -0.25129807, 0, -1, 1.09845875e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_lxaw6")
+[node name="Canister" parent="Item" unique_id=1501802207 instance=ExtResource("3_h3sdl")]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0, 0.3366971)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item" unique_id=695129206]
-transform = Transform3D(1, 0, 0, 0, 0, 1.0000001, 0, -1.0000001, 0, 0, -0.006837189, 0.0036621094)
+transform = Transform3D(1, 0, 0, 0, 0, 1.0000001, 0, -1.0000001, 0, 0, -0.006837189, -0.024597168)
 shape = SubResource("CylinderShape3D_oov56")
 
 [node name="Dropable" parent="Item" unique_id=16778985 instance=ExtResource("3_u2wl8")]
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item/Dropable" unique_id=705922073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024662018, 0.23937988, -0.02425003)
 shape = SubResource("BoxShape3D_37okk")
 
 [connection signal="inspectObject" from="Item" to="." method="_on_cylender_inspect_object"]

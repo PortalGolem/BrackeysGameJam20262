@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cae2q0wj37xsx"]
+
+[ext_resource type="Script" uid="uid://dlfhld5c8vgw3" path="res://scripts/moving_cylender.gd" id="1_vjjdd"]
+[ext_resource type="PackedScene" uid="uid://dxm0naksqno0g" path="res://Assets/Scenes/canister.tscn" id="1_w7fu4"]
+
+[node name="PathFollow3D" type="PathFollow3D" unique_id=719248638]
+transform = Transform3D(-0.18520042, 0.018465115, 0.9825209, 9.313147e-10, 0.99981374, -0.018790241, -0.982692, -0.0034799776, -0.18516818, 0, 0, 0)
+loop = false
+script = ExtResource("1_vjjdd")
+speed = 3.0
+
+[node name="Canister" parent="." unique_id=1501802207 instance=ExtResource("1_w7fu4")]
+transform = Transform3D(-8.8475645e-09, -0.19999999, -3.7252903e-09, 0.20000002, -8.789357e-09, -4.3655746e-11, -1.7462298e-10, 0, 0.2, 0.32730484, 0.0011590719, 0.06167364)

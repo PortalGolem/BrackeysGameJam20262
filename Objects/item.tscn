@@ -12,7 +12,7 @@ backboardHeight = 4.0
 backboardTilt = 30.0
 boundsLeftExtention = 2.0
 boundsRightExtention = 2.0
-grabbedOffset = 0.3
+grabbedOffset = 0.2
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
