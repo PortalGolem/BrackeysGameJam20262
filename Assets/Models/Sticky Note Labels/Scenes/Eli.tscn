@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://mo3nsvxjnyd3"]
+
+[ext_resource type="PackedScene" uid="uid://r5w0avdmhlbd" path="res://Assets/Models/Sticky Note Labels/Name_Card.fbx" id="1_6k01h"]
+[ext_resource type="Texture2D" uid="uid://djxarb5klud56" path="res://Assets/Models/Sticky Note Labels/Eli.png" id="2_xy34c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jekgr"]
+albedo_texture = ExtResource("2_xy34c")
+
+[node name="Name_Card" unique_id=2139220031 instance=ExtResource("1_6k01h")]
+
+[node name="Name_Card" parent="." index="0" unique_id=1570344408]
+material_override = SubResource("StandardMaterial3D_jekgr")

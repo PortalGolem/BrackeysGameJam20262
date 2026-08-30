@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://scripts/Items/Dropable/Cylender/cylender_spawner.gd" id="4_ywnsu"]
 [ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://scripts/Managers/system_manager.gd" id="6_lxaw6"]
 [ext_resource type="PackedScene" uid="uid://xor8rocu8tbd" path="res://Objects/ventricle.tscn" id="6_y0l3c"]
+[ext_resource type="PackedScene" uid="uid://bu7vgyatnbxtv" path="res://Assets/Models/Sticky Note Labels/Scenes/Larry.tscn" id="7_j6yrw"]
 [ext_resource type="Script" uid="uid://dd56p8bdnkf11" path="res://scripts/CameraWiggle.gd" id="7_oov56"]
 [ext_resource type="PackedScene" uid="uid://cnj70f1n04rvg" path="res://Assets/Scenes/Pipes/pipe_1.tscn" id="7_y0l3c"]
+[ext_resource type="PackedScene" uid="uid://bpw3nv0tmyyb" path="res://Assets/Models/Sticky Note Labels/Scenes/bob.tscn" id="8_1qtno"]
 [ext_resource type="PackedScene" uid="uid://doc4cjdojabah" path="res://Assets/Scenes/Pipes/pipe_2.tscn" id="8_w7qaw"]
 [ext_resource type="PackedScene" uid="uid://do4dkitpa1kna" path="res://Assets/Scenes/Pipes/pipe_3.tscn" id="9_r1l1s"]
 [ext_resource type="PackedScene" uid="uid://ba3qk4w560c0w" path="res://Assets/Scenes/Pipes/pipe_4.tscn" id="10_rq4wj"]
@@ -15,13 +17,22 @@
 [ext_resource type="PackedScene" uid="uid://cesua7ofbvjhc" path="res://Assets/Scenes/Pipes/pipe_8.tscn" id="14_go7lm"]
 [ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Scenes/Pipes/pipe_9.tscn" id="15_qju35"]
 [ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Scenes/Pipes/pipe_10.tscn" id="16_c8qf1"]
+[ext_resource type="PackedScene" uid="uid://3ggybxurbqsh" path="res://Assets/Models/Sticky Note Labels/Scenes/Meredith.tscn" id="17_1qtno"]
 [ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Scenes/Pipes/pipe_11.tscn" id="17_uxhga"]
+[ext_resource type="PackedScene" uid="uid://bgwe537dw6s7f" path="res://Assets/Models/Sticky Note Labels/Scenes/Nathan.tscn" id="18_5tk1d"]
 [ext_resource type="PackedScene" uid="uid://08if7nw0n80f" path="res://Assets/Scenes/NEWcrt.tscn" id="18_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://ct37uyvajhl4" path="res://Assets/Models/Sticky Note Labels/Scenes/Jim.tscn" id="19_tgbin"]
 [ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://Assets/Scenes/collection_bin.tscn" id="20_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://eijlmji3shbh" path="res://Assets/Models/Sticky Note Labels/Scenes/Frank.tscn" id="20_ir442"]
 [ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://Assets/Scenes/conveyor_belt.tscn" id="21_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://dt5tri808i24p" path="res://Assets/Models/Sticky Note Labels/Scenes/Einstein.tscn" id="21_kigow"]
+[ext_resource type="PackedScene" uid="uid://npvtn100i73b" path="res://Assets/Models/Sticky Note Labels/Scenes/Bertha.tscn" id="22_kf24t"]
 [ext_resource type="Texture2D" uid="uid://bt1mfxsc6eqi3" path="res://Assets/Models/CRT/CRTtv.tres" id="23_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://Assets/Scenes/electrical_box.tscn" id="23_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://jew3gmg6i767" path="res://Assets/Models/Sticky Note Labels/Scenes/Gertrude.tscn" id="23_ko3vp"]
 [ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://Assets/Scenes/electrical_lines.tscn" id="24_12hmx"]
+[ext_resource type="PackedScene" uid="uid://mo3nsvxjnyd3" path="res://Assets/Models/Sticky Note Labels/Scenes/Eli.tscn" id="24_d18gs"]
+[ext_resource type="PackedScene" uid="uid://dn6l3ot7n4svs" path="res://Assets/Models/Sticky Note Labels/Scenes/Boss.tscn" id="25_72vwu"]
 [ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="25_tbrxr"]
 [ext_resource type="PackedScene" uid="uid://bnk6xxkjdjhvp" path="res://Assets/Scenes/Emission_Plane.tscn" id="26_12hmx"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
@@ -61,7 +72,7 @@ glow_intensity = 1.0
 glow_bloom = 0.6
 adjustment_enabled = true
 adjustment_brightness = 1.05
-adjustment_contrast = 1.075
+adjustment_contrast = 0.85
 adjustment_saturation = 1.15
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
@@ -163,6 +174,12 @@ transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.38
 transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -1.3126835, 4.7641, 8.883475)
 ventricleID = 2
 
+[node name="Name_Card" parent="Pipes/Pipe3" unique_id=2139220031 instance=ExtResource("7_j6yrw")]
+transform = Transform3D(0.9000001, 0, 0, 0, 0.9000001, 0, 0, 0, 0.9000001, -1.0455179, 4.910768, 9.876187)
+
+[node name="Name_Card2" parent="Pipes/Pipe3" unique_id=1296420276 instance=ExtResource("8_1qtno")]
+transform = Transform3D(0.90000015, 0, 0, 0, 0.90000015, 0, 0, 0, 0.90000015, -3.0305164, 4.9299593, 9.888851)
+
 [node name="Pipe4" parent="Pipes" unique_id=288379918 instance=ExtResource("10_rq4wj")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
 
@@ -218,6 +235,33 @@ transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.38
 [node name="Ventricle" parent="Pipes/Pipe11" unique_id=1614666089 instance=ExtResource("6_y0l3c")]
 transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 3.845382, 7.2055464, 11.046754)
 ventricleID = 10
+
+[node name="Name_Card" parent="Pipes" unique_id=104671137 instance=ExtResource("17_1qtno")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.8356768, 2.2666862, -0.7917744)
+
+[node name="Name_Card2" parent="Pipes" unique_id=101377028 instance=ExtResource("18_5tk1d")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -3.5624652, 2.2464693, -0.8006904)
+
+[node name="Name_Card3" parent="Pipes" unique_id=1102306902 instance=ExtResource("19_tgbin")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.3766418, 2.281226, -0.77035856)
+
+[node name="Name_Card4" parent="Pipes" unique_id=1468199995 instance=ExtResource("20_ir442")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3.8563428, 2.2697837, -0.79689467)
+
+[node name="Name_Card5" parent="Pipes" unique_id=709483367 instance=ExtResource("21_kigow")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.7609286, 4.1346235, 0.55974126)
+
+[node name="Name_Card6" parent="Pipes" unique_id=157738877 instance=ExtResource("22_kf24t")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.2807469, 4.1381874, 0.55622077)
+
+[node name="Name_Card7" parent="Pipes" unique_id=1045306501 instance=ExtResource("23_ko3vp")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.021013469, 4.1314764, 0.59527063)
+
+[node name="Name_Card8" parent="Pipes" unique_id=2091149729 instance=ExtResource("24_d18gs")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.7444707, 4.156492, 0.55817056)
+
+[node name="Name_Card9" parent="Pipes" unique_id=703195814 instance=ExtResource("25_72vwu")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3.205258, 4.1452084, 0.554713)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=2056756282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

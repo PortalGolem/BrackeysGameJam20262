@@ -142,7 +142,7 @@ var people = {
 		"SentNotes" = []
 	},
 	Bertha = {
-		"VentricaID" = 6,
+		"VentricaID" = 7,
 		"Name" = "Einstein",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
@@ -165,7 +165,7 @@ var people = {
 		"SentNotes" = []
 	},
 	Gertrude = {
-		"VentricaID" = 7,
+		"VentricaID" = 8,
 		"Name" = "Gertrude",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
@@ -187,7 +187,7 @@ var people = {
 		"SentNotes" = []
 	},
 	Eli = {
-		"VentricaID" = 8,
+		"VentricaID" = 9,
 		"Name" = "Eli",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
@@ -205,7 +205,7 @@ var people = {
 		"SentNotes" = []
 	},
 	Boss = {
-		"VentricaID" = 8,
+		"VentricaID" = 10,
 		"Name" = "Eli",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
