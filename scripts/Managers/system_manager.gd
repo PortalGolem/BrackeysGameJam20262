@@ -89,21 +89,99 @@ var people = {
 		"SentNotes" = []
 	},
 	Frank = {
-		"VentricaID" = 4,
+		"VentricaID" = 5,
 		"Name" = "Frank",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
 		"Responses" = {
 		},
-		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!!", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
 		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOU", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
 		],
 		"PerpetualNotes" = [],
 		"SentNotes" = []
+	},
+	Einstein = {
+		"VentricaID" = 6,
+		"Name" = "Einstein",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+		},
+		"RandomNotes1" = [
+		{"Text" = "Hello? What is this...", "Target" = "Any", "Meta" = []},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Bertha = {
+		"VentricaID" = 6,
+		"Name" = "Einstein",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+		},
+		"RandomNotes1" = [
+		{"Text" = "Oh my gawwwwd. Gertrude is there a new guy working in our office? Is he hot??", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "I don't"}]},
+		{"Text" = "(send this to the PA) Heey guuuys, today is gertrudes birthday. She is turing 97 today. Go say happy birthday!", "Target" = "PA", "Meta" = [{"Recipient" = "Target", "Sender" = "Gertrude", "Return" = "YOU. I'm"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Gertrude = {
+		"VentricaID" = 7,
+		"Name" = "Gertrude",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+		},
+		"RandomNotes1" = [
+		{"Text" = "Hey Einstein... I've noticed that all of your numbers in your recent report are wrong.", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "What do"}]},
+		{"Text" = "Hey mail guy, send this back to me later to remind me to turn off the oven in the break room", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "FIRE"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Eli = {
+		"VentricaID" = 8,
+		"Name" = "Eli",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Greeting" = [{"Text" = "Wassup new person. Just as a warning if you see a guy talking in emoticons its probably Larry... I had to learn the hard way.", "Target" = "Any", "Meta" = []}],
+		"Responses" = {
+		},
+		"RandomNotes1" = [
+		{"Text" = "Hey Bob, Could you come clean up this spill", "Target" = "Bob", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "On it!"}]},
+		{"Text" = "Hey, does anyone know where the photocopier is?", "Target" = "Any", "Meta" = []},
+		{"Text" = "Hey Einstein, do you know of any good ramen places?", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, theres"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Boss = {
+		"VentricaID" = 8,
+		"Name" = "Eli",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Greeting" = [{"Text" = "First of all, I would like to say hello welcome to your new job as a mailmaster at this company. Your job is to sort through the notes that come through and send them to the correct people in the office. Have a nice day and good luck!", "Target" = "Any", "Meta" = []}],
+		"Responses" = {
+		},
+		"RandomNotes1" = [
+		{"Text" = "Eli, please come to my office.", "Target" = "Eli", "Meta" = []},
+		{"Text" = "Hey Larry, could you research a new employee monitoring software?", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, theres"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
 	}
+
 }
+
 
 func _ready() -> void:
 	_on_timer_timeout()

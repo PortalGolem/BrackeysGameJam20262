@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vyrau2snywgq"
-path="res://.godot/imported/AccuracyBarOverlay.png-0c07e89cf1b051cb9b0ce50275ab7d9d.ctex"
+uid="uid://vd5su4g8dw8d"
+path="res://.godot/imported/2.png-9fb66d793765fdf5b9d5cdacc6545145.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UIAssets/AccuracyBarOverlay.png"
-dest_files=["res://.godot/imported/AccuracyBarOverlay.png-0c07e89cf1b051cb9b0ce50275ab7d9d.ctex"]
+source_file="res://Assets/UIAssets/AccuracyBar/2.png"
+dest_files=["res://.godot/imported/2.png-9fb66d793765fdf5b9d5cdacc6545145.ctex"]
 
 [params]
 

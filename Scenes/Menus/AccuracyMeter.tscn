@@ -2,7 +2,17 @@
 
 [ext_resource type="Script" uid="uid://pd7rla1h76w7" path="res://scripts/Accuracy_Bar.gd" id="1_wkpfp"]
 [ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="2_vxame"]
-[ext_resource type="Texture2D" uid="uid://vyrau2snywgq" path="res://Assets/UIAssets/AccuracyBarOverlay.png" id="3_76el0"]
+[ext_resource type="Texture2D" uid="uid://vyrau2snywgq" path="res://Assets/UIAssets/AccuracyBar/AccuracyBarOverlay.png" id="3_76el0"]
+[ext_resource type="Texture2D" uid="uid://b5wgwmdp6gf7g" path="res://Assets/UIAssets/AccuracyBar/6.png" id="4_uvxpl"]
+[ext_resource type="Texture2D" uid="uid://cagnhrbjufskv" path="res://Assets/UIAssets/AccuracyBar/0.png" id="5_xlgnw"]
+[ext_resource type="Texture2D" uid="uid://h3mvtqlyekc6" path="res://Assets/UIAssets/AccuracyBar/1.png" id="6_3pkfr"]
+[ext_resource type="Texture2D" uid="uid://vd5su4g8dw8d" path="res://Assets/UIAssets/AccuracyBar/2.png" id="7_oi0q7"]
+[ext_resource type="Texture2D" uid="uid://c0vp0dlqea603" path="res://Assets/UIAssets/AccuracyBar/3.png" id="8_omj13"]
+[ext_resource type="Texture2D" uid="uid://brk07bxhd5t58" path="res://Assets/UIAssets/AccuracyBar/4.png" id="9_qucqk"]
+[ext_resource type="Texture2D" uid="uid://cdft7ykoffq72" path="res://Assets/UIAssets/AccuracyBar/5.png" id="10_o4epp"]
+[ext_resource type="Texture2D" uid="uid://crmqrqkwxovbk" path="res://Assets/UIAssets/AccuracyBar/7.png" id="11_5726m"]
+[ext_resource type="Texture2D" uid="uid://juxwwhsnx7g4" path="res://Assets/UIAssets/AccuracyBar/8.png" id="12_q6bi0"]
+[ext_resource type="Texture2D" uid="uid://fi4yeub6coic" path="res://Assets/UIAssets/AccuracyBar/9.png" id="13_hhge5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kbhuk"]
 shader = ExtResource("2_vxame")
@@ -37,20 +47,21 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 12.0
 offset_right = -640.0
-offset_bottom = -136.0
+offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
 [node name="Control" type="Control" parent="." unique_id=2020325541]
 anchors_preset = 0
 offset_left = 206.0
-offset_top = -4.0
+offset_top = -21.0
 offset_right = 246.0
-offset_bottom = 36.0
+offset_bottom = 19.0
 script = ExtResource("1_wkpfp")
 accuracy_percent = 80.0
-metadata/_edit_group_ = true
 
 [node name="OutlineBar" type="ColorRect" parent="Control" unique_id=643197117]
 layout_mode = 0
@@ -69,27 +80,19 @@ pivot_offset_ratio = Vector2(0.5, 0)
 color = Color(1, 0.5372549, 1, 1)
 
 [node name="written text" type="Label" parent="Control" unique_id=1099261829]
-visible = false
 layout_mode = 0
-offset_left = 32.0
-offset_top = 55.0
-offset_right = 160.0
-offset_bottom = 442.0
+offset_left = 27.0
+offset_top = 416.0
+offset_right = 155.0
+offset_bottom = 803.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "A
-C
-C
-U
-R
-A
-C
-Y
-100
-%"
+theme_override_font_sizes/font_size = 47
+text = "100
+
+"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1435113794]
+[node name="AccuracyOverlay" type="TextureRect" parent="Control" unique_id=1435113794]
 modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_kbhuk")
 layout_mode = 0
@@ -99,3 +102,117 @@ offset_right = 1899.0
 offset_bottom = 2034.0
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("3_76el0")
+
+[node name="Numbers" type="Control" parent="Control" unique_id=656597051]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="6" type="TextureRect" parent="Control/Numbers" unique_id=450831408]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_uvxpl")
+
+[node name="0" type="TextureRect" parent="Control/Numbers" unique_id=25550663]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = 3.0
+offset_top = -14.0
+offset_right = 2051.0
+offset_bottom = 2034.0
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("5_xlgnw")
+
+[node name="1" type="TextureRect" parent="Control/Numbers" unique_id=1943910911]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -187.73999
+offset_top = -17.64
+offset_right = 1860.26
+offset_bottom = 2030.36
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("6_3pkfr")
+
+[node name="2" type="TextureRect" parent="Control/Numbers" unique_id=1589229908]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -226.47998
+offset_top = -21.279999
+offset_right = 1821.52
+offset_bottom = 2026.72
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("7_oi0q7")
+
+[node name="3" type="TextureRect" parent="Control/Numbers" unique_id=594662711]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -265.21997
+offset_top = -24.919998
+offset_right = 1782.78
+offset_bottom = 2023.08
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("8_omj13")
+
+[node name="4" type="TextureRect" parent="Control/Numbers" unique_id=35869651]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -303.95996
+offset_top = -28.559998
+offset_right = 1744.04
+offset_bottom = 2019.44
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("9_qucqk")
+
+[node name="5" type="TextureRect" parent="Control/Numbers" unique_id=1082830998]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -342.69995
+offset_top = -32.199997
+offset_right = 1705.3
+offset_bottom = 2015.8
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("10_o4epp")
+
+[node name="7" type="TextureRect" parent="Control/Numbers" unique_id=1258685065]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -420.17993
+offset_top = -39.479996
+offset_right = 1627.8201
+offset_bottom = 2008.52
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("11_5726m")
+
+[node name="8" type="TextureRect" parent="Control/Numbers" unique_id=1724065336]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -458.91992
+offset_top = -43.119995
+offset_right = 1589.0801
+offset_bottom = 2004.88
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("12_q6bi0")
+
+[node name="9" type="TextureRect" parent="Control/Numbers" unique_id=819790864]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -497.6599
+offset_top = -46.759995
+offset_right = 1550.3401
+offset_bottom = 2001.24
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("13_hhge5")
