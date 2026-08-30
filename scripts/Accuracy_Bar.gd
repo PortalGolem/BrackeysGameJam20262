@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	_set_color_bar()
 	
 	# percentage text val
-	$"written text".text = "\nA\nC\nC\nU\nR\nA\nC\nY\n" + str(int(accuracy_percent)) + "\n%"
+	$"written text".text = str(int(accuracy_percent)) 
 	pass
 
 func _set_color_bar():
