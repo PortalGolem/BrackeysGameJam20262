@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dr7pngim1hjuh" path="res://Assets/Models/Posters/Poster.fbx" id="1_gcwey"]
 [ext_resource type="Texture2D" uid="uid://gc5jwo7fwloe" path="res://Assets/Models/Posters/Are You Pooping_/AreYouPooping_Color.png" id="2_k8roo"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu2dh"]
 cull_mode = 2
 albedo_texture = ExtResource("2_k8roo")

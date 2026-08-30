@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="8_vlp47"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="9_fxwx4"]
 
+
 [node name="TheGreatOutdoors" type="Node3D" unique_id=723118674]
 
 [node name="CardboardBox" parent="." unique_id=16955975 instance=ExtResource("1_hhcdj")]

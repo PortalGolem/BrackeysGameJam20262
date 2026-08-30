@@ -9,6 +9,8 @@ var score := 0
 var currentNotes = []
 var notesSent := 0
 
+var currentConversations = [null, null]
+
 var greetingSent := false
 
 var people = {
@@ -94,7 +96,6 @@ var people = {
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
-		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!!", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
 		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOU", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
 		],
@@ -115,7 +116,7 @@ var people = {
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
 		"RandomNotes1" = [
-		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOU", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
+		{"Text" = "Larry, do you also have problems with Merideth? God I just hate her.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "( ദ്ദി ˙ᗜ˙ )"}]},
 		],
 		"Conversations" = {
 			"Merideth, I've" = {"Text" = "Merideth, I've recently suffered a death in the family, please excuse any performance hiccups because of that.", "Target" = "Meredith", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Still not"}]},
@@ -142,8 +143,8 @@ var people = {
 		"SentNotes" = []
 	},
 	Bertha = {
-		"VentricaID" = 7,
-		"Name" = "Einstein",
+		"VentricaID" = 6,
+		"Name" = "Bertha",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
@@ -206,7 +207,7 @@ var people = {
 	},
 	Boss = {
 		"VentricaID" = 10,
-		"Name" = "Eli",
+		"Name" = "Boss",
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
@@ -240,7 +241,7 @@ func _on_timer_timeout() -> void:
 			if people[person]["PerpetualChance"] <= 0 and people[person]["SentNotes"].size() >= people[person]["RandomNotes1"].size():
 				break
 			if randf() < clampf(randomNoteSpawnChancePerCycle * people[person]["SystemTrust"], 0.0, 1.0):
-				var selectedNote = {"Text" = "No way brochacho", "Target" = "Trash"}
+				var selectedNote = {"Text" = "No way brochacho", "Target" = "Trash", "Meta" = []}
 				var isPerpetual:bool
 				if randf() < people[person]["PerpetualChance"] or people[person]["SentNotes"].size() >= people[person]["RandomNotes1"].size():
 					selectedNote = people[person]["PerpetualNotes"].pick_random()

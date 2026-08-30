@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://g8c58jrtx0i3" path="res://Assets/Models/test obj/Canister.fbx" id="1_eeyem"]
 
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2gruq"]
 
 [sub_resource type="Sky" id="Sky_fo3dt"]

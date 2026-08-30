@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dl6bdh55g5n0q" path="res://Assets/Models/New Cardboard Box/Box_Normal.png" id="3_3n43a"]
 [ext_resource type="Texture2D" uid="uid://c44vu5h1uhn63" path="res://Assets/Models/New Cardboard Box/Box_Roughness.png" id="4_jjbh2"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfhtr"]
 cull_mode = 2
 albedo_texture = ExtResource("2_oq5cr")

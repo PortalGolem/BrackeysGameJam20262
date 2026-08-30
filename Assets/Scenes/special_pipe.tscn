@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://gmysen4q4y2w" path="res://Assets/Scenes/special_pipe_no_animation.tscn" id="3_mxjcw"]
 [ext_resource type="PackedScene" uid="uid://j061o15wuxe7" path="res://Assets/Scenes/special_pipe_open.tscn" id="4_dhasf"]
 
+
 [node name="SpecialPipe" unique_id=1920061222 instance=ExtResource("1_m30wi")]
 
 [node name="Cylinder_008" parent="." index="0" unique_id=799969425]

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://37dqglij1k2" path="res://Assets/Models/Special Pipe/Special_Pipe_Metallic.png" id="3_8eysu"]
 [ext_resource type="Texture2D" uid="uid://dqhqiphkd6nuj" path="res://Assets/Models/Special Pipe/Special_Pipe_Roughness.png" id="4_ma3md"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p0sp"]
 albedo_texture = ExtResource("2_k1xc5")
 metallic = 1.0

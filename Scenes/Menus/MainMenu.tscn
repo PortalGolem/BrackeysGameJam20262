@@ -68,7 +68,7 @@ scale = Vector2(0.655, 0.655)
 [node name="Label" type="Label" parent="MainMenu/TITLE" unique_id=1358226956]
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
-text = "No Ideas"
+text = "Pipe Dream"
 
 [node name="Selection1" type="Label" parent="MainMenu" unique_id=1484498285]
 layout_mode = 0

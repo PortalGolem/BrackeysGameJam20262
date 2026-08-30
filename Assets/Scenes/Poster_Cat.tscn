@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dr7pngim1hjuh" path="res://Assets/Models/Posters/Poster.fbx" id="1_br0g6"]
 [ext_resource type="Texture2D" uid="uid://bhtt2xlk2g1sv" path="res://Assets/Models/Posters/Hang In there!/HangInThere_Color.png" id="2_4s7g0"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stcfx"]
 cull_mode = 2
 albedo_texture = ExtResource("2_4s7g0")

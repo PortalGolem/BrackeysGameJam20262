@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5as3aye5g1yb" path="res://Assets/Models/Collection  Bin/Bin_Roughness.png" id="5_d8s1k"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nyrv"]
 albedo_texture = ExtResource("2_n0hg0")
 metallic = 1.0

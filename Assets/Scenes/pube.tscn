@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dtfuqodotgutx" path="res://Assets/Models/Pube/Pube.fbx" id="1_lle8g"]
 [ext_resource type="Texture2D" uid="uid://dioj8q52io6ep" path="res://Assets/Models/Pube/Pube_Color.png" id="2_3yrgo"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keiqn"]
 albedo_texture = ExtResource("2_3yrgo")
 
