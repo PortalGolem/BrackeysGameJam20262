@@ -23,3 +23,16 @@ func _on_dropable_trigger_dropped_function(object: Node3D) -> void:
 			object.visible = false
 			object.reparent(get_viewport(), true)
 			contents = object
+
+
+func _on_item_drop_object(object: Node3D) -> void:
+	global.sound_play($AudioStreamPlayer, load("res://Sounds/SFX for pipes/Container_Drop.mp3"), 0.3)
+	pass # Replace with function body.
+
+func _on_item_inspect_object() -> void:
+	global.sound_play($AudioStreamPlayer, load("res://Sounds/SFX for pipes/Container_Open.mp3"), 0.3)
+	pass # Replace with function body.
+
+func _on_item_pick_up_item(item: Item) -> void:
+	global.sound_play($AudioStreamPlayer, load("res://Sounds/SFX for pipes/Container_PickUp.mp3"), 0.3)
+	pass # Replace with function body.
