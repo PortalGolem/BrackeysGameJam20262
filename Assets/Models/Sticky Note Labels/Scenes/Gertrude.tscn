@@ -8,5 +8,5 @@ albedo_texture = ExtResource("2_mg2ik")
 
 [node name="Name_Card" unique_id=2139220031 instance=ExtResource("1_r6rct")]
 
-[node name="Name_Card" parent="." index="0" unique_id=1570344408]
+[node name="Name_Card" parent="." index="0" unique_id=1824312901]
 material_override = SubResource("StandardMaterial3D_0h1st")

@@ -2,6 +2,8 @@ extends Node
 
 var score := 0
 
+signal recieveFirstNote()
+
 @onready var spawner := $CylenderSpawner
 @export var randomNoteSpawnChancePerCycle := .5
 @export var randomNoteSpawnRollCount := 2
@@ -29,7 +31,7 @@ var people = {
 		"Greeting" = [{"Text" = "ε(´｡•o•`)っ", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮" =  {"Text" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮", "Target" = "Jim", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "What did"}]},
 			"¯\\_(ツ)_/¯" = {"Text" = "¯\\_(ツ)_/¯", "Target" = "Jim", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "off you"}]},
 			"( ദ്ദി ˙ᗜ˙ )" = {"Text" = "( ദ്ദി ˙ᗜ˙ )", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "I know"}]},
@@ -51,7 +53,7 @@ var people = {
 		"RandomNotes1" = [
 		{"Text" = "Hello Everyone! This new mailing system is cooooooool!  \n\n-Mr. Bob", "Target" = "Any", "Meta" = []},
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"On it!" = {"Text" = "On it!", "Target" = "Eli", "Meta" = []}
 		},
 		"PerpetualNotes" = [],
@@ -68,7 +70,7 @@ var people = {
 		#{"Text" = "Hey everyone! How are you guys doing? Meri here!", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Hello? Anyone"}]},
 		{"Text" = "Hey Frank. I've noticed that your performance is slightly off from yesterday. Not to be theat person but make sure your working hard!", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Meredith, I've"}]}
 		],
-		"Conversations" = {
+		"Conversation" = {
 			#"Hello? Anyone" = {"Text" = "Hello? Anyone get my message?", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Is my"}]},
 			#"Is my" = {"Text" = "Is my tube broken?", "Target" = "Any", Meta = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Mail guy,"}]},
 			#"Mail guy," = {"Text" = "Mail guy, you suck at your job.", "Target" = "Any", Meta = []},
@@ -88,7 +90,7 @@ var people = {
 		{"Text" = "Jim, have you seen the new update for Gatya:The Impact?", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Nathan, I'm"}]},
 		{"Text" = "Hey Epstien, did you get the statistics on the cafeteria spend this week?", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, it"}]}
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"But sending" = {"Text" = "But sending notes is way cooler.", "Target" = "Jim", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Whatever you"}]},
 			"Hey, your" = {"Text" = "Hey, your doing the same thing as me! Why is it weird when I do it??", "Target" = "Jim", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "It's because"}]},
 		},
@@ -104,7 +106,7 @@ var people = {
 		"RandomNotes1" = [
 		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOUR @^&$%*& ASS. \n\nWorst,\nJim", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"What did" = {"Text" = "What did I even do to deserve this... I can get my work done and watch shows at the same time.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "¯\\_(ツ)_/¯"}]},
 			"off you" = {"Text" = "@&*$%^*@&# off you mute #&^$%*.", "Target" = "Larry", "Meta" = []},
 			"Nathan, I'm" = {"Text" = "Nathan, I'm sitting right next to you. You don't have to send notes to me.", "Target" = "Nathan", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "But sending"}]},
@@ -123,7 +125,7 @@ var people = {
 		"RandomNotes1" = [
 		{"Text" = "Larry, do you also have problems with Merideth? God I just hate her.\n\n- Frank.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "( ദ്ദി ˙ᗜ˙ )"}]},
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"Merideth, I've" = {"Text" = "Merideth, I've recently suffered a death in the family, please excuse any performance hiccups because of that.", "Target" = "Meredith", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Still not"}]},
 			"I know" = {"Text" = "I know right? Was she just born a #&%^& or something? Whats her problem???", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\")"}]},
 			"Thanks Larry" = {"Text" = "Thanks Larry. Your my only true friend... ", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "🫂"}]}
@@ -140,7 +142,7 @@ var people = {
 		"RandomNotes1" = [
 		{"Text" = "Hello? What is this? Einstein in the house!", "Target" = "Any", "Meta" = []},
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"Yeah, theres" = {"Text" = "Yeah, theres a good place down the street called 'Aldi'", "Target" = "Eli", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "..."}]},
 			"Yeah, it" = {"Text" = "Yeah, it was 5,000, Gertrude ate 23 cakes last month.", "Target" = "Nathan", "Meta" = []},
 		},
@@ -156,7 +158,7 @@ var people = {
 		"RandomNotes1" = [
 			{"Text" = "Oh my gawwwwd. Gertrude is there a new guy working in our office? Is he hot??", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "I don't"}]},
 		],
-		"Conversations" = {
+		"Conversation" = {
 			"Sooooo whaaaat." = {"Text" = "Sooooo whaaaat. Can't you live a little Gerty?", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Don't call"}]},
 			"But don't" = {"Text" = "But don't you think he's kind of cute?", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Bertha", "Return" = "Gerty?"}]},
 			"Gerty?" = {"Text" = "Gerty?", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Bertha", "Return" = "Gerty-poo?"}]},
@@ -227,6 +229,7 @@ var people = {
 		"SentNotes" = []
 	}
 }
+var hasRecievedNotes = false
 
 
 func _ready() -> void:
@@ -267,6 +270,9 @@ func _on_timer_timeout() -> void:
 	greetingSent = true
 	
 func handleNotes(note:Note, sentWithoutCannister:bool, ventricleID):
+	if not hasRecievedNotes:
+		hasRecievedNotes = true
+		recieveFirstNote.emit()
 	var noteDict = null
 	for n in currentNotes:
 		if (n["Text"] == note.text):
@@ -291,7 +297,7 @@ func handleNotes(note:Note, sentWithoutCannister:bool, ventricleID):
 		activeConversations = max(activeConversations, 0)
 		currentAccuracyQuality -= 1
 		if (currentAccuracyQuality <= 6):
-			print("You ded")
+			get_tree().change_scene_to_file("res://Scenes/Menus/DeathMenu.tscn")
 	print("Update!")
 	$"../SubViewport/AccuracyMeter".get_child(0).accuracy_percent = currentAccuracyQuality * 10
 	
