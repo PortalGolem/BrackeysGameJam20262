@@ -56,7 +56,7 @@ offset_top = -798.4721
 offset_right = 135.15799
 offset_bottom = 3.0429077
 offset_transform_enabled = true
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+color = Color(0, 0, 0, 0.43137255)
 metadata/_edit_group_ = true
 
 [node name="TITLE" type="CenterContainer" parent="MainMenu" unique_id=336479199]
@@ -146,9 +146,10 @@ offset_right = 576.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(10, 10)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
-color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+color = Color(0, 0, 0, 1)
 script = ExtResource("4_uv623")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1452066851]

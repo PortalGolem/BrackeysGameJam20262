@@ -21,7 +21,7 @@ offset_top = -85.0
 offset_right = 1364.0
 offset_bottom = 716.515
 offset_transform_enabled = true
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+color = Color(0, 0, 0, 0.43137255)
 metadata/_edit_group_ = true
 
 [node name="Buttons" type="Control" parent="." unique_id=1261418563]
