@@ -57,7 +57,6 @@ offset_right = 135.15799
 offset_bottom = 3.0429077
 offset_transform_enabled = true
 color = Color(0, 0, 0, 0.43137255)
-metadata/_edit_group_ = true
 
 [node name="TITLE" type="CenterContainer" parent="MainMenu" unique_id=336479199]
 layout_mode = 0
@@ -69,7 +68,7 @@ scale = Vector2(0.655, 0.655)
 [node name="Label" type="Label" parent="MainMenu/TITLE" unique_id=1358226956]
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
-text = "NO IDEAS"
+text = "No Ideas"
 
 [node name="Selection1" type="Label" parent="MainMenu" unique_id=1484498285]
 layout_mode = 0
@@ -140,10 +139,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
+offset_left = -592.9995
+offset_top = -323.99976
+offset_right = 559.0005
+offset_bottom = 324.00024
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(10, 10)
