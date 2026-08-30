@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://Assets/Scenes/electrical_lines.tscn" id="24_12hmx"]
 [ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="25_tbrxr"]
 [ext_resource type="PackedScene" uid="uid://bnk6xxkjdjhvp" path="res://Assets/Scenes/Emission_Plane.tscn" id="26_12hmx"]
-[ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="26_cu2dh"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
 [ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://cae2q0wj37xsx" path="res://Objects/MovingCylender.tscn" id="29_dyeg5"]
@@ -32,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
 [ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="31_jm2s4"]
-[ext_resource type="PackedScene" uid="uid://b5v55a4gb6nji" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
+[ext_resource type="PackedScene" uid="uid://i8uxbfh72x5c" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
 [ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="32_12hmx"]
 [ext_resource type="PackedScene" uid="uid://ddchbcp57k1tk" path="res://Assets/Scenes/light_fixture.tscn" id="32_jm2s4"]
 
@@ -44,6 +43,8 @@ sky_material = SubResource("ProceduralSkyMaterial_u057j")
 [sub_resource type="Environment" id="Environment_37okk"]
 background_energy_multiplier = 0.74
 sky = SubResource("Sky_ila21")
+ambient_light_color = Color(0.44, 0.26957336, 0.07480001, 1)
+ambient_light_energy = 3.78
 tonemap_mode = 3
 ssao_enabled = true
 glow_enabled = true

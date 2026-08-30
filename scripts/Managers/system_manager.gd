@@ -12,16 +12,97 @@ var notesSent := 0
 var greetingSent := false
 
 var people = {
-	 Garry = {
-			"VentricaID" = 2,
-			"Name" = "Larr",
-			"Color" = "yellow",
-			"SystemTrust" = 1.0,
-			"PerpetualChance" = 0.0,
-			"RandomNotes1" = [
-			{"Text" = ": )", "Target" = "Any", "Meta" = [{"Person" = "Target", "Return" = ": )"}]},
-			"PerpetualNotes" = [],
-			"SentNotes" = []},
+	 Larry = {
+		"VentricaID" = 2,
+		"Name" = "Larry",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Greeting" = [{"Text" = "ε(´｡•o•`)っ", "Target" = "Any", "Meta" = []}],
+		"RandomNotes1" = [
+		{"Text" = ": )", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = ": )"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+		},
+	Bob = {
+		"VentricaID" = 1,
+		"Name" = "Bob",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"RandomNotes1" = [
+		{"Text" = "Hello Everyone! This new mailing system is cooooooool!  -Mr. Bob Yes it is bob!", "Target" = "Any", "Meta" = []},
+		],
+		"Responses" = {
+			"On It" = {"Text" = "Hello Everyone! This new mailing system is cooooooool!  -Mr. Bob Yes it is bob!", "Target" = "Any", "Meta" = []},
+		},
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Meredith = {
+		"VentricaID" = 3,
+		"Name" = "Meredith",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+			"On It" = {"Text" = "Hello Everyone! This new mailing system is cooooooool!  -Mr. Bob Yes it is bob!", "Target" = "Eli", "Meta" = []},
+		},
+		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!!", "Target" = "Any", "Meta" = []}],
+		"RandomNotes1" = [
+		{"Text" = "Hey everyone! How are you guys doing? Meri here!", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Hello? Anyone"}]},
+		{"Text" = "Hey Frank. I've noticed that your performance is slightly off from yesterday. Not to be theat person but make sure your working hard!", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Meredith, I've"}]}
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Nathan = {
+		"VentricaID" = 0,
+		"Name" = "Nathan",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+		},
+		"RandomNotes1" = [
+		{"Text" = "Could you direct me to the conference room Bertha?", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yes! It's"}]},
+		{"Text" = "Jim, have you seen the new update for Gatya:The Impact", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Nathan, I'm"}]},
+		{"Text" = "Hey Epstien, did you get the statistics on the cafateria spend this week?", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, it"}]}
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Jim = {
+		"VentricaID" = 4,
+		"Name" = "Jim",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+		},
+		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!!", "Target" = "Any", "Meta" = []}],
+		"RandomNotes1" = [
+		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOU", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	},
+	Frank = {
+		"VentricaID" = 4,
+		"Name" = "Frank",
+		"Color" = "yellow",
+		"SystemTrust" = 1.0,
+		"PerpetualChance" = 0.0,
+		"Responses" = {
+		},
+		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!!", "Target" = "Any", "Meta" = []}],
+		"RandomNotes1" = [
+		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOU", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
+		],
+		"PerpetualNotes" = [],
+		"SentNotes" = []
+	}
 }
 
 func _ready() -> void:
