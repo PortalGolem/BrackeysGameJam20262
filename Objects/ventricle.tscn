@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1xi74kv7vjul" path="res://scripts/Items/Dropable/ventricle.gd" id="1_fp6l2"]
 [ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_gp21u"]
-
+[ext_resource type="PackedScene" uid="uid://bda6axgcd8kmi" path="res://Objects/FX/VentricleHover.tscn" id="3_gp21u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37okk"]
 size = Vector3(0.96673584, 1.081543, 1)
@@ -20,6 +20,12 @@ shape = SubResource("BoxShape3D_37okk")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1705164872]
 
+[node name="VentricleHover" parent="." unique_id=607739977 instance=ExtResource("3_gp21u")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.17652678, -1.4709744, 0.06484628)
+visible = false
+
+[connection signal="body_entered" from="Dropable" to="." method="_on_dropable_body_entered"]
 [connection signal="body_entered" from="Dropable" to="Dropable" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Dropable" to="." method="_on_dropable_body_exited"]
 [connection signal="body_exited" from="Dropable" to="Dropable" method="_on_area_3d_body_exited"]
 [connection signal="trigger_dropped_function" from="Dropable" to="." method="_on_dropable_trigger_dropped_function"]

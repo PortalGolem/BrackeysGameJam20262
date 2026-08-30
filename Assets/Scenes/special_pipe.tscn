@@ -1,27 +1,24 @@
 [gd_scene format=3 uid="uid://gahgs66agi7x"]
 
 [ext_resource type="PackedScene" uid="uid://dofym1dyv7qkl" path="res://Assets/Models/Special Pipe/SpecialPipe.fbx" id="1_m30wi"]
-[ext_resource type="Texture2D" uid="uid://baa0hs1etqqew" path="res://Assets/Models/Special Pipe/Special_Pipe_Color.png" id="2_i2wws"]
-[ext_resource type="Texture2D" uid="uid://37dqglij1k2" path="res://Assets/Models/Special Pipe/Special_Pipe_Metallic.png" id="3_vs6a7"]
-[ext_resource type="Texture2D" uid="uid://dqhqiphkd6nuj" path="res://Assets/Models/Special Pipe/Special_Pipe_Roughness.png" id="4_ohesb"]
-
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5vuv"]
-albedo_texture = ExtResource("2_i2wws")
-metallic = 1.0
-metallic_texture = ExtResource("3_vs6a7")
-roughness_texture = ExtResource("4_ohesb")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ka7wq"]
-albedo_texture = ExtResource("2_i2wws")
-metallic = 1.0
-metallic_texture = ExtResource("3_vs6a7")
-roughness_texture = ExtResource("4_ohesb")
+[ext_resource type="PackedScene" uid="uid://ckle1mgojo4jk" path="res://Assets/Scenes/special_pipe_close.tscn" id="2_u84a0"]
+[ext_resource type="PackedScene" uid="uid://gmysen4q4y2w" path="res://Assets/Scenes/special_pipe_no_animation.tscn" id="3_mxjcw"]
+[ext_resource type="PackedScene" uid="uid://j061o15wuxe7" path="res://Assets/Scenes/special_pipe_open.tscn" id="4_dhasf"]
 
 [node name="SpecialPipe" unique_id=1920061222 instance=ExtResource("1_m30wi")]
 
-[node name="Cylinder_008" parent="." index="0" unique_id=640145902]
-surface_material_override/0 = SubResource("StandardMaterial3D_v5vuv")
+[node name="Cylinder_008" parent="." index="0" unique_id=799969425]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+visible = false
 
-[node name="Plane_007" parent="." index="1" unique_id=800825204]
-surface_material_override/0 = SubResource("StandardMaterial3D_ka7wq")
+[node name="Plane_007" parent="." index="1" unique_id=950846738]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 5.8405886, 8.264522, -4.732196)
+
+[node name="SpecialPipe_Close2" parent="." index="2" unique_id=1838875837 instance=ExtResource("2_u84a0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.750886, 0, -2.1119993)
+
+[node name="SpecialPipe_No_Animation2" parent="." index="3" unique_id=1856880327 instance=ExtResource("3_mxjcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.750886, 0, 0.94167376)
+
+[node name="SpecialPipe_Open2" parent="." index="4" unique_id=1793276971 instance=ExtResource("4_dhasf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.750886, 0, 0.94167376)

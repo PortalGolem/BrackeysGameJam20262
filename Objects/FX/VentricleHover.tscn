@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bda6axgcd8kmi"]
+
+[ext_resource type="Texture2D" uid="uid://bqbdy81uxjfjf" path="res://Assets/FX/wind.png" id="1_s17qy"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u057j"]
+emission_shape_scale = Vector3(1, 0.1, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -4.9999895
+angle_max = 5.000011
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 9.17
+initial_velocity_max = 10.17
+gravity = Vector3(0, 0, 0)
+scale_min = 4.08
+scale_max = 4.7799997
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bl2r1"]
+transparency = 1
+albedo_texture = ExtResource("1_s17qy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fo3dt"]
+material = SubResource("StandardMaterial3D_bl2r1")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[node name="VentricleHover" type="Node3D" unique_id=607739977]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=572320550]
+amount = 15
+lifetime = 0.22
+preprocess = 0.79
+speed_scale = 0.3
+explosiveness = 0.12
+randomness = 0.4
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_u057j")
+draw_pass_1 = SubResource("PlaneMesh_fo3dt")
