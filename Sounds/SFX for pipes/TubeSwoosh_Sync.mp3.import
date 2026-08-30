@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://babfj3lyruw2v"
+path="res://.godot/imported/TubeSwoosh_Sync.mp3-72eba683059958e1bb676f9381a63108.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX for pipes/TubeSwoosh_Sync.mp3"
+dest_files=["res://.godot/imported/TubeSwoosh_Sync.mp3-72eba683059958e1bb676f9381a63108.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cjibfdkbe6qe5"]
+
+[ext_resource type="PackedScene" uid="uid://dpq3ty8bprokq" path="res://Assets/Models/Main Menu/Main_Menu.fbx" id="1_bmubs"]
+[ext_resource type="Texture2D" uid="uid://cna26aj4j4lbd" path="res://Assets/Models/Main Menu/lines bullshit/Lines_Color.png" id="2_funp0"]
+[ext_resource type="Texture2D" uid="uid://bqlwg8ftre1na" path="res://Assets/Models/Main Menu/lines bullshit/Lines_Metallic.png" id="3_aye23"]
+[ext_resource type="Texture2D" uid="uid://cu6x4m7a0whcw" path="res://Assets/Models/Main Menu/lines bullshit/Lines_Roughness.png" id="4_qynwu"]
+[ext_resource type="Texture2D" uid="uid://bn4rq7jld7hcg" path="res://Assets/Models/Main Menu/Pipes/Pipes_Color.png" id="5_lix7o"]
+[ext_resource type="Texture2D" uid="uid://wy345kwpw4ag" path="res://Assets/Models/Main Menu/Pipes/Pipes_Metallic.png" id="6_hlie0"]
+[ext_resource type="Texture2D" uid="uid://bkwe7kj0eqeob" path="res://Assets/Models/Main Menu/Pipes/Pipes_Normal.png" id="7_3fnbp"]
+[ext_resource type="Texture2D" uid="uid://bjcx8dgf6oj73" path="res://Assets/Models/Main Menu/Pipes/Pipes_Roughness.png" id="8_1pet1"]
+[ext_resource type="Texture2D" uid="uid://pbl05p7754m8" path="res://Assets/Models/Main Menu/Wall/Wall_Color.png" id="9_e7hsp"]
+[ext_resource type="Texture2D" uid="uid://bs35bktbp760" path="res://Assets/Models/Main Menu/Wall/Wall_Normal.png" id="10_hfxbu"]
+[ext_resource type="Texture2D" uid="uid://y2jnthl675fm" path="res://Assets/Models/Main Menu/Wall/Wall_Roughness.png" id="11_hx8xt"]
+[ext_resource type="PackedScene" uid="uid://dq8ku6vex34x8" path="res://Assets/Scenes/Tubes_Combined_Animation.tscn" id="12_ig31h"]
+[ext_resource type="PackedScene" uid="uid://dibdw1mogwt31" path="res://Assets/Scenes/camera_shake.tscn" id="13_hrdrn"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/StickyNote_Flying.tscn" id="14_c6gw4"]
+[ext_resource type="AudioStream" uid="uid://jef0chp2glj8" path="res://Sounds/SFX for pipes/MainMenu_Ambiance.mp3" id="15_2dgve"]
+[ext_resource type="AudioStream" uid="uid://babfj3lyruw2v" path="res://Sounds/SFX for pipes/TubeSwoosh_Sync.mp3" id="16_gbhl0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mvdg"]
+albedo_texture = ExtResource("2_funp0")
+metallic = 1.0
+metallic_texture = ExtResource("3_aye23")
+roughness_texture = ExtResource("4_qynwu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0su"]
+cull_mode = 2
+albedo_texture = ExtResource("5_lix7o")
+metallic = 0.75
+metallic_texture = ExtResource("6_hlie0")
+roughness_texture = ExtResource("8_1pet1")
+normal_enabled = true
+normal_texture = ExtResource("7_3fnbp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o34id"]
+cull_mode = 2
+albedo_texture = ExtResource("9_e7hsp")
+roughness_texture = ExtResource("11_hx8xt")
+normal_enabled = true
+normal_texture = ExtResource("10_hfxbu")
+
+[sub_resource type="Environment" id="Environment_68oas"]
+background_energy_multiplier = 0.0
+tonemap_mode = 3
+tonemap_exposure = 1.5
+tonemap_white = 2.0
+glow_enabled = true
+glow_intensity = 2.83
+glow_bloom = 0.6
+glow_hdr_threshold = 2.0
+glow_hdr_scale = 3.0
+glow_hdr_luminance_cap = 15.0
+
+[node name="Main_Menu" unique_id=1287745718 instance=ExtResource("1_bmubs")]
+
+[node name="Electrical Bullshit" parent="." index="0" unique_id=555130579]
+surface_material_override/0 = SubResource("StandardMaterial3D_8mvdg")
+
+[node name="Pipes 1-9" parent="." index="1" unique_id=74061467]
+surface_material_override/0 = SubResource("StandardMaterial3D_dc0su")
+
+[node name="Wall" parent="." index="2" unique_id=1140046117]
+surface_material_override/0 = SubResource("StandardMaterial3D_o34id")
+
+[node name="Tubes" parent="." index="3" unique_id=1509204707 instance=ExtResource("12_ig31h")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="4" unique_id=1007181645]
+environment = SubResource("Environment_68oas")
+
+[node name="Camera_Shake" parent="." index="5" unique_id=1740387477 instance=ExtResource("13_hrdrn")]
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." index="6" unique_id=213250158]
+transform = Transform3D(-1, -1.8189894e-12, -0.00013217132, 3.0595987e-05, 0.9728379, -0.23148735, 0.00012858128, -0.23148735, -0.9728379, 0, 14.603, -12.412)
+light_color = Color(1, 1, 0.7764706, 1)
+light_energy = 40.95
+light_indirect_energy = 1.385
+area_range = 14.905
+area_attenuation = 1.1
+area_size = Vector2(37.135, 37.135)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="." index="7" unique_id=1023383245]
+transform = Transform3D(-1, -1.0896474e-07, 5.3401733e-10, 5.340221e-10, -4.3708127e-08, 1, -1.0896474e-07, 1, 4.3708127e-08, 0, 21.98606, 0.19509983)
+light_color = Color(1, 1, 0.7647059, 1)
+light_energy = 40.95
+light_indirect_energy = 1.385
+area_range = 21.862
+area_attenuation = 1.1
+area_size = Vector2(37.135, 37.135)
+
+[node name="Stretch Goals" parent="." index="8" unique_id=1016426022 instance=ExtResource("14_c6gw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.168344, 12.286404, -8.515)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9" unique_id=896377847]
+stream = ExtResource("15_2dgve")
+volume_db = -5.012
+autoplay = true
+max_polyphony = 4
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="10" unique_id=1653483825]
+stream = ExtResource("16_gbhl0")
+volume_db = -10.085
+autoplay = true
+parameters/looping = true

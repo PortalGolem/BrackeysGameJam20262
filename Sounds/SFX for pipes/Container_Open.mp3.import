@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpeak28rw8x80"
+path="res://.godot/imported/Container_Open.mp3-b72a34bfdec452f0de628d6e7e4ea785.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX for pipes/Container_Open.mp3"
+dest_files=["res://.godot/imported/Container_Open.mp3-b72a34bfdec452f0de628d6e7e4ea785.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

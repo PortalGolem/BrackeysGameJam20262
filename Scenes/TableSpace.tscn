@@ -16,13 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Scenes/Pipes/pipe_9.tscn" id="15_qju35"]
 [ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Scenes/Pipes/pipe_10.tscn" id="16_c8qf1"]
 [ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Scenes/Pipes/pipe_11.tscn" id="17_uxhga"]
+[ext_resource type="PackedScene" uid="uid://08if7nw0n80f" path="res://Assets/Scenes/NEWcrt.tscn" id="18_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://Assets/Scenes/collection_bin.tscn" id="20_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://Assets/Scenes/conveyor_belt.tscn" id="21_dyeg5"]
-[ext_resource type="PackedScene" uid="uid://d16ywi8c1fsr7" path="res://Assets/Scenes/crt.tscn" id="22_v1xsh"]
 [ext_resource type="Texture2D" uid="uid://bt1mfxsc6eqi3" path="res://Assets/Models/CRT/CRTtv.tres" id="23_cd4vf"]
 [ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://Assets/Scenes/electrical_box.tscn" id="23_jm2s4"]
 [ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://Assets/Scenes/electrical_lines.tscn" id="24_12hmx"]
 [ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="25_tbrxr"]
+[ext_resource type="PackedScene" uid="uid://bnk6xxkjdjhvp" path="res://Assets/Scenes/Emission_Plane.tscn" id="26_12hmx"]
 [ext_resource type="PackedScene" uid="uid://gahgs66agi7x" path="res://Assets/Scenes/special_pipe.tscn" id="26_cu2dh"]
 [ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
 [ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
@@ -31,7 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
 [ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="31_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://b5v55a4gb6nji" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
 [ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="32_12hmx"]
+[ext_resource type="PackedScene" uid="uid://ddchbcp57k1tk" path="res://Assets/Scenes/light_fixture.tscn" id="32_jm2s4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
 
@@ -39,10 +42,13 @@
 sky_material = SubResource("ProceduralSkyMaterial_u057j")
 
 [sub_resource type="Environment" id="Environment_37okk"]
-background_energy_multiplier = 2.36
+background_energy_multiplier = 0.74
 sky = SubResource("Sky_ila21")
-ambient_light_color = Color(0.44, 0.26957336, 0.07480001, 1)
-ambient_light_energy = 3.78
+tonemap_mode = 3
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 0.96
+glow_bloom = 0.5
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
 
@@ -219,11 +225,11 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.441030
 [node name="ConveyorBelt" parent="." unique_id=550541245 instance=ExtResource("21_dyeg5")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.35793042, -8.315971)
 
-[node name="CRT" parent="." unique_id=1199210867 instance=ExtResource("22_v1xsh")]
-transform = Transform3D(0.636486, 0, 0.37747243, 0, 0.74, 0, -0.37747243, 0, 0.636486, -4.969798, 1.9342018, -0.9051404)
+[node name="CRT2" parent="." unique_id=1079699050 instance=ExtResource("18_dyeg5")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -5.5923333, 4.4193363, 1.9397268)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CRT" unique_id=1901847369]
-transform = Transform3D(0.6340513, 5.364418e-07, -1.2434498e-14, 0, -5.3854997e-08, -0.6061226, -1.4901161e-07, 1.2320583, -2.649445e-08, 0.171525, 0.5740874, 0.09205747)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CRT2" unique_id=1901847369]
+transform = Transform3D(0.7517509, 1.1355683, -2.8825358e-08, 0, -7.527102e-08, -1, -0.6594473, 1.294515, -3.2860072e-08, 0.5679655, 0.7580323, 0.40295458)
 mesh = SubResource("PlaneMesh_3slyq")
 
 [node name="Electrical_Box" parent="." unique_id=52782056 instance=ExtResource("23_jm2s4")]
@@ -235,9 +241,6 @@ transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 2.5419755, 0.8264725
 [node name="Room" parent="." unique_id=310400824 instance=ExtResource("25_tbrxr")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -11.9918995, -1.7857406, 17.950874)
 
-[node name="SpecialPipe" parent="." unique_id=1920061222 instance=ExtResource("26_cu2dh")]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.13556218, 0.38724804, -8.762668)
-
 [node name="TrashCan2" parent="." unique_id=1884958424 instance=ExtResource("27_stcfx")]
 transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 6.7594132, 0.054823756, 1.0867425)
 
@@ -248,27 +251,18 @@ transform = Transform3D(1.3513514, 0, 0, 0, 1.3513514, 0, 0, 0, 1.3513514, -1.80
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3520861, 0.9030762, 1.1039257)
 shape = SubResource("BoxShape3D_fo3dt")
 
-[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=270792858]
-transform = Transform3D(1, 0, 0, 0, 0.31914014, 0.94770753, 0, -0.94770753, 0.31914014, 0.5854435, 7.3106194, 4.454878)
-light_energy = 7.759
-light_indirect_energy = 2.06
-light_specular = 1.909
-area_range = 23.59
-area_attenuation = 2.269
-area_size = Vector2(10, 5)
-
-[node name="AreaLight3D" type="AreaLight3D" parent="AreaLight3D" unique_id=883251824]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5854435, 8.569151, 20.738234)
-light_energy = 8.175
-area_range = 76.42
-area_attenuation = 2.836
-area_normalize_energy = false
-area_size = Vector2(20, 20)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1171203485]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.285801, 2.6133094, 12.305206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54351616, 11.769893, 6.383787)
+light_color = Color(1, 1, 0.80784315, 1)
 omni_range = 27.562
 omni_attenuation = 0.03
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D" unique_id=1412782894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72281265, 47.585438, -14.907988)
+light_color = Color(1, 1, 0.80784315, 1)
+light_energy = 1.205
+omni_range = 42.701
+omni_attenuation = -0.365
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=998798660]
 disable_3d = true
@@ -312,6 +306,35 @@ script = ExtResource("32_12hmx")
 transition_started = true
 hardcoded_shit = false
 
+[node name="Fan" parent="." unique_id=997207045 instance=ExtResource("31_v1xsh")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, -0.5458126, 9.536743e-07, -8.924231)
+
+[node name="Light_Fixture" parent="." unique_id=981242666 instance=ExtResource("32_jm2s4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 14.645073, 13.547807, -6.372081)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Light_Fixture" unique_id=2068636023]
+transform = Transform3D(1.3333334, 0, 0, 0, -5.8281852e-08, 1.3333334, 0, -1.3333334, -5.8281852e-08, 0, -1.7314949, 0)
+light_color = Color(1, 1, 0.80784315, 1)
+light_energy = 4.055
+area_range = 42.871
+area_size = Vector2(3.52, 13.46)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light_Fixture" unique_id=2136134912]
+transform = Transform3D(1.3333334, 0, 0, 0, -5.8281852e-08, 1.3333334, 0, -1.3333334, -5.8281852e-08, -38.86884, -1.7314949, 0)
+light_color = Color(1, 1, 0.80784315, 1)
+light_energy = 4.055
+area_range = 42.871
+area_size = Vector2(3.52, 13.46)
+
+[node name="Light_Fixture2" parent="Light_Fixture" unique_id=962971858 instance=ExtResource("32_jm2s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.93748, 0, 0)
+
+[node name="MeshInstance3D" parent="." unique_id=1117880977 instance=ExtResource("26_12hmx")]
+transform = Transform3D(1.20975, 0, 0, 0, -0.99974996, 8.7449223e-07, 0, -1.5095804e-07, -5.7915, 14.657974, 12.453408, -6.407605)
+
+[node name="MeshInstance3D2" parent="MeshInstance3D" unique_id=1555962933 instance=ExtResource("26_12hmx")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, -5.684342e-14, 0, 3.5527137e-15, 1.0000001, -24.169998, 0, 0)
+
 [connection signal="add_note_to_queue" from="SystemManager/CylenderSpawner" to="Path3D" method="_on_cylender_spawner_add_note_to_queue"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer2" to="SystemManager/CylenderSpawner" method="_on_timer_2_timeout"]
@@ -326,5 +349,8 @@ hardcoded_shit = false
 [connection signal="submitItem" from="Pipes/Pipe9/Ventricle" to="SystemManager" method="_ventricle_return_function"]
 [connection signal="submitItem" from="Pipes/Pipe10/Ventricle" to="SystemManager" method="_ventricle_return_function"]
 [connection signal="submitItem" from="Pipes/Pipe11/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="body_entered" from="TrashCan2/TrashCan" to="TrashCan2/TrashCan" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="TrashCan2/TrashCan" to="TrashCan2/TrashCan" method="_on_area_3d_body_exited"]
+[connection signal="trigger_dropped_function" from="TrashCan2/TrashCan" to="SystemManager" method="_on_trash_can_trigger_dropped_function"]
 [connection signal="object_finished" from="Path3D" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]

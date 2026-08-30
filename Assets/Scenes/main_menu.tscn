@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c0eds74e7hje4"]
+
+[ext_resource type="PackedScene" uid="uid://dpq3ty8bprokq" path="res://Assets/Models/Main Menu/Main_Menu.fbx" id="1_jkcs5"]
+[ext_resource type="Texture2D" uid="uid://cna26aj4j4lbd" path="res://Assets/Models/Main Menu/lines bullshit/Lines_Color.png" id="2_s067f"]
+[ext_resource type="Texture2D" uid="uid://bqlwg8ftre1na" path="res://Assets/Models/Main Menu/lines bullshit/Lines_Metallic.png" id="3_kvp6s"]
+[ext_resource type="Texture2D" uid="uid://cu6x4m7a0whcw" path="res://Assets/Models/Main Menu/lines bullshit/Lines_Roughness.png" id="4_cvcoh"]
+[ext_resource type="Texture2D" uid="uid://bn4rq7jld7hcg" path="res://Assets/Models/Main Menu/Pipes/Pipes_Color.png" id="5_0youy"]
+[ext_resource type="Texture2D" uid="uid://wy345kwpw4ag" path="res://Assets/Models/Main Menu/Pipes/Pipes_Metallic.png" id="6_o6fo6"]
+[ext_resource type="Texture2D" uid="uid://bkwe7kj0eqeob" path="res://Assets/Models/Main Menu/Pipes/Pipes_Normal.png" id="7_m3o7a"]
+[ext_resource type="Texture2D" uid="uid://bjcx8dgf6oj73" path="res://Assets/Models/Main Menu/Pipes/Pipes_Roughness.png" id="8_s707j"]
+[ext_resource type="Texture2D" uid="uid://pbl05p7754m8" path="res://Assets/Models/Main Menu/Wall/Wall_Color.png" id="9_00jt8"]
+[ext_resource type="Texture2D" uid="uid://bs35bktbp760" path="res://Assets/Models/Main Menu/Wall/Wall_Normal.png" id="10_wdfnr"]
+[ext_resource type="Texture2D" uid="uid://y2jnthl675fm" path="res://Assets/Models/Main Menu/Wall/Wall_Roughness.png" id="11_jui5k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glbon"]
+albedo_texture = ExtResource("2_s067f")
+metallic = 1.0
+metallic_texture = ExtResource("3_kvp6s")
+roughness_texture = ExtResource("4_cvcoh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06t4h"]
+cull_mode = 2
+albedo_texture = ExtResource("5_0youy")
+metallic = 0.75
+metallic_texture = ExtResource("6_o6fo6")
+roughness_texture = ExtResource("8_s707j")
+normal_enabled = true
+normal_texture = ExtResource("7_m3o7a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlkkf"]
+cull_mode = 2
+albedo_texture = ExtResource("9_00jt8")
+roughness_texture = ExtResource("11_jui5k")
+normal_enabled = true
+normal_texture = ExtResource("10_wdfnr")
+
+[node name="Main_Menu" unique_id=1968480737 instance=ExtResource("1_jkcs5")]
+
+[node name="Electrical Bullshit" parent="." index="0" unique_id=555130579]
+surface_material_override/0 = SubResource("StandardMaterial3D_glbon")
+
+[node name="Pipes 1-9" parent="." index="1" unique_id=74061467]
+surface_material_override/0 = SubResource("StandardMaterial3D_06t4h")
+
+[node name="Wall" parent="." index="2" unique_id=1140046117]
+surface_material_override/0 = SubResource("StandardMaterial3D_nlkkf")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="3" unique_id=1178822744]
