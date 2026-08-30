@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dq8ku6vex34x8" path="res://Assets/Scenes/Tubes_Combined_Animation.tscn" id="12_ig31h"]
 [ext_resource type="PackedScene" uid="uid://dibdw1mogwt31" path="res://Assets/Scenes/camera_shake.tscn" id="13_hrdrn"]
 [ext_resource type="AudioStream" uid="uid://jef0chp2glj8" path="res://Sounds/SFX for pipes/MainMenu_Ambiance.mp3" id="15_2dgve"]
+[ext_resource type="PackedScene" uid="uid://b885bhjdc1a5n" path="res://Assets/Scenes/flying_note.tscn" id="16_bmubs"]
 [ext_resource type="AudioStream" uid="uid://babfj3lyruw2v" path="res://Sounds/SFX for pipes/TubeSwoosh_Sync.mp3" id="16_gbhl0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mvdg"]
@@ -98,3 +99,6 @@ stream = ExtResource("16_gbhl0")
 volume_db = -10.085
 autoplay = true
 parameters/looping = true
+
+[node name="FlyingNote" parent="." index="10" unique_id=305087920 instance=ExtResource("16_bmubs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6564016, 5.678887, 2.257454)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bwyrv70cljidu"]
+
+[ext_resource type="PackedScene" uid="uid://dc0a8aba1apqn" path="res://Assets/Models/Pube/Pube_Animated.fbx" id="1_33ini"]
+[ext_resource type="Texture2D" uid="uid://55bub5vpqiux" path="res://Assets/Models/Pube/Pube_Animated_Color.png" id="2_02ikv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmubs"]
+albedo_texture = ExtResource("2_02ikv")
+
+[node name="Pube_Animated" unique_id=614879993 instance=ExtResource("1_33ini")]
+
+[node name="Cube_004" parent="." index="0" unique_id=1901798707]
+transform = Transform3D(70.71067, 70.71068, 1.1920928e-05, -2.980232e-06, -1.1920928e-05, 99.99999, 70.71068, -70.71067, 0, 0, 1, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_bmubs")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1066526744]
+autoplay = &"Cube_004|Action_006"

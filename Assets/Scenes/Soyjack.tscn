@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ci4nf7jv2qu1t"]
+
+[ext_resource type="PackedScene" uid="uid://ccd6kt5oacncl" path="res://Assets/Models/Posters/Poster_Square.fbx" id="1_u7e0o"]
+[ext_resource type="Texture2D" uid="uid://d3dia1h1ub71a" path="res://Assets/Models/Posters/New_Project.jpg" id="2_ci7d1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbohw"]
+cull_mode = 2
+albedo_texture = ExtResource("2_ci7d1")
+
+[node name="Poster_Square" unique_id=735373434 instance=ExtResource("1_u7e0o")]
+
+[node name="Poster_001" parent="." index="0" unique_id=749286974]
+surface_material_override/0 = SubResource("StandardMaterial3D_fbohw")

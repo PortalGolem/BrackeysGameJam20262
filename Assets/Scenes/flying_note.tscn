@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b885bhjdc1a5n"]
+
+[ext_resource type="PackedScene" uid="uid://b1xcbsj3f2oyl" path="res://Assets/Models/Main Menu/FlyingNote.fbx" id="1_gsfnb"]
+[ext_resource type="Texture2D" uid="uid://dp5h60ks1ul0v" path="res://Assets/UIAssets/PostIts/postit_stain.png" id="2_4iaq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aathi"]
+cull_mode = 2
+albedo_texture = ExtResource("2_4iaq6")
+roughness = 0.0
+
+[node name="FlyingNote" unique_id=305087920 instance=ExtResource("1_gsfnb")]
+
+[node name="flyiing note" parent="." index="0" unique_id=1598132683]
+transform = Transform3D(434.63242, 0, 0, 0, -1.8998388e-05, 434.63242, 0, -434.63245, -1.8998386e-05, 15.195361, 23.852911, -9.084707)
+surface_material_override/0 = SubResource("StandardMaterial3D_aathi")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=461068767]
+autoplay = &"Fluttering_Animation"

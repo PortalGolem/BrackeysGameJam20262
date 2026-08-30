@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b1bf54k55tnny"]
+
+[ext_resource type="PackedScene" uid="uid://dtfuqodotgutx" path="res://Assets/Models/Pube/Pube.fbx" id="1_lle8g"]
+[ext_resource type="Texture2D" uid="uid://dioj8q52io6ep" path="res://Assets/Models/Pube/Pube_Color.png" id="2_3yrgo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keiqn"]
+albedo_texture = ExtResource("2_3yrgo")
+
+[node name="Pube" unique_id=1791971279 instance=ExtResource("1_lle8g")]
+
+[node name="Pube" parent="." index="0" unique_id=1279469450]
+surface_material_override/0 = SubResource("StandardMaterial3D_keiqn")
