@@ -1,31 +1,30 @@
-[gd_scene format=3 uid="uid://i8uxbfh72x5c"]
+[gd_scene format=3 uid="uid://b5v55a4gb6nji"]
 
 [ext_resource type="PackedScene" uid="uid://cmsjalrngt7hg" path="res://Assets/Models/Fan/Fan.fbx" id="1_sxj65"]
 [ext_resource type="Texture2D" uid="uid://uij51boaqokx" path="res://Assets/Models/Fan/Fan_Color.png" id="2_ub2ck"]
 [ext_resource type="Texture2D" uid="uid://c7t2yp8gs6rvc" path="res://Assets/Models/Fan/Fan_Metallic.png" id="3_f6rxn"]
 [ext_resource type="Texture2D" uid="uid://b606g4iyytp1r" path="res://Assets/Models/Fan/Fan_Roughness.png" id="4_lpc4o"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ofwq"]
-albedo_texture = ExtResource("2_ub2ck")
-metallic = 1.0
-metallic_texture = ExtResource("3_f6rxn")
-roughness_texture = ExtResource("4_lpc4o")
-emission_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vgsl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tc01m"]
 albedo_texture = ExtResource("2_ub2ck")
 metallic = 1.0
 metallic_texture = ExtResource("3_f6rxn")
 roughness_texture = ExtResource("4_lpc4o")
 
-[node name="Fan" unique_id=911150085 instance=ExtResource("1_sxj65")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phar3"]
+albedo_texture = ExtResource("2_ub2ck")
+metallic = 1.0
+metallic_texture = ExtResource("3_f6rxn")
+roughness_texture = ExtResource("4_lpc4o")
 
-[node name="Cylinder_008" parent="." index="0" unique_id=1559133705]
-surface_material_override/0 = SubResource("StandardMaterial3D_0ofwq")
+[node name="Fan" unique_id=997207045 instance=ExtResource("1_sxj65")]
 
-[node name="Cylinder_009" parent="." index="1" unique_id=1990034157]
-transform = Transform3D(99.999985, 0, 0, 0, -4.371138e-06, 99.99998, 0, -99.999985, -4.371138e-06, -0.7788405, 17.19663, 20.223658)
-surface_material_override/0 = SubResource("StandardMaterial3D_8vgsl")
+[node name="Cylinder_008" parent="." index="0" unique_id=1810015199]
+surface_material_override/0 = SubResource("StandardMaterial3D_tc01m")
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=1801249505]
-autoplay = &"Cylinder_009|Cylinder_009Action"
+[node name="Cylinder_009" parent="." index="1" unique_id=2037070632]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, -0.0027481765, 17.19663, 20.223658)
+surface_material_override/0 = SubResource("StandardMaterial3D_phar3")
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=251795847]
+autoplay = &"Cylinder_009|Action_001"
