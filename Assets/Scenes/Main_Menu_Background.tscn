@@ -51,13 +51,13 @@ glow_hdr_luminance_cap = 15.0
 
 [node name="Main_Menu" unique_id=1287745718 instance=ExtResource("1_bmubs")]
 
-[node name="Electrical Bullshit" parent="." index="0" unique_id=1524450996]
+[node name="Electrical Bullshit" parent="." index="0" unique_id=555130579]
 surface_material_override/0 = SubResource("StandardMaterial3D_8mvdg")
 
-[node name="Pipes 1-9" parent="." index="1" unique_id=1126267320]
+[node name="Pipes 1-9" parent="." index="1" unique_id=74061467]
 surface_material_override/0 = SubResource("StandardMaterial3D_dc0su")
 
-[node name="Wall" parent="." index="2" unique_id=148013645]
+[node name="Wall" parent="." index="2" unique_id=1140046117]
 surface_material_override/0 = SubResource("StandardMaterial3D_o34id")
 
 [node name="Tubes" parent="." index="3" unique_id=1509204707 instance=ExtResource("12_ig31h")]

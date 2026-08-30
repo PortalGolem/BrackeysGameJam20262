@@ -42,7 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
 [ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="31_jm2s4"]
-[ext_resource type="PackedScene" uid="uid://i8uxbfh72x5c" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
+[ext_resource type="PackedScene" uid="uid://b5v55a4gb6nji" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
 [ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="32_12hmx"]
 [ext_resource type="PackedScene" uid="uid://ddchbcp57k1tk" path="res://Assets/Scenes/light_fixture.tscn" id="32_jm2s4"]
 [ext_resource type="PackedScene" uid="uid://djjjwejr6duoc" path="res://Assets/Scenes/Posterr_Sloth.tscn" id="35_cu2dh"]
