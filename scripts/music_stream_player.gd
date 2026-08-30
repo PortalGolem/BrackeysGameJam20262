@@ -19,9 +19,7 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 
 func loop_music():
-	if !playing:
-		global.music_play($".", load(global.Music))
-		music_playing = global.Music
+
 	if global.Music != music_playing:
 		music_playing = global.Music
 		global.music_play($".", load(global.Music))

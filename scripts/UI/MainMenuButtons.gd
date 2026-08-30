@@ -3,7 +3,7 @@ extends Control
 var selection = 1
 var selection_past = 1
 var font = global.Main_Font
-var music = "res://Sounds/Meow/snd_Meow8.mp3"
+var music = "res://Sounds/Music/MainMenu_Ambiance.mp3"
 var game_music = "res://Sounds/Music/spheretypebeat.mp3"
 var move_sfx = [preload("res://Sounds/Menu/Move/snd_menu_moveA.mp3"), preload("res://Sounds/Menu/Move/snd_menu_moveC1.mp3"),
 preload("res://Sounds/Menu/Move/snd_menu_moveC.mp3"),preload("res://Sounds/Menu/Move/snd_menu_moveD.mp3"),

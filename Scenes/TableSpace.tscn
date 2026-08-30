@@ -31,12 +31,14 @@
 [ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
 [ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
 [ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="31_jm2s4"]
-[ext_resource type="PackedScene" uid="uid://i8uxbfh72x5c" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
+[ext_resource type="PackedScene" uid="uid://b5v55a4gb6nji" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
 [ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="32_12hmx"]
 [ext_resource type="PackedScene" uid="uid://ddchbcp57k1tk" path="res://Assets/Scenes/light_fixture.tscn" id="32_jm2s4"]
 [ext_resource type="PackedScene" uid="uid://djjjwejr6duoc" path="res://Assets/Scenes/Posterr_Sloth.tscn" id="35_cu2dh"]
 [ext_resource type="PackedScene" uid="uid://c6vqid1sslxc0" path="res://Assets/Scenes/Poster_AreYouPooping.tscn" id="36_stcfx"]
 [ext_resource type="PackedScene" uid="uid://bhifuax1hqvuw" path="res://Assets/Scenes/Poster_Cat.tscn" id="37_6j2xr"]
+[ext_resource type="PackedScene" uid="uid://bwyrv70cljidu" path="res://Assets/Scenes/pube_animated.tscn" id="38_riluv"]
+[ext_resource type="PackedScene" uid="uid://ci4nf7jv2qu1t" path="res://Assets/Scenes/Soyjack.tscn" id="39_csns6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
 
@@ -312,8 +314,9 @@ offset_right = 576.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(10, 10)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+color = Color(0, 0, 0, 1)
 script = ExtResource("32_12hmx")
 transition_started = true
 hardcoded_shit = false
@@ -348,13 +351,19 @@ transform = Transform3D(1.20975, 0, 0, 0, -0.99974996, 8.7449223e-07, 0, -1.5095
 transform = Transform3D(0.9999999, 0, 0, 0, 1, -5.684342e-14, 0, 3.5527137e-15, 1.0000001, -24.169998, 0, 0)
 
 [node name="Poster" parent="." unique_id=1614337120 instance=ExtResource("35_cu2dh")]
-transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 17.449585, 9.242689, -30.676)
+transform = Transform3D(-1.782714, -0.90660405, -3.962892e-08, 0, -8.742278e-08, 2, -0.90660405, 1.782714, 7.79249e-08, 7.622566, 20.637646, -2.9985108)
 
 [node name="Poster2" parent="." unique_id=250044162 instance=ExtResource("36_stcfx")]
-transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, 22.020102, 6.318014, -1.5153506)
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, 22.020102, 6.318014, -13.889551)
 
 [node name="Poster3" parent="." unique_id=564597385 instance=ExtResource("37_6j2xr")]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -22.550037, 7.055927, 0.4678197)
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -22.550037, 7.055927, -5.8904486)
+
+[node name="Pube_Animated" parent="." unique_id=614879993 instance=ExtResource("38_riluv")]
+transform = Transform3D(-0.35, 0, 3.059797e-08, 0, 0.35, 0, -3.059797e-08, 0, -0.35, 5.7620835, 4.9710627, -2.9984107)
+
+[node name="Poster_Square" parent="." unique_id=735373434 instance=ExtResource("39_csns6")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -22.524523, 8.40298, 0.9975674)
 
 [connection signal="add_note_to_queue" from="SystemManager/CylenderSpawner" to="Path3D" method="_on_cylender_spawner_add_note_to_queue"]
 [connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]

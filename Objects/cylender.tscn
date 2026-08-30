@@ -32,7 +32,12 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024662018, 0.23937988, -0.02425003)
 shape = SubResource("BoxShape3D_37okk")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2008816799]
+
+[connection signal="dropObject" from="Item" to="." method="_on_item_drop_object"]
+[connection signal="inspectObject" from="Item" to="." method="_on_item_inspect_object"]
 [connection signal="inspectObject" from="Item" to="." method="_on_cylender_inspect_object"]
+[connection signal="pickUpItem" from="Item" to="." method="_on_item_pick_up_item"]
 [connection signal="body_entered" from="Item/Dropable" to="Item/Dropable" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Item/Dropable" to="Item/Dropable" method="_on_area_3d_body_exited"]
 [connection signal="trigger_dropped_function" from="Item/Dropable" to="." method="_on_dropable_trigger_dropped_function"]
