@@ -143,7 +143,7 @@ var people = {
 		{"Text" = "Hello? What is this? Einstein in the house!", "Target" = "Any", "Meta" = []},
 		],
 		"Conversation" = {
-			"Yeah, theres" = {"Text" = "Yeah, theres a good place down the street called 'Aldi'", "Target" = "Eli", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "..."}]},
+			"Yeah, theres" = {"Text" = "Yeah, theres a good place down the street called 'Aldi'.", "Target" = "Eli", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "..."}]},
 			"Yeah, it" = {"Text" = "Yeah, it was 5,000, Gertrude ate 23 cakes last month.", "Target" = "Nathan", "Meta" = []},
 			"What do" = {"Text" = "What do you mean? I spent all night working on that report.", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "You calculated"}]},
 			"Yeah? What" = {"Text" = "Yeah? What do you not know how interest works?",  "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Why the"}]},
@@ -181,7 +181,7 @@ var people = {
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
 		"RandomNotes1" = [
-		{"Text" = "Hey Einstein... I've noticed that all of your numbers in your recent report are wrong.", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "What do"}]},
+		{"Text" = "Hey Einstein... I've noticed that all of your numbers in your recent report are wrong.\n\n- Gertrude.", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "What do"}]},
 		],
 		"Conversation" = {
 			"I don't" = {"Text" = "I don't know bertha. I'm 40 years old. I have a husband and kids.", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Sooooo whaaaat."}]},
@@ -203,7 +203,7 @@ var people = {
 		"PerpetualChance" = 0.0,
 		"Greeting" = [{"Text" = "Wassup new person. Just as a warning if you see a guy talking in emoticons its probably Larry... I had to learn the hard way.", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
-		{"Text" = "Hey Bob, Could you come clean up this spill", "Target" = "Bob", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "On it!"}]},
+		{"Text" = "Hey Bob, Could you come clean up this spill?\n\nThank you,\nEli.", "Target" = "Bob", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "On it!"}]},
 		{"Text" = "Hey, does anyone know where the photocopier is?", "Target" = "Any", "Meta" = []},
 		{"Text" = "Hey Einstein, do you know of any good ramen places?\n\nEli", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, theres"}]},
 		],
@@ -222,7 +222,7 @@ var people = {
 		"Greeting" = [{"Text" = "First of all, I would like to say hello welcome to your new job as a mailmaster at this company. Your job is to sort through the notes that come through and send them to the correct people in the office. Have a nice day and good luck!", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
 		{"Text" = "Eli, please come to my office.", "Target" = "Eli", "Meta" = []},
-		{"Text" = "Hey Larry, could you research a new employee monitoring software?", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\"')"}]},
+		{"Text" = "Hey Larry, could you research a new employee monitoring software? \n\nBest,\nThe Guy that pays you.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\"')"}]},
 		],
 		"Conversation" = {
 			"I need" = {"Text" = "I need one with privledge settings so restrictions don't apply to everyone", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\"'')"}]},
