@@ -102,7 +102,7 @@ var people = {
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
 		"RandomNotes1" = [
-		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOUR FUCKING ASS. \n\nWorst,\nJim", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
+		{"Text" = "Larry I swear to GOD if you block ONE MORE OF MY ANIME SITES I'm gonna BEAT YOUR @^&$%*& ASS. \n\nWorst,\nJim", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮"}]},
 		],
 		"Conversations" = {
 			"What did" = {"Text" = "What did I even do to deserve this... I can get my work done and watch shows at the same time.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "¯\\_(ツ)_/¯"}]},
