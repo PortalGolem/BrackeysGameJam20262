@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3rojm0usueh2"
-path="res://.godot/imported/postit_cat.png-7926df2eaf95bb1c8f4971b1aaaaf3ef.ctex"
+uid="uid://xmfaafngaq4i"
+path="res://.godot/imported/big poo drip.jpg-e4a8670278e191bae4f6f1db01bb92f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UIAssets/PostIts/postit_cat.png"
-dest_files=["res://.godot/imported/postit_cat.png-7926df2eaf95bb1c8f4971b1aaaaf3ef.ctex"]
+source_file="res://big poo drip.jpg"
+dest_files=["res://.godot/imported/big poo drip.jpg-e4a8670278e191bae4f6f1db01bb92f3.ctex"]
 
 [params]
 

@@ -2,6 +2,36 @@
 
 [ext_resource type="Script" uid="uid://dh7bunnpimn7j" path="res://scripts/UI/MainMenuButtons.gd" id="1_i26rj"]
 [ext_resource type="PackedScene" uid="uid://cjd7cide3olap" path="res://Scenes/Menus/SettingsMenu.tscn" id="2_b42ut"]
+[ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="3_tfrft"]
+[ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="4_uv623"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jq2tr"]
+shader = ExtResource("3_tfrft")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 3
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = false
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 3
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1152495092]
 
@@ -41,23 +71,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "NO IDEAS"
 
-[node name="TEXT" type="CenterContainer" parent="MainMenu" unique_id=611039226]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 320.0
-offset_right = 222.0
-offset_bottom = 512.0005
-
-[node name="written text" type="Label" parent="MainMenu/TEXT" unique_id=1666516053]
-layout_mode = 2
-theme_override_font_sizes/font_size = 26
-text = "Game start
-
-Settings
-
-Quit"
-horizontal_alignment = 1
-
 [node name="Selection1" type="Label" parent="MainMenu" unique_id=1484498285]
 layout_mode = 0
 offset_left = 70.0
@@ -85,7 +98,61 @@ offset_bottom = 426.0
 scale = Vector2(1.5, 1.5)
 offset_transform_enabled = true
 
+[node name="Buttons" type="Control" parent="MainMenu" unique_id=953420479]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Button" parent="MainMenu/Buttons" unique_id=1574184793]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 394.0
+offset_right = 208.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 26
+text = "Settings"
+alignment = 0
+
+[node name="Button3" type="Button" parent="MainMenu/Buttons" unique_id=17893489]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 472.0
+offset_right = 190.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+alignment = 0
+
+[node name="Button1" type="Button" parent="MainMenu/Buttons" unique_id=1101554862]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 316.0
+offset_right = 230.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 26
+text = "Game Start"
+alignment = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1452066851]
 max_polyphony = 20
 
 [node name="SettingsMenu" parent="." unique_id=1236389570 instance=ExtResource("2_b42ut")]
+visible = false
+
+[node name="TransitionClock" type="ColorRect" parent="." unique_id=235062600]
+material = SubResource("ShaderMaterial_jq2tr")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+script = ExtResource("4_uv623")
+transition_started = null
