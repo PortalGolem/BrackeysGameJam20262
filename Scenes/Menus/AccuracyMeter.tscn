@@ -61,7 +61,7 @@ offset_top = -21.0
 offset_right = 246.0
 offset_bottom = 19.0
 script = ExtResource("1_wkpfp")
-accuracy_percent = 80.0
+accuracy_percent = 100.0
 
 [node name="OutlineBar" type="ColorRect" parent="Control" unique_id=643197117]
 layout_mode = 0

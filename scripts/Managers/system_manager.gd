@@ -6,12 +6,18 @@ var score := 0
 @export var randomNoteSpawnChancePerCycle := .5
 @export var randomNoteSpawnRollCount := 2
 @export var maxNoteSpawns := 2
+@export var maxConversations = 2
 var currentNotes = []
 var notesSent := 0
 
 var currentConversations = [null, null]
 
 var greetingSent := false
+var currentAccuracyQuality = 10
+
+var activeConversations:int = 0
+
+var ventricleIds = ["Nathan", "Bob", "Larry", "Meredith", "Jim", "Frank", "Einstein", "Bertha", "Gertrude", "Eli", "Boss"]
 
 var people = {
 	 Larry = {
@@ -22,7 +28,6 @@ var people = {
 		"PerpetualChance" = 0.0,
 		"Greeting" = [{"Text" = "ε(´｡•o•`)っ", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
-		{"Text" = ": )", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = ": )"}]},
 		],
 		"Conversations" = {
 			"╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮" =  {"Text" = "╭∩╮( ＾◡＾)╭∩╮╭∩╮( ＾◡＾)╭∩╮", "Target" = "Jim", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "What did"}]},
@@ -60,13 +65,13 @@ var people = {
 		"PerpetualChance" = 0.0,
 		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!! \n\nBest, \nMerideth.", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
-		{"Text" = "Hey everyone! How are you guys doing? Meri here!", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Hello? Anyone"}]},
-		{"Text" = "Hey Frank. I've noticed that your performance is slightly off from yesterday. Not to be that person but make sure your working hard! \n\nBest,\nMerideth", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Meredith, I've"}]}
+		#{"Text" = "Hey everyone! How are you guys doing? Meri here!", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Hello? Anyone"}]},
+		{"Text" = "Hey Frank. I've noticed that your performance is slightly off from yesterday. Not to be theat person but make sure your working hard!", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Meredith, I've"}]}
 		],
 		"Conversations" = {
-			"Hello? Anyone" = {"Text" = "Hello? Anyone get my message?", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Is my"}]},
-			"Is my" = {"Text" = "Is my tube broken?", "Target" = "Any", Meta = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Mail guy,"}]},
-			"Mail guy," = {"Text" = "Mail guy, you suck at your job.", "Target" = "Any", Meta = []},
+			#"Hello? Anyone" = {"Text" = "Hello? Anyone get my message?", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Is my"}]},
+			#"Is my" = {"Text" = "Is my tube broken?", "Target" = "Any", Meta = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Mail guy,"}]},
+			#"Mail guy," = {"Text" = "Mail guy, you suck at your job.", "Target" = "Any", Meta = []},
 			"Still not" = {"Text" = "Still not an excuse Frank! Think about the shareholders, they need to make their hard earned money too!", "Target" = "Frank", "Meta" = []}
 		},
 		"PerpetualNotes" = [],
@@ -149,8 +154,7 @@ var people = {
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
 		"RandomNotes1" = [
-			{"Text" = "Oh my gawwwwd. Gertrude is there a new guy working in our office? Is he hot?? \n\nYa best friend\nBertha", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "I don't"}]},
-			{"Text" = "(send this to the PA) Heey guuuys, today is Gertrudes birthday. She is turning 97 today. Go say happy birthday!", "Target" = "PA", "Meta" = [{"Recipient" = "Target", "Sender" = "Gertrude", "Return" = "YOU. I'm"}]},
+			{"Text" = "Oh my gawwwwd. Gertrude is there a new guy working in our office? Is he hot??", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "I don't"}]},
 		],
 		"Conversations" = {
 			"Sooooo whaaaat." = {"Text" = "Sooooo whaaaat. Can't you live a little Gerty?", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Don't call"}]},
@@ -173,7 +177,6 @@ var people = {
 		"PerpetualChance" = 0.0,
 		"RandomNotes1" = [
 		{"Text" = "Hey Einstein... I've noticed that all of your numbers in your recent report are wrong.", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "What do"}]},
-		{"Text" = "Hey mail guy, send this back to me later to remind me to turn off the oven in the break room.\n\nHave a nice day,\nGertrude", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "FIRE"}]},
 		],
 		"Conversation" = {
 			"I don't" = {"Text" = "I don't know bertha. I'm 40 years old. I have a husband and kids.", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Sooooo whaaaat."}]},
@@ -231,14 +234,18 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	notesSent = 0
+	
 	for person in people:
 		if not greetingSent and people[person].has("Greeting"):
 			for greet in people[person]["Greeting"]:
 				# Greetings disabled
-				sendNotes(greet["Text"], people[person]["Color"], greet["Target"], people[person]["Name"], true, true)
+				sendNotes(greet["Text"], people[person]["Color"], greet["Target"], people[person]["Name"], true, greet, true)
 				pass
+		
 		for i in randomNoteSpawnRollCount:
 			if people[person]["PerpetualChance"] <= 0 and people[person]["SentNotes"].size() >= people[person]["RandomNotes1"].size():
+				break
+			if (activeConversations >= maxConversations):
 				break
 			if randf() < clampf(randomNoteSpawnChancePerCycle * people[person]["SystemTrust"], 0.0, 1.0):
 				var selectedNote = {"Text" = "No way brochacho", "Target" = "Trash", "Meta" = []}
@@ -253,40 +260,65 @@ func _on_timer_timeout() -> void:
 						if selectedNote in people[person]["SentNotes"]:
 							continue
 						break
-				sendNotes(selectedNote["Text"], people[person]["Color"], selectedNote["Target"], people[person]["Name"], isPerpetual)
+				sendNotes(selectedNote["Text"], people[person]["Color"], selectedNote["Target"], people[person]["Name"], isPerpetual, selectedNote)
+				activeConversations += 1
 		
 	
 	greetingSent = true
 	
-func handleNotes(note:Note, sentWithoutCannister:bool):
+func handleNotes(note:Note, sentWithoutCannister:bool, ventricleID):
 	var noteDict = null
 	for n in currentNotes:
 		if (n["Text"] == note.text):
 			noteDict = n
 	if noteDict == null:
 		print("No notes!")
+		return
+	if (ventricleID != 11 and ventricleIds[ventricleID] == noteDict["Target"]) or noteDict["Target"] == "Any":
+		if (noteDict["Meta"].size() > 0):
+			var person
+			if (noteDict["Meta"][0]["Sender"] == "Target" or noteDict["Target"] == "Any"):
+				person = noteDict["Target"]
+			else:
+				person = noteDict["Meta"][0]["Sender"]
+			sendNotes(people[person]["Conversation"][noteDict["Meta"][0]["Return"]]["Text"], people[person]["Color"], people[person]["Conversation"][noteDict["Meta"][0]["Return"]]["Target"], people[person]["Name"], false, people[person]["Conversation"][noteDict["Meta"][0]["Return"]])
+		else:
+			activeConversations -= 1
+		currentAccuracyQuality += 1
+		currentAccuracyQuality = clamp(currentAccuracyQuality, 0, 10)
+	else:
+		activeConversations -= 1
+		activeConversations = max(activeConversations, 0)
+		currentAccuracyQuality -= 1
+		if (currentAccuracyQuality <= 6):
+			print("You ded")
+	print("Update!")
+	$"../SubViewport/AccuracyMeter".get_child(0).accuracy_percent = currentAccuracyQuality * 10
 	
-func sendNotes(text: String, color: String, target: String, origin: String, isPerpetual: bool, maxNoteOverride := false) -> void:
+	
+func sendNotes(text: String, color: String, target: String, origin: String, isPerpetual: bool, noteDict, maxNoteOverride := false,) -> void:
 	if notesSent > maxNoteSpawns and not maxNoteOverride:
 		return
 	notesSent += 1
 	spawner.printNote(text, color)
-	currentNotes.append({"Text" = text, "Target" = target, "Origin" = origin})
+	currentNotes.append(noteDict)
 	if not isPerpetual:
 		people[origin]["SentNotes"].append({"Text" = text, "Target" = target})
 
 func _ventricle_return_function(object:Node3D, ventricle:int):
-	var parent = object.get_parent().get_parent()
+	var parent = object.get_parent()
 	if parent is CylenderContents and parent.hasContents:
-		handleNotes(parent.contents, false)
+		handleNotes(parent.contents, false, ventricle)
 	if parent is Note:
-		handleNotes(parent, true)
+		handleNotes(parent, true, ventricle)
+		pass
 
 
 func _on_trash_can_trigger_dropped_function(object: Node3D) -> void:
-	var parent = object.get_parent().get_parent()
+	var parent = object.get_parent()
 	if parent is CylenderContents and parent.hasContents:
-		handleNotes(parent.contents, false)
+		handleNotes(parent.contents, false, 11)
 	if parent is Note:
-		handleNotes(parent, true)
+		handleNotes(parent, true, 11)
+		pass
 	object.queue_free()
