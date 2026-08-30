@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnk6xxkjdjhvp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6faft"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_sjr81"]
+cull_mode = 2
+emission_enabled = true
+emission = Color(1, 1, 0.80784315, 1)
+emission_energy_multiplier = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1117880977]
+transform = Transform3D(0.805, 0, 0, 0, 1, 0, 0, 0, 3.605, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6faft")
+surface_material_override/0 = SubResource("ORMMaterial3D_sjr81")
