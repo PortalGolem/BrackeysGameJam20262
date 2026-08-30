@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxx5vvifv5eud" path="res://Assets/Models/Canister/Electrical Box/Electrical_Box_Roughness.png" id="4_ufgqo"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvsy6"]
 albedo_texture = ExtResource("2_kie14")
 metallic = 1.0

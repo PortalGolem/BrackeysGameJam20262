@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b4gfb82o33hde" path="res://Assets/Models/Canister/Electrical Box/Panel/Panel.fbx" id="1_bhlvv"]
 [ext_resource type="Texture2D" uid="uid://dxcldrnlmvhl4" path="res://Assets/Models/Canister/Electrical Box/Panel/Panel.png" id="2_acnei"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esvih"]
 albedo_texture = ExtResource("2_acnei")
 

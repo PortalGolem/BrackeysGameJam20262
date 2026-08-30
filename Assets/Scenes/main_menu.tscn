@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bs35bktbp760" path="res://Assets/Models/Main Menu/Wall/Wall_Normal.png" id="10_wdfnr"]
 [ext_resource type="Texture2D" uid="uid://y2jnthl675fm" path="res://Assets/Models/Main Menu/Wall/Wall_Roughness.png" id="11_jui5k"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glbon"]
 albedo_texture = ExtResource("2_s067f")
 metallic = 1.0

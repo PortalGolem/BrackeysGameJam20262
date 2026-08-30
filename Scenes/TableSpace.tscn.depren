@@ -1,0 +1,386 @@
+[gd_scene format=3 uid="uid://cvlrfj50brt4"]
+
+[ext_resource type="PackedScene" uid="uid://to5ej5dtb3bl" path="res://Objects/dropable.tscn" id="2_hwbjd"]
+[ext_resource type="Script" uid="uid://bkpwr1btmhdbm" path="res://scripts/Items/Dropable/Cylender/cylender_spawner.gd" id="4_ywnsu"]
+[ext_resource type="Script" uid="uid://btxe3bx0bcvg6" path="res://scripts/Managers/system_manager.gd" id="6_lxaw6"]
+[ext_resource type="PackedScene" uid="uid://xor8rocu8tbd" path="res://Objects/ventricle.tscn" id="6_y0l3c"]
+[ext_resource type="Script" uid="uid://dd56p8bdnkf11" path="res://scripts/CameraWiggle.gd" id="7_oov56"]
+[ext_resource type="PackedScene" uid="uid://cnj70f1n04rvg" path="res://Assets/Scenes/Pipes/pipe_1.tscn" id="7_y0l3c"]
+[ext_resource type="PackedScene" uid="uid://doc4cjdojabah" path="res://Assets/Scenes/Pipes/pipe_2.tscn" id="8_w7qaw"]
+[ext_resource type="PackedScene" uid="uid://do4dkitpa1kna" path="res://Assets/Scenes/Pipes/pipe_3.tscn" id="9_r1l1s"]
+[ext_resource type="PackedScene" uid="uid://ba3qk4w560c0w" path="res://Assets/Scenes/Pipes/pipe_4.tscn" id="10_rq4wj"]
+[ext_resource type="PackedScene" uid="uid://csacdh3f0u2vp" path="res://Assets/Scenes/Pipes/pipe_5.tscn" id="11_3fi02"]
+[ext_resource type="PackedScene" uid="uid://caauej2tpc12" path="res://Assets/Scenes/Pipes/pipe_6.tscn" id="12_qqlji"]
+[ext_resource type="PackedScene" uid="uid://cmlvo64vqbk1d" path="res://Assets/Scenes/Pipes/pipe_7.tscn" id="13_vqnbw"]
+[ext_resource type="PackedScene" uid="uid://cesua7ofbvjhc" path="res://Assets/Scenes/Pipes/pipe_8.tscn" id="14_go7lm"]
+[ext_resource type="PackedScene" uid="uid://hm1x8mthbvon" path="res://Assets/Scenes/Pipes/pipe_9.tscn" id="15_qju35"]
+[ext_resource type="PackedScene" uid="uid://dabyex1hx43jc" path="res://Assets/Scenes/Pipes/pipe_10.tscn" id="16_c8qf1"]
+[ext_resource type="PackedScene" uid="uid://vx8u58a7urpo" path="res://Assets/Scenes/Pipes/pipe_11.tscn" id="17_uxhga"]
+[ext_resource type="PackedScene" uid="uid://08if7nw0n80f" path="res://Assets/Scenes/NEWcrt.tscn" id="18_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://ciust056ejqx3" path="res://Assets/Scenes/collection_bin.tscn" id="20_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://c3mrunir6auus" path="res://Assets/Scenes/conveyor_belt.tscn" id="21_dyeg5"]
+[ext_resource type="Texture2D" uid="uid://bt1mfxsc6eqi3" path="res://Assets/Models/CRT/CRTtv.tres" id="23_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://7sd5yebdgfr1" path="res://Assets/Scenes/electrical_box.tscn" id="23_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://47tscetidhjs" path="res://Assets/Scenes/electrical_lines.tscn" id="24_12hmx"]
+[ext_resource type="PackedScene" uid="uid://bkne75omvapdr" path="res://Assets/Scenes/room.tscn" id="25_tbrxr"]
+[ext_resource type="PackedScene" uid="uid://bnk6xxkjdjhvp" path="res://Assets/Scenes/Emission_Plane.tscn" id="26_12hmx"]
+[ext_resource type="PackedScene" uid="uid://clyp8rbnlr0gm" path="res://Assets/Scenes/trash_can.tscn" id="27_stcfx"]
+[ext_resource type="PackedScene" uid="uid://bcwcgq08jeqv7" path="res://Assets/Scenes/table_desk.tscn" id="29_cd4vf"]
+[ext_resource type="PackedScene" uid="uid://cae2q0wj37xsx" path="res://Objects/MovingCylender.tscn" id="29_dyeg5"]
+[ext_resource type="Script" uid="uid://ckggr1mdl56uu" path="res://scripts/pathToSpawnerConnector.gd" id="29_v1xsh"]
+[ext_resource type="PackedScene" uid="uid://ceiwv563g50j7" path="res://Scenes/Menus/AccuracyMeter.tscn" id="30_dyeg5"]
+[ext_resource type="PackedScene" uid="uid://74t1p0v4pkky" path="res://Assets/Scenes/box.tscn" id="30_v1xsh"]
+[ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="31_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://b5v55a4gb6nji" path="res://Assets/Scenes/fan.tscn" id="31_v1xsh"]
+[ext_resource type="Script" uid="uid://dnu1k1508ng50" path="res://scripts/UI/transition_clock.gd" id="32_12hmx"]
+[ext_resource type="PackedScene" uid="uid://ddchbcp57k1tk" path="res://Assets/Scenes/light_fixture.tscn" id="32_jm2s4"]
+[ext_resource type="PackedScene" uid="uid://djjjwejr6duoc" path="res://Assets/Scenes/Posterr_Sloth.tscn" id="35_cu2dh"]
+[ext_resource type="PackedScene" uid="uid://c6vqid1sslxc0" path="res://Assets/Scenes/Poster_AreYouPooping.tscn" id="36_stcfx"]
+[ext_resource type="PackedScene" uid="uid://bhifuax1hqvuw" path="res://Assets/Scenes/Poster_Cat.tscn" id="37_6j2xr"]
+[ext_resource type="PackedScene" uid="uid://bwyrv70cljidu" path="res://Assets/Scenes/pube_animated.tscn" id="38_riluv"]
+[ext_resource type="PackedScene" uid="uid://ci4nf7jv2qu1t" path="res://Assets/Scenes/Soyjack.tscn" id="39_csns6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u057j"]
+
+[sub_resource type="Sky" id="Sky_ila21"]
+sky_material = SubResource("ProceduralSkyMaterial_u057j")
+
+[sub_resource type="Environment" id="Environment_37okk"]
+background_energy_multiplier = 0.65
+sky = SubResource("Sky_ila21")
+ambient_light_color = Color(0.44, 0.26957336, 0.07480001, 1)
+ambient_light_energy = 3.78
+tonemap_mode = 3
+ssr_fade_in = 1.6392456
+ssr_fade_out = 0.03847333
+ssao_enabled = true
+ssao_radius = 0.25
+ssao_intensity = 16.0
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.6
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_contrast = 1.075
+adjustment_saturation = 1.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo3dt"]
+
+[sub_resource type="Compositor" id="Compositor_2gruq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kq5l"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("23_cd4vf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3slyq"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_0kq5l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fo3dt"]
+size = Vector3(1.4352417, 2.8061523, 1.6264153)
+
+[sub_resource type="Curve3D" id="Curve3D_yyvi6"]
+bake_interval = 6.76
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.9439845, 2.213457, 18.519457, 0, 0, 0, 0, 0, 0, -7.208261, 2.3552966, 19.606628, 0, 0, 0, 0, 0, 0, -6.001621, 2.819058, 22.426022, 0, 0, 0, 0, 0, 0, -5.3087296, 2.7947516, 23.201023, 0, 0, 0, 0, 0, 0, -2.2799745, 2.6897092, 23.343437, 0, 0, 0, 0, 0, 0, -0.9769311, 2.4177458, 23.34258, 0, 0, 0, 0, 0, 0, -0.8123431, 0.2393573, 23.48526),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbrxr"]
+shader = ExtResource("31_jm2s4")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 3
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 3
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
+
+[node name="TableSpace" type="Node3D" unique_id=1361018379]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378084259]
+environment = SubResource("Environment_37okk")
+camera_attributes = SubResource("CameraAttributesPractical_fo3dt")
+compositor = SubResource("Compositor_2gruq")
+
+[node name="SystemManager" type="Node" parent="." unique_id=1602999480]
+script = ExtResource("6_lxaw6")
+
+[node name="CylenderSpawner" type="Node3D" parent="SystemManager" unique_id=969594893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.249941, 1.8908757, 1.1865151)
+script = ExtResource("4_ywnsu")
+
+[node name="Timer" type="Timer" parent="SystemManager/CylenderSpawner" unique_id=1855129281]
+wait_time = 5.0
+
+[node name="Timer2" type="Timer" parent="SystemManager/CylenderSpawner" unique_id=812902109]
+wait_time = 0.5
+autostart = true
+
+[node name="Timer" type="Timer" parent="SystemManager" unique_id=825140361]
+wait_time = 10.0
+autostart = true
+
+[node name="Pipes" type="Node3D" parent="." unique_id=923323276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1318533, 0)
+
+[node name="Pipe1" parent="Pipes" unique_id=1296160952 instance=ExtResource("7_y0l3c")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe1" unique_id=1573269064 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -5.255067, 4.7641, 8.883475)
+
+[node name="Pipe2" parent="Pipes" unique_id=52720117 instance=ExtResource("8_w7qaw")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe2" unique_id=1561302375 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -3.3683803, 4.7641, 8.883475)
+ventricleID = 1
+
+[node name="Pipe3" parent="Pipes" unique_id=1268137030 instance=ExtResource("9_r1l1s")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe3" unique_id=48853055 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -1.3126835, 4.7641, 8.883475)
+ventricleID = 2
+
+[node name="Pipe4" parent="Pipes" unique_id=288379918 instance=ExtResource("10_rq4wj")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe4" unique_id=356971259 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 0.849071, 4.7641, 8.883475)
+ventricleID = 3
+
+[node name="Pipe5" parent="Pipes" unique_id=1181145620 instance=ExtResource("11_3fi02")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe5" unique_id=831566015 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 2.7625756, 4.7641, 8.883475)
+ventricleID = 4
+
+[node name="Pipe6" parent="Pipes" unique_id=345968622 instance=ExtResource("12_qqlji")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe6" unique_id=1575109043 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 4.8061256, 4.6802397, 8.9416)
+ventricleID = 5
+
+[node name="Pipe7" parent="Pipes" unique_id=461442714 instance=ExtResource("13_vqnbw")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe7" unique_id=861307647 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -4.27316, 7.2055464, 11.046754)
+ventricleID = 6
+
+[node name="Pipe8" parent="Pipes" unique_id=1208834969 instance=ExtResource("14_go7lm")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe8" unique_id=2050183908 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -2.1369367, 7.2055464, 11.046754)
+ventricleID = 7
+
+[node name="Pipe9" parent="Pipes" unique_id=118030934 instance=ExtResource("15_qju35")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe9" unique_id=1920501126 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, -0.43473947, 7.2055464, 11.046754)
+ventricleID = 8
+
+[node name="Pipe10" parent="Pipes" unique_id=1781539512 instance=ExtResource("16_c8qf1")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe10" unique_id=1722944049 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 1.8855665, 7.2055464, 11.046754)
+ventricleID = 9
+
+[node name="Pipe11" parent="Pipes" unique_id=974635522 instance=ExtResource("17_uxhga")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0.17500138, -1.3880079, -8.161959)
+
+[node name="Ventricle" parent="Pipes/Pipe11" unique_id=1614666089 instance=ExtResource("6_y0l3c")]
+transform = Transform3D(1.3422819, 0, 0, 0, 1.3422819, 0, 0, 0, 1.3422819, 3.845382, 7.2055464, 11.046754)
+ventricleID = 10
+
+[node name="Node3D" type="Node3D" parent="." unique_id=2056756282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CameraWiggle" type="Node3D" parent="." unique_id=1155477327]
+transform = Transform3D(1, 0, 0, 0, 0.91318256, -0.40755072, 0, 0.40755072, 0.91318256, 0, 4.543485, 6.9199133)
+script = ExtResource("7_oov56")
+wiggleCenter = Vector2(0.5, 0.6)
+upWiggleFactor = 2.0
+downWiggleFactor = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="CameraWiggle" unique_id=755732051]
+transform = Transform3D(1, 0, 0, 0, 0.5930183, 0.8051891, 0, -0.8051891, 0.5930183, 0, 0, 0)
+fov = 50.0
+
+[node name="CollectionBin" parent="." unique_id=1244313674 instance=ExtResource("20_cd4vf")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.44103074, -8.315971)
+
+[node name="ConveyorBelt" parent="." unique_id=550541245 instance=ExtResource("21_dyeg5")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.35793042, -8.315971)
+
+[node name="CRT2" parent="." unique_id=1079699050 instance=ExtResource("18_dyeg5")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -5.5923333, 4.4193363, 1.9397268)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CRT2" unique_id=1901847369]
+transform = Transform3D(0.7517509, 1.1355683, -2.8825358e-08, 0, -7.527102e-08, -1, -0.6594473, 1.294515, -3.2860072e-08, 0.5679655, 0.7580323, 0.40295458)
+mesh = SubResource("PlaneMesh_3slyq")
+
+[node name="Electrical_Box" parent="." unique_id=52782056 instance=ExtResource("23_jm2s4")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.09491587, 0.34611154, -8.315971)
+
+[node name="ElectricalLines" parent="." unique_id=1065912506 instance=ExtResource("24_12hmx")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 2.5419755, 0.8264725, -8.315971)
+
+[node name="Room" parent="." unique_id=310400824 instance=ExtResource("25_tbrxr")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -11.9918995, -1.7857406, 17.950874)
+
+[node name="TrashCan2" parent="." unique_id=1884958424 instance=ExtResource("27_stcfx")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 6.7594132, 0.054823756, 1.0867425)
+
+[node name="TrashCan" parent="TrashCan2" unique_id=16778985 instance=ExtResource("2_hwbjd")]
+transform = Transform3D(1.3513514, 0, 0, 0, 1.3513514, 0, 0, 0, 1.3513514, -1.8028612, -0.07408616, -1.468571)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashCan2/TrashCan" unique_id=1768333186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3520861, 0.9030762, 1.1039257)
+shape = SubResource("BoxShape3D_fo3dt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1171203485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54351616, 11.769893, 6.383787)
+light_color = Color(1, 1, 0.80784315, 1)
+omni_range = 27.562
+omni_attenuation = 0.03
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D" unique_id=1412782894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72281265, 47.585438, -14.907988)
+light_color = Color(1, 1, 0.80784315, 1)
+light_energy = 1.205
+omni_range = 42.701
+omni_attenuation = -0.365
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=998798660]
+disable_3d = true
+transparent_bg = true
+
+[node name="AccuracyMeter" parent="SubViewport" unique_id=1817966563 instance=ExtResource("30_dyeg5")]
+
+[node name="TableDesk" parent="." unique_id=1343893694 instance=ExtResource("29_cd4vf")]
+transform = Transform3D(0.7399998, 0, 8.940697e-07, 0, 0.74, 0, -8.940697e-07, 0, 0.7399998, -0.061618328, 0.23818827, -8.252304)
+
+[node name="Box" parent="." unique_id=1030823981 instance=ExtResource("30_v1xsh")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -7.4709578, 0.4834038, 0.62449265)
+
+[node name="Path3D" type="Path3D" parent="." unique_id=263996855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.698314, 0, -22.57311)
+curve = SubResource("Curve3D_yyvi6")
+script = ExtResource("29_v1xsh")
+
+[node name="PathFollow3D" parent="Path3D" unique_id=719248638 instance=ExtResource("29_dyeg5")]
+transform = Transform3D(-0.9716864, 0.029706812, 0.234329, 9.31307e-10, 0.9920408, -0.12576643, -0.23620367, -0.12220684, -0.9639744, -6.9439845, 2.213457, 18.519457)
+
+[node name="Timer" type="Timer" parent="Path3D" unique_id=638267457]
+autostart = true
+
+[node name="TransitionClock" type="ColorRect" parent="." unique_id=1111744979]
+material = SubResource("ShaderMaterial_tbrxr")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 1)
+script = ExtResource("32_12hmx")
+transition_started = true
+hardcoded_shit = false
+
+[node name="Fan" parent="." unique_id=997207045 instance=ExtResource("31_v1xsh")]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, -0.5458126, 9.536743e-07, -8.924231)
+
+[node name="Light_Fixture" parent="." unique_id=981242666 instance=ExtResource("32_jm2s4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 14.645073, 13.547807, -6.372081)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Light_Fixture" unique_id=2068636023]
+transform = Transform3D(1.3333334, 0, 0, 0, -5.8281852e-08, 1.3333334, 0, -1.3333334, -5.8281852e-08, 0, -1.7314949, 0)
+light_color = Color(1, 1, 0.80784315, 1)
+light_energy = 4.055
+area_range = 42.871
+area_size = Vector2(3.52, 13.46)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="Light_Fixture" unique_id=2136134912]
+transform = Transform3D(1.3333334, 0, 0, 0, -5.8281852e-08, 1.3333334, 0, -1.3333334, -5.8281852e-08, -38.86884, -1.7314949, 0)
+light_color = Color(1, 1, 0.80784315, 1)
+light_energy = 4.055
+area_range = 42.871
+area_size = Vector2(3.52, 13.46)
+
+[node name="Light_Fixture2" parent="Light_Fixture" unique_id=962971858 instance=ExtResource("32_jm2s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.93748, 0, 0)
+
+[node name="MeshInstance3D" parent="." unique_id=1117880977 instance=ExtResource("26_12hmx")]
+transform = Transform3D(1.20975, 0, 0, 0, -0.99974996, 8.7449223e-07, 0, -1.5095804e-07, -5.7915, 14.657974, 12.453408, -6.407605)
+
+[node name="MeshInstance3D2" parent="MeshInstance3D" unique_id=1555962933 instance=ExtResource("26_12hmx")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, -5.684342e-14, 0, 3.5527137e-15, 1.0000001, -24.169998, 0, 0)
+
+[node name="Poster" parent="." unique_id=1614337120 instance=ExtResource("35_cu2dh")]
+transform = Transform3D(-1.782714, -0.90660405, -3.962892e-08, 0, -8.742278e-08, 2, -0.90660405, 1.782714, 7.79249e-08, 7.622566, 20.637646, -2.9985108)
+
+[node name="Poster2" parent="." unique_id=250044162 instance=ExtResource("36_stcfx")]
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, 22.020102, 6.318014, -13.889551)
+
+[node name="Poster3" parent="." unique_id=564597385 instance=ExtResource("37_6j2xr")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -22.550037, 7.055927, -5.8904486)
+
+[node name="Pube_Animated" parent="." unique_id=614879993 instance=ExtResource("38_riluv")]
+transform = Transform3D(-0.35, 0, 3.059797e-08, 0, 0.35, 0, -3.059797e-08, 0, -0.35, 5.7620835, 4.9710627, -2.9984107)
+
+[node name="Poster_Square" parent="." unique_id=735373434 instance=ExtResource("39_csns6")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -22.524523, 8.40298, 0.9975674)
+
+[connection signal="add_note_to_queue" from="SystemManager/CylenderSpawner" to="Path3D" method="_on_cylender_spawner_add_note_to_queue"]
+[connection signal="timeout" from="SystemManager/CylenderSpawner/Timer" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="SystemManager/CylenderSpawner/Timer2" to="SystemManager/CylenderSpawner" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="SystemManager/Timer" to="SystemManager" method="_on_timer_timeout"]
+[connection signal="submitItem" from="Pipes/Pipe1/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe2/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe3/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe4/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe5/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe6/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe7/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe9/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe10/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="submitItem" from="Pipes/Pipe11/Ventricle" to="SystemManager" method="_ventricle_return_function"]
+[connection signal="body_entered" from="TrashCan2/TrashCan" to="TrashCan2/TrashCan" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="TrashCan2/TrashCan" to="TrashCan2/TrashCan" method="_on_area_3d_body_exited"]
+[connection signal="trigger_dropped_function" from="TrashCan2/TrashCan" to="SystemManager" method="_on_trash_can_trigger_dropped_function"]
+[connection signal="object_finished" from="Path3D" to="SystemManager/CylenderSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Path3D/Timer" to="Path3D" method="_on_timer_timeout"]

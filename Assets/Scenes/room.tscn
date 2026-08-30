@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ds7q4bhkd3ocp" path="res://Assets/Models/Office Room/Room_Normal.png" id="4_x5k2b"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_be47u"]
 albedo_texture = ExtResource("2_4o3f6")
 metallic = 1.0

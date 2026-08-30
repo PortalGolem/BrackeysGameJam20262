@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fc2121pcbobb" path="res://Assets/Models/Canister/Canister Regular/Canister_Color.png" id="2_11l3f"]
 [ext_resource type="Texture2D" uid="uid://dn3nnikmwcr4r" path="res://Assets/Models/Canister/Canister Regular/Canister_Roughness.png" id="3_3ja1n"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ikeg"]
 albedo_texture = ExtResource("2_11l3f")
 roughness_texture = ExtResource("3_3ja1n")

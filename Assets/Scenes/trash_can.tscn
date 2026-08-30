@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbs0hqaydltyb" path="res://Assets/Models/Trash Can/TrashCan_Roughness.png" id="4_dv6pg"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alpy1"]
 cull_mode = 2
 albedo_texture = ExtResource("2_alpy1")
