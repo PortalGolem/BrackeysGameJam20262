@@ -5,15 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://mquqyxaqh74c" path="res://Assets/Models/Pipes/Pipe 1/Pipe_Normal.png" id="3_7betv"]
 [ext_resource type="Texture2D" uid="uid://fahgfb2afamq" path="res://Assets/Models/Pipes/Pipe 4/Pipe_Roughness.png" id="4_n6v10"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usddj"]
 albedo_texture = ExtResource("2_l5o02")
-metallic = 1.0
+metallic = 0.75
 roughness_texture = ExtResource("4_n6v10")
 normal_enabled = true
 normal_texture = ExtResource("3_7betv")
 
 [node name="Pipe5" unique_id=1181145620 instance=ExtResource("1_y7cxu")]
 
-[node name="Pipe5" parent="." index="0" unique_id=1329013228]
+[node name="Pipe5" parent="." index="0" unique_id=1443137503]
 surface_material_override/0 = SubResource("StandardMaterial3D_usddj")
