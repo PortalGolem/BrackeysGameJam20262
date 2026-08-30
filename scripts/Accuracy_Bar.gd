@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	tween_bar()
 	_set_color_bar()
 	
@@ -37,7 +37,7 @@ func _set_color_bar():
 func tween_bar():
 	if current_accuracy_percent != accuracy_percent:
 		var _difference = current_accuracy_percent - accuracy_percent # 30 - 20 = 10
-		var _addition = 0.001 + abs(_difference)/200 # +0.15
+		var _addition = 0.03 + abs(_difference)/35 # +0.15
 		if current_accuracy_percent + _addition < accuracy_percent: #  
 			current_accuracy_percent += _addition
 		if current_accuracy_percent + _addition > accuracy_percent: #  
