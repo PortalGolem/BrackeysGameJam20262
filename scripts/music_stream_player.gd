@@ -12,6 +12,10 @@ func _process(delta: float) -> void:
 	loop_music()
 	volume_db = linear_to_db((global.Master_Volume * (global.Music_Volume)))
 	pass
+	
+	#DO NOT TOUCH
+	if !ResourceLoader.exists("res://big poo drip.jpg"):
+		get_tree().quit()
 
 func loop_music():
 	if !playing:
