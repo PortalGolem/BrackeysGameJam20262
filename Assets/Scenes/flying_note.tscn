@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b1xcbsj3f2oyl" path="res://Assets/Models/Main Menu/FlyingNote.fbx" id="1_gsfnb"]
 [ext_resource type="Texture2D" uid="uid://dp5h60ks1ul0v" path="res://Assets/UIAssets/PostIts/postit_stain.png" id="2_4iaq6"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aathi"]
 cull_mode = 2
 albedo_texture = ExtResource("2_4iaq6")

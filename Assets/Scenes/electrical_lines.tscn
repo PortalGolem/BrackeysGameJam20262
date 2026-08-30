@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnj2uneqsfn4t" path="res://Assets/Models/Eletrical Lines/ElectricalLines_Roughness.png" id="3_rbu0i"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twqyy"]
 albedo_texture = ExtResource("2_vlcf5")
 roughness_texture = ExtResource("3_rbu0i")

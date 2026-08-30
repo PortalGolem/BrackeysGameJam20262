@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqhqiphkd6nuj" path="res://Assets/Models/Special Pipe/Special_Pipe_Roughness.png" id="4_crf0b"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alwxc"]
 albedo_texture = ExtResource("2_684fy")
 metallic = 1.0

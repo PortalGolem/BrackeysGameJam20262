@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqf0vpiqe16rm" path="res://Assets/Models/Table Desk/Desk_Roughness.png" id="4_xqhl2"]
 
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhvfj"]
 albedo_texture = ExtResource("2_apaj2")
 metallic = 1.0

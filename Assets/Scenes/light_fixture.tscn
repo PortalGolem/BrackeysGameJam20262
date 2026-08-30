@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3nwynjrs6xfa" path="res://Assets/Models/Light Fixture/Light_Metallic.png" id="4_73yrp"]
 [ext_resource type="Texture2D" uid="uid://coki20lhalhlx" path="res://Assets/Models/Light Fixture/Light_Roughness.png" id="5_t7pdd"]
 
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ka7wq"]
 albedo_texture = ExtResource("2_wwyyk")
 metallic = 1.0

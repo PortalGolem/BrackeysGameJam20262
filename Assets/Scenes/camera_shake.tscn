@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bkikxts4plu3c" path="res://Assets/Models/Main Menu/Camera_Shake.fbx" id="1_qiidf"]
 
+
 [node name="Camera_Shake" unique_id=1740387477 instance=ExtResource("1_qiidf")]
 
 [node name="Camera_004" parent="." index="0" unique_id=872658695]

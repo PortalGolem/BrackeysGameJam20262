@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dlfhld5c8vgw3" path="res://scripts/moving_cylender.gd" id="1_vjjdd"]
 [ext_resource type="PackedScene" uid="uid://dxm0naksqno0g" path="res://Assets/Scenes/canister.tscn" id="1_w7fu4"]
 
+
 [node name="PathFollow3D" type="PathFollow3D" unique_id=719248638]
 transform = Transform3D(-0.18520042, 0.018465115, 0.9825209, 9.313147e-10, 0.99981374, -0.018790241, -0.982692, -0.0034799776, -0.18516818, 0, 0, 0)
 loop = false
