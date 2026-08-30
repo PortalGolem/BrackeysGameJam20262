@@ -1,6 +1,36 @@
 [gd_scene format=3 uid="uid://ceiwv563g50j7"]
 
 [ext_resource type="Script" uid="uid://pd7rla1h76w7" path="res://scripts/Accuracy_Bar.gd" id="1_wkpfp"]
+[ext_resource type="Shader" uid="uid://dxag0prch8mjr" path="res://AssetStore/transition.gdshader" id="2_vxame"]
+[ext_resource type="Texture2D" uid="uid://vyrau2snywgq" path="res://Assets/UIAssets/AccuracyBarOverlay.png" id="3_76el0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbhuk"]
+shader = ExtResource("2_vxame")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 0
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/invert = false
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
 
 [node name="AccuracyMeter" type="Control" unique_id=1817966563]
 layout_mode = 3
@@ -14,28 +44,32 @@ grow_vertical = 2
 
 [node name="Control" type="Control" parent="." unique_id=2020325541]
 anchors_preset = 0
-offset_left = 219.0
-offset_right = 259.0
-offset_bottom = 40.0
+offset_left = 206.0
+offset_top = -4.0
+offset_right = 246.0
+offset_bottom = 36.0
 script = ExtResource("1_wkpfp")
 accuracy_percent = 80.0
 metadata/_edit_group_ = true
 
 [node name="OutlineBar" type="ColorRect" parent="Control" unique_id=643197117]
 layout_mode = 0
-offset_right = 201.0
-offset_bottom = 512.0
+offset_left = 46.0
+offset_top = 24.0
+offset_right = 176.0
+offset_bottom = 497.0
 
 [node name="FillBar" type="ColorRect" parent="Control/OutlineBar" unique_id=947418062]
 layout_mode = 1
-offset_top = 512.0
-offset_right = 200.80379
-offset_bottom = 712.0
+offset_top = 474.22968
+offset_right = 130.11934
+offset_bottom = 636.45935
 rotation = 3.1415927
 pivot_offset_ratio = Vector2(0.5, 0)
 color = Color(1, 0.5372549, 1, 1)
 
 [node name="written text" type="Label" parent="Control" unique_id=1099261829]
+visible = false
 layout_mode = 0
 offset_left = 32.0
 offset_top = 55.0
@@ -54,3 +88,14 @@ Y
 100
 %"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1435113794]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_kbhuk")
+layout_mode = 0
+offset_left = -149.0
+offset_top = -14.0
+offset_right = 1899.0
+offset_bottom = 2034.0
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("3_76el0")
