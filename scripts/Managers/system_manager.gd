@@ -88,7 +88,7 @@ var people = {
 		"RandomNotes1" = [
 		{"Text" = "Could you direct me to the conference room Bertha? \n\nBest,\nNathan", "Target" = "Bertha", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yes! It's"}]},
 		{"Text" = "Jim, have you seen the new update for Gatya:The Impact?", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Nathan, I'm"}]},
-		{"Text" = "Hey Epstien, did you get the statistics on the cafeteria spend this week?", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, it"}]}
+		{"Text" = "Hey Epstien, did you get the statistics on the cafeteria spend this week? \n\nGood Day, Nathan.", "Target" = "Einstein", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, it"}]}
 		],
 		"Conversation" = {
 			"But sending" = {"Text" = "But sending notes is way cooler.", "Target" = "Jim", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Whatever you"}]},
