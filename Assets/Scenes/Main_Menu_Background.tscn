@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://y2jnthl675fm" path="res://Assets/Models/Main Menu/Wall/Wall_Roughness.png" id="11_hx8xt"]
 [ext_resource type="PackedScene" uid="uid://dq8ku6vex34x8" path="res://Assets/Scenes/Tubes_Combined_Animation.tscn" id="12_ig31h"]
 [ext_resource type="PackedScene" uid="uid://dibdw1mogwt31" path="res://Assets/Scenes/camera_shake.tscn" id="13_hrdrn"]
-[ext_resource type="PackedScene" path="res://Assets/Scenes/StickyNote_Flying.tscn" id="14_c6gw4"]
 [ext_resource type="AudioStream" uid="uid://jef0chp2glj8" path="res://Sounds/SFX for pipes/MainMenu_Ambiance.mp3" id="15_2dgve"]
 [ext_resource type="AudioStream" uid="uid://babfj3lyruw2v" path="res://Sounds/SFX for pipes/TubeSwoosh_Sync.mp3" id="16_gbhl0"]
 
@@ -87,17 +86,14 @@ area_range = 21.862
 area_attenuation = 1.1
 area_size = Vector2(37.135, 37.135)
 
-[node name="Stretch Goals" parent="." index="8" unique_id=1016426022 instance=ExtResource("14_c6gw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.168344, 12.286404, -8.515)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9" unique_id=896377847]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8" unique_id=896377847]
 stream = ExtResource("15_2dgve")
 volume_db = -5.012
 autoplay = true
 max_polyphony = 4
 parameters/looping = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="10" unique_id=1653483825]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="9" unique_id=1653483825]
 stream = ExtResource("16_gbhl0")
 volume_db = -10.085
 autoplay = true

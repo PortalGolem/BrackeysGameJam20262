@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	loop_music()
 	volume_db = linear_to_db((global.Master_Volume * (global.Music_Volume)))
+	
 	pass
 	
 	#DO NOT TOUCH

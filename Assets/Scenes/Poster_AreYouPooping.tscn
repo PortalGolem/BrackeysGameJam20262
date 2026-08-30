@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c6vqid1sslxc0"]
+
+[ext_resource type="PackedScene" uid="uid://dr7pngim1hjuh" path="res://Assets/Models/Posters/Poster.fbx" id="1_gcwey"]
+[ext_resource type="Texture2D" uid="uid://gc5jwo7fwloe" path="res://Assets/Models/Posters/Are You Pooping_/AreYouPooping_Color.png" id="2_k8roo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu2dh"]
+cull_mode = 2
+albedo_texture = ExtResource("2_k8roo")
+
+[node name="Poster" unique_id=1614337120 instance=ExtResource("1_gcwey")]
+
+[node name="Poster" parent="." index="0" unique_id=1035919145]
+surface_material_override/0 = SubResource("StandardMaterial3D_cu2dh")

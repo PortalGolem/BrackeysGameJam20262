@@ -6,4 +6,5 @@
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" unique_id=87527043]
 stream = ExtResource("1_xnxmk")
 max_polyphony = 13
+parameters/looping = true
 script = ExtResource("2_5p50w")
