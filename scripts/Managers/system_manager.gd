@@ -65,7 +65,7 @@ var people = {
 		"Color" = "yellow",
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
-		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!! \n\nBest, \nMerideth.", "Target" = "Any", "Meta" = []}],
+		"Greeting" = [{"Text" = "Hello newbie! Just so you know, I'm keeping track of your accuracy. Better not fall too low, but theres no pressure!! \n\nBest, \nMeredith.", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
 		#{"Text" = "Hey everyone! How are you guys doing? Meri here!", "Target" = "Any", "Meta" = [{"Recipient" = "Target", "Sender" = "Meredith", "Return" = "Hello? Anyone"}]},
 		{"Text" = "Hey Frank. I've noticed that your performance is slightly off from yesterday. Not to be theat person but make sure your working hard!", "Target" = "Frank", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Meredith, I've"}]}
@@ -123,10 +123,10 @@ var people = {
 		"SystemTrust" = 1.0,
 		"PerpetualChance" = 0.0,
 		"RandomNotes1" = [
-		{"Text" = "Larry, do you also have problems with Merideth? God I just hate her.\n\n- Frank.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "( ദ്ദി ˙ᗜ˙ )"}]},
+		{"Text" = "Larry, do you also have problems with Meredith? God I just hate her.\n\n- Frank.", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "( ദ്ദി ˙ᗜ˙ )"}]},
 		],
 		"Conversation" = {
-			"Merideth, I've" = {"Text" = "Merideth, I've recently suffered a death in the family, please excuse any performance hiccups because of that.", "Target" = "Meredith", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Still not"}]},
+			"Meredith, I've" = {"Text" = "Meredith, I've recently suffered a death in the family, please excuse any performance hiccups because of that.", "Target" = "Meredith", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Still not"}]},
 			"I know" = {"Text" = "I know right? Was she just born a #&%^& or something? Whats her problem???", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\")"}]},
 			"Thanks Larry" = {"Text" = "Thanks Larry. Your my only true friend... ", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "🫂"}]}
 		},
@@ -145,6 +145,9 @@ var people = {
 		"Conversation" = {
 			"Yeah, theres" = {"Text" = "Yeah, theres a good place down the street called 'Aldi'", "Target" = "Eli", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "..."}]},
 			"Yeah, it" = {"Text" = "Yeah, it was 5,000, Gertrude ate 23 cakes last month.", "Target" = "Nathan", "Meta" = []},
+			"What do" = {"Text" = "What do you mean? I spent all night working on that report.", "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "You calculated"}]},
+			"Yeah? What" = {"Text" = "Yeah? What do you not know how interest works?",  "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Why the"}]},
+			"It's because" = {"Text" = "It's because im just that good at finance Gerty.",  "Target" = "Gertrude", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "YOU TOO???"}]}
 		},
 		"PerpetualNotes" = [],
 		"SentNotes" = []
@@ -219,7 +222,7 @@ var people = {
 		"Greeting" = [{"Text" = "First of all, I would like to say hello welcome to your new job as a mailmaster at this company. Your job is to sort through the notes that come through and send them to the correct people in the office. Have a nice day and good luck!", "Target" = "Any", "Meta" = []}],
 		"RandomNotes1" = [
 		{"Text" = "Eli, please come to my office.", "Target" = "Eli", "Meta" = []},
-		{"Text" = "Hey Larry, could you research a new employee monitoring software?", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "Yeah, theres"}]},
+		{"Text" = "Hey Larry, could you research a new employee monitoring software?", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\"')"}]},
 		],
 		"Conversation" = {
 			"I need" = {"Text" = "I need one with privledge settings so restrictions don't apply to everyone", "Target" = "Larry", "Meta" = [{"Recipient" = "Target", "Sender" = "Target", "Return" = "(¬_¬\"'')"}]},
@@ -298,8 +301,7 @@ func handleNotes(note:Note, sentWithoutCannister:bool, ventricleID):
 		currentAccuracyQuality -= 1
 		if (currentAccuracyQuality <= 6):
 			get_tree().change_scene_to_file("res://Scenes/Menus/DeathMenu.tscn")
-	print("Update!")
-	$"../SubViewport/AccuracyMeter".get_child(0).accuracy_percent = currentAccuracyQuality * 10
+	$"../SubViewport/AccuracyMeter".get_child(0).accuracy_percent = (currentAccuracyQuality - 6) * 25
 	
 	
 func sendNotes(text: String, color: String, target: String, origin: String, isPerpetual: bool, noteDict, maxNoteOverride := false,) -> void:
